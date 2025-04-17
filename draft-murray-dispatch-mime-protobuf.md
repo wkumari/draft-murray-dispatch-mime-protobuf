@@ -53,7 +53,7 @@ author:
   ins: M. Kucherawy
   name: Murray S. Kucherawy
   org: Facebook
-  email:msk@fb.com
+  email: msk@fb.com
 
 normative:
   RFC6838:
