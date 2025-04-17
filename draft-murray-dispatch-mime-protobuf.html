@@ -1204,9 +1204,26 @@ current and historical media types used for this purpose would benefit from regi
       </h2>
 <p id="section-2-1">These media types are used in the transport of serialized objects only.  The IDL definitions, if transported, would be used with any appropriate text media type.  In the
 three figures below, only the third of these would ever be used with these media types (a JSON example is depicted).<a href="#section-2-1" class="pilcrow">¶</a></p>
-<p id="section-2-2">(labeled example of an IDL object definition)<a href="#section-2-2" class="pilcrow">¶</a></p>
-<p id="section-2-3">(labeled example of an annotated IDL object instance definition)<a href="#section-2-3" class="pilcrow">¶</a></p>
-<p id="section-2-4">(labeled example of a serialized object)<a href="#section-2-4" class="pilcrow">¶</a></p>
+<p id="section-2-2">An example use of the IDL to specify a "Person" object:
+~~~
+edition = "2023";<a href="#section-2-2" class="pilcrow">¶</a></p>
+<p id="section-2-3">message Person {
+  string name = 1;
+  int32 id = 2;
+  string email = 3;
+}
+~~~<a href="#section-2-3" class="pilcrow">¶</a></p>
+<p id="section-2-4">An example of python code that uses the definition above to create an instance of a "Person" object:
+~~~
+person = Person()
+person.id = 1234
+person.name = "John Doe"
+person.email = "jdoe@example.com"
+~~~<a href="#section-2-4" class="pilcrow">¶</a></p>
+<p id="section-2-5">An example of the above instance expressed in JSON:
+~~~
+TBD
+~~~<a href="#section-2-5" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="encoding">
