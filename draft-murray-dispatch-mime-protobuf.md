@@ -39,7 +39,7 @@ author:
   name: Rob Sloan
   org: Google
   email: rmsj@google.com
- -
+
 
 normative:
   RFC1341: # MIME (Multipurpose Internet Mail Extensions)
@@ -62,7 +62,6 @@ normative:
     title: "Protocol Buffers"
 
 informative:
-  RFC2045: # Multipurpose Internet Mail Extensions (MIME) Part One: Format of Internet Message Bodies
   RFC8446: # The Transport Layer Security (TLS) Protocol Version 1.3
   CROSS-ORIGIN-READ-BLOCKING:
     author:
