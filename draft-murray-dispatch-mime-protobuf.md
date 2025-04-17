@@ -41,13 +41,13 @@ normative:
   RFC4648:
   RFC7159:
   RFC6657:
+  Protobuf:
+    target: "https://protobuf.dev/"
+    title: "Protocol Buffers"
 
 informative:
   RFC2045:
   RFC8446:
-  Protobuf:
-    target: "https://protobuf.dev/"
-    title: "Protocol Buffers"
 
 --- abstract
 
@@ -83,7 +83,7 @@ A protobuf payload can be either in JSON form or in binary form.  For binary for
 
 # Security Considerations {#security}
 
-The payload for this media type contains no directly executable code.  However, it is common for a protobuf definition to be used as input to a code generator which then
+The payload for these media types contain no directly executable code.  However, it is common for a protobuf definition to be used as input to a code generator which then
 does produce something executable.
 
 A malformed request to a protobuf server could be crafted to, for example, allocate a very large amount of memory, potentially impacting other operations on that server.
