@@ -66,6 +66,17 @@ easily crafted and deployed.
 Serialized objects are occasionally transported within media that make use of media types (see {{RFC2045}} et seq) to identify payloads.  Accordingly,
 current and historical media types used for this purpose would benefit from registration.  This document requests those registrations of IANA.
 
+# Payload Description {#description}
+
+These media types are used in the transport of serialized objects only.  The IDL definitions, if transported, would be used with any appropriate text media type.  In the
+three figures below, only the third of these would ever be used with these media types (a JSON example is depicted).
+
+(labeled example of an IDL object definition)
+
+(labeled example of an annotated IDL object instance definition)
+
+(labeled example of a serialized object)
+
 # Encoding Considerations {#encoding}
 
 A protobuf payload can be either in JSON form or in binary form.  For binary forms that need to transit non-binary transports, base64 (xref to RFC 4648) is recommended.
@@ -112,15 +123,15 @@ Additional information:
 
 Person & email address to contact for further information: protobuf-external@google.com
 
-   Intended usage: COMMON
+Intended usage: COMMON
 
-   Restrictions on usage: N/A
+Restrictions on usage: N/A
 
-   Author: Rob (details here)
+Author: Rob (details here)
 
-   Change controller: protobuf-external@google.com
+Change controller: protobuf-external@google.com
 
-   Provisional registration? (standards tree only): No
+Provisional registration? (standards tree only): No
 
 ## Registration for "application/protobuf+json" Media Type
 
@@ -153,14 +164,19 @@ Additional information:
 
 Person & email address to contact for further information: protobuf-external@google.com
 
-   Intended usage: COMMON
+Intended usage: COMMON
 
-   Restrictions on usage: N/A
+Restrictions on usage: N/A
 
-   Author: Rob (details here)
+Author: Rob (details here)
 
-   Change controller: protobuf-external@google.com
+Change controller: protobuf-external@google.com
 
-   Provisional registration? (standards tree only): No
+Provisional registration? (standards tree only): No
 
 --- back
+
+# Acknowledgments
+{:numbered="false"}
+ 
+Orie Steele provided valuable feedback to this work.
