@@ -1189,12 +1189,13 @@ svg :is([fill="white"], [fill^="#fff"]) {
       <h2 id="name-introduction">
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
-<p id="section-1-1">Protocol Buffers ("protobufs") were introduced in 2008 as a free, open source, platform-independent mechanism for transport and storage of structured data.  Their use has become
-increasingly common.<a href="#section-1-1" class="pilcrow">¶</a></p>
-<p id="section-1-2">The specification for protobufs generally includes an interface definition language and a code generator so that clients and servers understanding the structured data can be
-easily crafted and deployed.<a href="#section-1-2" class="pilcrow">¶</a></p>
-<p id="section-1-3">Serialized objects are occasionally transported within media that make use of media types (see <span>[<a href="#RFC2045" class="cite xref">RFC2045</a>]</span> et seq) to identify payloads.  Accordingly,
-current and historical media types used for this purpose would benefit from registration.  This document requests those registrations of IANA.<a href="#section-1-3" class="pilcrow">¶</a></p>
+<p id="section-1-1">(For Rob: Feel free to edit for accuracy, but no need to expound too much; we refer to the full specification URI later.)<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-2">Protocol Buffers ("protobufs") were introduced in 2008 as a free, open source, platform-independent mechanism for transport and storage of structured data.  Their use has become
+increasingly common.<a href="#section-1-2" class="pilcrow">¶</a></p>
+<p id="section-1-3">The specification for protobufs generally includes an interface definition language and a code generator so that clients and servers understanding the structured data can be
+easily crafted and deployed.<a href="#section-1-3" class="pilcrow">¶</a></p>
+<p id="section-1-4">Serialized objects are occasionally transported within media that make use of media types (see <span>[<a href="#RFC2045" class="cite xref">RFC2045</a>]</span> et seq) to identify payloads.  Accordingly,
+current and historical media types used for this purpose would benefit from registration.  This document requests those registrations of IANA.<a href="#section-1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="description">
@@ -1228,9 +1229,14 @@ person.email = "jdoe@example.com"
 <p id="section-2-6">An example of the above instance expressed in JSON:<a href="#section-2-6" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-2-7">
 <pre>
-TBD
+{
+  "name": "John Doe",
+  "id": 1234,
+  "email": "jdoe@example.com"
+}
 </pre><a href="#section-2-7" class="pilcrow">¶</a>
 </div>
+<p id="section-2-8">(For Rob: If the actual JSON payload looks different than this, please update.)<a href="#section-2-8" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="encoding">
@@ -1238,7 +1244,8 @@ TBD
       <h2 id="name-encoding-considerations">
 <a href="#section-3" class="section-number selfRef">3. </a><a href="#name-encoding-considerations" class="section-name selfRef">Encoding Considerations</a>
       </h2>
-<p id="section-3-1">A protobuf payload can be either in JSON form or in binary form.  For binary forms that need to transit non-binary transports, base64 (xref to RFC 4648) is recommended.<a href="#section-3-1" class="pilcrow">¶</a></p>
+<p id="section-3-1">(For Rob: Anything else to say here?)<a href="#section-3-1" class="pilcrow">¶</a></p>
+<p id="section-3-2">A protobuf payload can be either in JSON form or in binary form.  For binary forms that need to transit non-binary transports, base64 (xref to RFC 4648) is recommended.<a href="#section-3-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="security">
@@ -1246,10 +1253,12 @@ TBD
       <h2 id="name-security-considerations">
 <a href="#section-4" class="section-number selfRef">4. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
       </h2>
-<p id="section-4-1">The payload for these media types contain no directly executable code.  However, it is common for a protobuf definition to be used as input to a code generator which then
-does produce something executable.<a href="#section-4-1" class="pilcrow">¶</a></p>
-<p id="section-4-2">A malformed request to a protobuf server could be crafted to, for example, allocate a very large amount of memory, potentially impacting other operations on that server.<a href="#section-4-2" class="pilcrow">¶</a></p>
-<p id="section-4-3">Protobuf provides no security services.  Clients or servers for which this is a concern should avail themselves of solutions that provide such capabilities (e.g., <span>[<a href="#RFC8446" class="cite xref">RFC8446</a>]</span>).<a href="#section-4-3" class="pilcrow">¶</a></p>
+<p id="section-4-1">(For Rob: Anything else to say here?)<a href="#section-4-1" class="pilcrow">¶</a></p>
+<p id="section-4-2">The payload for these media types contain no directly executable code.  However, it is common for a protobuf definition to be used as input to a code generator which then
+does produce something executable.<a href="#section-4-2" class="pilcrow">¶</a></p>
+<p id="section-4-3">A malformed request to a protobuf server could be crafted to, for example, allocate a very large amount of memory, potentially impacting other operations on that server.<a href="#section-4-3" class="pilcrow">¶</a></p>
+<p id="section-4-4">Protobuf provides no security or integrity services.  Clients or servers for which this is a concern should avail themselves of solutions that provide such capabilities
+(e.g., <span>[<a href="#RFC8446" class="cite xref">RFC8446</a>]</span>).<a href="#section-4-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="iana">
@@ -1257,6 +1266,7 @@ does produce something executable.<a href="#section-4-1" class="pilcrow">¶</a><
       <h2 id="name-iana-considerations">
 <a href="#section-5" class="section-number selfRef">5. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
       </h2>
+<p id="section-5-1">(For Rob: Add any required/optional parameters in both of the next two sections, plus any other relevant discussion.)<a href="#section-5-1" class="pilcrow">¶</a></p>
 <div id="registration-for-applicationprotobuf-media-type">
 <section id="section-5.1">
         <h3 id="name-registration-for-applicatio">
