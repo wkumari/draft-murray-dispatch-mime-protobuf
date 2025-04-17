@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" class="Internet-Draft">
+<html lang="en" class="RFC">
 <head>
 <meta charset="utf-8">
 <meta content="Common,Latin" name="scripts">
 <meta content="initial-scale=1.0" name="viewport">
-<title>Media Type Registration for Protocol Buffers</title>
+<title>RFC 0: Media Type Registration for Protocol Buffers</title>
 <meta content="Murray S. Kucherawy" name="author">
 <meta content="Warren Kumari" name="author">
 <meta content="
-       TODO Abstract 
+       This document registers media types for Protocol Buffers, a common extensible mechanism for serializing structured data. 
     " name="description">
 <meta content="xml2rfc 3.28.1" name="generator">
 <meta content="MIME" name="keyword">
 <meta content="protobuf" name="keyword">
 <meta content="media type" name="keyword">
 <meta content="application" name="keyword">
-<meta content="draft-murray-dispatch-mime-protobuf-latest" name="ietf.draft">
+<meta content="0" name="rfc.number">
 <!-- Generator version information:
   xml2rfc 3.28.1
     Python 3.12.9
@@ -1042,40 +1042,43 @@ svg :is([fill="white"], [fill^="#fff"]) {
 }
 </style>
 
-</head>
+<link href="https://dx.doi.org/10.17487/rfc0" rel="alternate">
+  <link href="urn:issn:2070-1721" rel="alternate">
+  <link href="https://datatracker.ietf.org/doc/draft-murray-dispatch-mime-protobuf-latest" rel="prev">
+  </head>
 <body class="xml2rfc">
 <table class="ears">
 <thead><tr>
-<td class="left">Internet-Draft</td>
+<td class="left">RFC 0</td>
 <td class="center">Media Type Registration for Protocol Buf</td>
 <td class="right">April 2025</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Kucherawy &amp; Kumari</td>
-<td class="center">Expires 19 October 2025</td>
+<td class="center">Informational</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
 <div id="external-metadata" class="document-information"></div>
 <div id="internal-metadata" class="document-information">
 <dl id="identifiers">
-<dt class="label-workgroup">Workgroup:</dt>
-<dd class="workgroup">DISPATCH</dd>
-<dt class="label-internet-draft">Internet-Draft:</dt>
-<dd class="internet-draft">draft-murray-dispatch-mime-protobuf-latest</dd>
+<dt class="label-stream">Stream:</dt>
+<dd class="stream">Internet Engineering Task Force (IETF)</dd>
+<dt class="label-rfc">RFC:</dt>
+<dd class="rfc"><a href="https://www.rfc-editor.org/rfc/rfc0" class="eref">0</a></dd>
+<dt class="label-category">Category:</dt>
+<dd class="category">Informational</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
 <time datetime="2025-04-17" class="published">17 April 2025</time>
     </dd>
-<dt class="label-intended-status">Intended Status:</dt>
-<dd class="intended-status">Informational</dd>
-<dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2025-10-19">19 October 2025</time></dd>
+<dt class="label-issn">ISSN:</dt>
+<dd class="issn">2070-1721</dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
-      <div class="author-name">M. Kucherawy</div>
-<div class="org">Facebook</div>
+      <div class="author-name">M. Kucherawy, <span class="editor">Ed.</span>
+</div>
 </div>
 <div class="author">
       <div class="author-name">W. Kumari</div>
@@ -1084,26 +1087,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </dd>
 </dl>
 </div>
+<h1 id="rfcnum">RFC 0</h1>
 <h1 id="title">Media Type Registration for Protocol Buffers</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">TODO Abstract<a href="#section-abstract-1" class="pilcrow">¶</a></p>
-</section>
-<section class="note rfcEditorRemove" id="section-note.1">
-      <h2 id="name-about-this-document">
-<a href="#name-about-this-document" class="section-name selfRef">About This Document</a>
-      </h2>
-<p id="section-note.1-1">This note is to be removed before publishing as an RFC.<a href="#section-note.1-1" class="pilcrow">¶</a></p>
-<p id="section-note.1-2">
-        The latest revision of this draft can be found at <span><a href="https://example.com/LATEST">https://example.com/LATEST</a></span>.
-        Status information for this document may be found at <span><a href="https://datatracker.ietf.org/doc/draft-murray-dispatch-mime-protobuf/">https://datatracker.ietf.org/doc/draft-murray-dispatch-mime-protobuf/</a></span>.<a href="#section-note.1-2" class="pilcrow">¶</a></p>
-<p id="section-note.1-3">
-        Discussion of this document takes place on the
-        DISPATCH Working Group mailing list (<span><a href="mailto:dispatch@ietf.org">mailto:dispatch@ietf.org</a></span>),
-        which is archived at <span><a href="https://www.ietf.org/mailman/listinfo/dispatch">https://www.ietf.org/mailman/listinfo/dispatch</a></span>.
-        Subscribe at <span><a href="https://www.ietf.org/mailman/listinfo/dispatch/">https://www.ietf.org/mailman/listinfo/dispatch/</a></span>.<a href="#section-note.1-3" class="pilcrow">¶</a></p>
-<p id="section-note.1-4">Source for this draft and an issue tracker can be found at
-        <span><a href="https://github.com//wkumari/draft-murray-dispatch-mime-protobuf">https://github.com//wkumari/draft-murray-dispatch-mime-protobuf</a></span>.<a href="#section-note.1-4" class="pilcrow">¶</a></p>
+<p id="section-abstract-1">This document registers media types for Protocol Buffers, a common extensible mechanism for serializing structured data.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </section>
 <div id="status-of-memo">
 <section id="section-boilerplate.1">
@@ -1111,20 +1099,19 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <a href="#name-status-of-this-memo" class="section-name selfRef">Status of This Memo</a>
         </h2>
 <p id="section-boilerplate.1-1">
-        This Internet-Draft is submitted in full conformance with the
-        provisions of BCP 78 and BCP 79.<a href="#section-boilerplate.1-1" class="pilcrow">¶</a></p>
+            This document is not an Internet Standards Track specification; it is
+            published for informational purposes.<a href="#section-boilerplate.1-1" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-2">
-        Internet-Drafts are working documents of the Internet Engineering Task
-        Force (IETF). Note that other groups may also distribute working
-        documents as Internet-Drafts. The list of current Internet-Drafts is
-        at <span><a href="https://datatracker.ietf.org/drafts/current/">https://datatracker.ietf.org/drafts/current/</a></span>.<a href="#section-boilerplate.1-2" class="pilcrow">¶</a></p>
+            This document is a product of the Internet Engineering Task Force
+            (IETF).  It represents the consensus of the IETF community.  It has
+            received public review and has been approved for publication by the
+            Internet Engineering Steering Group (IESG).  Not all documents
+            approved by the IESG are candidates for any level of Internet
+            Standard; see Section 2 of RFC 7841.<a href="#section-boilerplate.1-2" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-3">
-        Internet-Drafts are draft documents valid for a maximum of six months
-        and may be updated, replaced, or obsoleted by other documents at any
-        time. It is inappropriate to use Internet-Drafts as reference
-        material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
-<p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 19 October 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+            Information about the current status of this document, any
+            errata, and how to provide feedback on it may be obtained at
+            <span><a href="https://www.rfc-editor.org/info/rfc0">https://www.rfc-editor.org/info/rfc0</a></span>.<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1157,13 +1144,21 @@ svg :is([fill="white"], [fill^="#fff"]) {
             <p id="section-toc.1-1.1.1" class="keepWithNext"><a href="#section-1" class="auto internal xref">1</a>.  <a href="#name-introduction" class="internal xref">Introduction</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2">
-            <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-conventions-and-definitions" class="internal xref">Conventions and Definitions</a></p>
+            <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-encoding-considerations" class="internal xref">Encoding Considerations</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3">
             <p id="section-toc.1-1.3.1" class="keepWithNext"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4">
             <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.1">
+                <p id="section-toc.1-1.4.2.1.1"><a href="#section-4.1" class="auto internal xref">4.1</a>.  <a href="#name-registration-for-applicatio" class="internal xref">Registration for "application/protobuf" Media Type</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.2">
+                <p id="section-toc.1-1.4.2.2.1"><a href="#section-4.2" class="auto internal xref">4.2</a>.  <a href="#name-registration-for-application" class="internal xref">Registration for "application/protobuf+json" Media Type</a></p>
+</li>
+            </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5">
             <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-references" class="internal xref">References</a></p>
@@ -1177,48 +1172,113 @@ svg :is([fill="white"], [fill^="#fff"]) {
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6">
-            <p id="section-toc.1-1.6.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
-</li>
-          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7">
-            <p id="section-toc.1-1.7.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
+            <p id="section-toc.1-1.6.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
 </li>
         </ul>
 </nav>
 </section>
 </div>
-<div id="introduction">
+<div id="intro">
 <section id="section-1">
       <h2 id="name-introduction">
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
-<p id="section-1-1">TODO Introduction<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-1">Protocol Buffers ("protobufs") were introduced in 2008 as a free, open source, platform-independent mechanism for transport and storage of structured data.  Their use has become
+increasingly common.<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-2">The specification for protobufs generally includes an interface definition language and a code generator so that clients and servers understanding the structured data can be
+easily crafted and deployed.<a href="#section-1-2" class="pilcrow">¶</a></p>
+<p id="section-1-3">Serialized objects are occasionally transported within media that make use of media types (see <span>[<a href="#RFC2045" class="cite xref">RFC2045</a>]</span> et seq) to identify payloads.  Accordingly,
+current and historical media types used for this purpose would benefit from registration.  This document requests those registrations of IANA.<a href="#section-1-3" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="conventions-and-definitions">
+<div id="encoding">
 <section id="section-2">
-      <h2 id="name-conventions-and-definitions">
-<a href="#section-2" class="section-number selfRef">2. </a><a href="#name-conventions-and-definitions" class="section-name selfRef">Conventions and Definitions</a>
+      <h2 id="name-encoding-considerations">
+<a href="#section-2" class="section-number selfRef">2. </a><a href="#name-encoding-considerations" class="section-name selfRef">Encoding Considerations</a>
       </h2>
-<p id="section-2-1">The key words "<span class="bcp14">MUST</span>", "<span class="bcp14">MUST NOT</span>", "<span class="bcp14">REQUIRED</span>", "<span class="bcp14">SHALL</span>", "<span class="bcp14">SHALL NOT</span>", "<span class="bcp14">SHOULD</span>", "<span class="bcp14">SHOULD NOT</span>", "<span class="bcp14">RECOMMENDED</span>", "<span class="bcp14">NOT RECOMMENDED</span>",
-"<span class="bcp14">MAY</span>", and "<span class="bcp14">OPTIONAL</span>" in this document are to be interpreted as
-described in BCP 14 <span>[<a href="#RFC2119" class="cite xref">RFC2119</a>]</span> <span>[<a href="#RFC8174" class="cite xref">RFC8174</a>]</span> when, and only when, they
-appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶</a></p>
+<p id="section-2-1">A protobuf payload can be either in JSON form or in binary form.  For binary forms that need to transit non-binary transports, base64 (xref to RFC 4648) is recommended.<a href="#section-2-1" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="security-considerations">
+<div id="security">
 <section id="section-3">
       <h2 id="name-security-considerations">
 <a href="#section-3" class="section-number selfRef">3. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
       </h2>
-<p id="section-3-1">TODO Security<a href="#section-3-1" class="pilcrow">¶</a></p>
+<p id="section-3-1">The payload for this media type contains no directly executable code.  However, it is common for a protobuf definition to be used as input to a code generator which then
+does produce something executable.<a href="#section-3-1" class="pilcrow">¶</a></p>
+<p id="section-3-2">A malformed request to a protobuf server could be crafted to, for example, allocate a very large amount of memory, potentially impacting other operations on that server.<a href="#section-3-2" class="pilcrow">¶</a></p>
+<p id="section-3-3">Protobuf provides no security services.  Clients or servers for which this is a concern should avail themselves of solutions that provide such capabilities (e.g., <span>[<a href="#RFC8446" class="cite xref">RFC8446</a>]</span>).<a href="#section-3-3" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="iana-considerations">
+<div id="iana">
 <section id="section-4">
       <h2 id="name-iana-considerations">
 <a href="#section-4" class="section-number selfRef">4. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
       </h2>
-<p id="section-4-1">This document has no IANA actions.<a href="#section-4-1" class="pilcrow">¶</a></p>
+<div id="registration-for-applicationprotobuf-media-type">
+<section id="section-4.1">
+        <h3 id="name-registration-for-applicatio">
+<a href="#section-4.1" class="section-number selfRef">4.1. </a><a href="#name-registration-for-applicatio" class="section-name selfRef">Registration for "application/protobuf" Media Type</a>
+        </h3>
+<p id="section-4.1-1">Type name: application<a href="#section-4.1-1" class="pilcrow">¶</a></p>
+<p id="section-4.1-2">Subtype name: protobuf<a href="#section-4.1-2" class="pilcrow">¶</a></p>
+<p id="section-4.1-3">Required parameters: N/A<a href="#section-4.1-3" class="pilcrow">¶</a></p>
+<p id="section-4.1-4">Optional parameters: N/A<a href="#section-4.1-4" class="pilcrow">¶</a></p>
+<p id="section-4.1-5">Encoding considerations: binary<a href="#section-4.1-5" class="pilcrow">¶</a></p>
+<p id="section-4.1-6">Security considerations: see <a href="#security" class="auto internal xref">Section 3</a><a href="#section-4.1-6" class="pilcrow">¶</a></p>
+<p id="section-4.1-7">Interoperability considerations: The protobufs specification includes versioning provisions to ensure backward compatibility when encountering payloads with unknown properties.<a href="#section-4.1-7" class="pilcrow">¶</a></p>
+<p id="section-4.1-8">Published specification: <span>[<a href="#Protobuf" class="cite xref">Protobuf</a>]</span><a href="#section-4.1-8" class="pilcrow">¶</a></p>
+<p id="section-4.1-9">Applications that use this media type: Any application with a need to exchange or store structured objects across platforms or implementations.<a href="#section-4.1-9" class="pilcrow">¶</a></p>
+<p id="section-4.1-10">Fragment identifier considerations: None.<a href="#section-4.1-10" class="pilcrow">¶</a></p>
+<p id="section-4.1-11">Additional information:<a href="#section-4.1-11" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-4.1-12">
+<pre>
+ Deprecated alias names for this type: x-protobuf
+ Magic number(s):
+ File extension(s):
+ Macintosh file type code(s):
+</pre><a href="#section-4.1-12" class="pilcrow">¶</a>
+</div>
+<p id="section-4.1-13">Person &amp; email address to contact for further information: protobuf-external@google.com<a href="#section-4.1-13" class="pilcrow">¶</a></p>
+<p id="section-4.1-14">Intended usage: COMMON<a href="#section-4.1-14" class="pilcrow">¶</a></p>
+<p id="section-4.1-15">Restrictions on usage: N/A<a href="#section-4.1-15" class="pilcrow">¶</a></p>
+<p id="section-4.1-16">Author: Rob (details here)<a href="#section-4.1-16" class="pilcrow">¶</a></p>
+<p id="section-4.1-17">Change controller: protobuf-external@google.com<a href="#section-4.1-17" class="pilcrow">¶</a></p>
+<p id="section-4.1-18">Provisional registration? (standards tree only): No<a href="#section-4.1-18" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="registration-for-applicationprotobufjson-media-type">
+<section id="section-4.2">
+        <h3 id="name-registration-for-application">
+<a href="#section-4.2" class="section-number selfRef">4.2. </a><a href="#name-registration-for-application" class="section-name selfRef">Registration for "application/protobuf+json" Media Type</a>
+        </h3>
+<p id="section-4.2-1">Type name: application<a href="#section-4.2-1" class="pilcrow">¶</a></p>
+<p id="section-4.2-2">Subtype name: protobuf<a href="#section-4.2-2" class="pilcrow">¶</a></p>
+<p id="section-4.2-3">Required parameters: N/A<a href="#section-4.2-3" class="pilcrow">¶</a></p>
+<p id="section-4.2-4">Optional parameters: N/A<a href="#section-4.2-4" class="pilcrow">¶</a></p>
+<p id="section-4.2-5">Encoding considerations:  Same as encoding considerations of application/json as specified in <span>[<a href="#RFC7159" class="cite xref">RFC7159</a>]</span>, Section 11.<a href="#section-4.2-5" class="pilcrow">¶</a></p>
+<p id="section-4.2-6">Security considerations: see <a href="#security" class="auto internal xref">Section 3</a><a href="#section-4.2-6" class="pilcrow">¶</a></p>
+<p id="section-4.2-7">Interoperability considerations: The protobufs specification includes versioning provisions to ensure backward compatibility when encountering payloads with unknown properties.<a href="#section-4.2-7" class="pilcrow">¶</a></p>
+<p id="section-4.2-8">Published specification: <span>[<a href="#Protobuf" class="cite xref">Protobuf</a>]</span><a href="#section-4.2-8" class="pilcrow">¶</a></p>
+<p id="section-4.2-9">Applications that use this media type: Any application with a need to exchange or store structured objects across platforms or implementations.<a href="#section-4.2-9" class="pilcrow">¶</a></p>
+<p id="section-4.2-10">Fragment identifier considerations: None.<a href="#section-4.2-10" class="pilcrow">¶</a></p>
+<p id="section-4.2-11">Additional information:<a href="#section-4.2-11" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-4.2-12">
+<pre>
+ Deprecated alias names for this type: x-protobuf+json
+ Magic number(s):
+ File extension(s):
+ Macintosh file type code(s):
+</pre><a href="#section-4.2-12" class="pilcrow">¶</a>
+</div>
+<p id="section-4.2-13">Person &amp; email address to contact for further information: protobuf-external@google.com<a href="#section-4.2-13" class="pilcrow">¶</a></p>
+<p id="section-4.2-14">Intended usage: COMMON<a href="#section-4.2-14" class="pilcrow">¶</a></p>
+<p id="section-4.2-15">Restrictions on usage: N/A<a href="#section-4.2-15" class="pilcrow">¶</a></p>
+<p id="section-4.2-16">Author: Rob (details here)<a href="#section-4.2-16" class="pilcrow">¶</a></p>
+<p id="section-4.2-17">Change controller: protobuf-external@google.com<a href="#section-4.2-17" class="pilcrow">¶</a></p>
+<p id="section-4.2-18">Provisional registration? (standards tree only): No<a href="#section-4.2-18" class="pilcrow">¶</a></p>
+</section>
+</div>
 </section>
 </div>
 <div id="sec-combined-references">
@@ -1232,13 +1292,13 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
 <a href="#section-5.1" class="section-number selfRef">5.1. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
         </h3>
 <dl class="references">
-<dt id="RFC2119">[RFC2119]</dt>
-        <dd>
-<span class="refAuthor">Bradner, S.</span>, <span class="refTitle">"Key words for use in RFCs to Indicate Requirement Levels"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 2119</span>, <span class="seriesInfo">DOI 10.17487/RFC2119</span>, <time datetime="1997-03" class="refDate">March 1997</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>&gt;</span>. </dd>
-<dd class="break"></dd>
 <dt id="RFC4289">[RFC4289]</dt>
         <dd>
 <span class="refAuthor">Freed, N.</span> and <span class="refAuthor">J. Klensin</span>, <span class="refTitle">"Multipurpose Internet Mail Extensions (MIME) Part Four: Registration Procedures"</span>, <span class="seriesInfo">BCP 13</span>, <span class="seriesInfo">RFC 4289</span>, <span class="seriesInfo">DOI 10.17487/RFC4289</span>, <time datetime="2005-12" class="refDate">December 2005</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc4289">https://www.rfc-editor.org/rfc/rfc4289</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC4648">[RFC4648]</dt>
+        <dd>
+<span class="refAuthor">Josefsson, S.</span>, <span class="refTitle">"The Base16, Base32, and Base64 Data Encodings"</span>, <span class="seriesInfo">RFC 4648</span>, <span class="seriesInfo">DOI 10.17487/RFC4648</span>, <time datetime="2006-10" class="refDate">October 2006</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc4648">https://www.rfc-editor.org/rfc/rfc4648</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC6657">[RFC6657]</dt>
         <dd>
@@ -1248,9 +1308,9 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
         <dd>
 <span class="refAuthor">Freed, N.</span>, <span class="refAuthor">Klensin, J.</span>, and <span class="refAuthor">T. Hansen</span>, <span class="refTitle">"Media Type Specifications and Registration Procedures"</span>, <span class="seriesInfo">BCP 13</span>, <span class="seriesInfo">RFC 6838</span>, <span class="seriesInfo">DOI 10.17487/RFC6838</span>, <time datetime="2013-01" class="refDate">January 2013</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc6838">https://www.rfc-editor.org/rfc/rfc6838</a>&gt;</span>. </dd>
 <dd class="break"></dd>
-<dt id="RFC8174">[RFC8174]</dt>
+<dt id="RFC7159">[RFC7159]</dt>
       <dd>
-<span class="refAuthor">Leiba, B.</span>, <span class="refTitle">"Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 8174</span>, <span class="seriesInfo">DOI 10.17487/RFC8174</span>, <time datetime="2017-05" class="refDate">May 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a>&gt;</span>. </dd>
+<span class="refAuthor">Bray, T., Ed.</span>, <span class="refTitle">"The JavaScript Object Notation (JSON) Data Interchange Format"</span>, <span class="seriesInfo">RFC 7159</span>, <span class="seriesInfo">DOI 10.17487/RFC7159</span>, <time datetime="2014-03" class="refDate">March 2014</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7159">https://www.rfc-editor.org/rfc/rfc7159</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
@@ -1262,33 +1322,32 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
         </h3>
 <dl class="references">
 <dt id="Protobuf">[Protobuf]</dt>
-      <dd>
+        <dd>
 <span class="refTitle">"Protocol Buffers"</span>, <span>n.d.</span>, <span>&lt;<a href="https://protobuf.dev/">https://protobuf.dev/</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC2045">[RFC2045]</dt>
+        <dd>
+<span class="refAuthor">Freed, N.</span> and <span class="refAuthor">N. Borenstein</span>, <span class="refTitle">"Multipurpose Internet Mail Extensions (MIME) Part One: Format of Internet Message Bodies"</span>, <span class="seriesInfo">RFC 2045</span>, <span class="seriesInfo">DOI 10.17487/RFC2045</span>, <time datetime="1996-11" class="refDate">November 1996</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc2045">https://www.rfc-editor.org/rfc/rfc2045</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8446">[RFC8446]</dt>
+      <dd>
+<span class="refAuthor">Rescorla, E.</span>, <span class="refTitle">"The Transport Layer Security (TLS) Protocol Version 1.3"</span>, <span class="seriesInfo">RFC 8446</span>, <span class="seriesInfo">DOI 10.17487/RFC8446</span>, <time datetime="2018-08" class="refDate">August 2018</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8446">https://www.rfc-editor.org/rfc/rfc8446</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
 </div>
 </section>
 </div>
-<div id="acknowledgments">
-<section id="appendix-A">
-      <h2 id="name-acknowledgments">
-<a href="#name-acknowledgments" class="section-name selfRef">Acknowledgments</a>
-      </h2>
-<p id="appendix-A-1">TODO acknowledge.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
-</section>
-</div>
 <div id="authors-addresses">
-<section id="appendix-B">
+<section id="appendix-A">
       <h2 id="name-authors-addresses">
 <a href="#name-authors-addresses" class="section-name selfRef">Authors' Addresses</a>
       </h2>
 <address class="vcard">
-        <div dir="auto" class="left"><span class="fn nameRole">Murray S. Kucherawy</span></div>
-<div dir="auto" class="left"><span class="org">Facebook</span></div>
+        <div dir="auto" class="left"><span class="fn nameRole">Murray S. Kucherawy (<span class="role">editor</span>)</span></div>
 <div class="email">
 <span>Email:</span>
-<a href="mailto:msk@fb.com" class="email">msk@fb.com</a>
+<a href="mailto:superuser@gmail.com" class="email">superuser@gmail.com</a>
 </div>
 </address>
 <address class="vcard">
