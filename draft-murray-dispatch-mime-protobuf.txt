@@ -177,9 +177,9 @@ Table of Contents
 
    Optional parameters:  encoding, which indicates the type of Protobuf
       encoding and is "binary" by default for application/protobuf,
-      indicating the [Binary].  Clients MUST reject json encodings
-      without +json and MUST reject unknown encodings.  At the time of
-      writing, no other encoding can be used for application/
+      indicating the [Binary] format.  Clients MUST reject JSON
+      encodings without +json and MUST reject unknown encodings.  At the
+      time of writing, no other encoding can be used for application/
       protobuf+json so this parameter is for extensibility.
 
       version, which indicates the version of the encoding
@@ -191,7 +191,7 @@ Table of Contents
 
    Security considerations: see Section 4
 
-   Interoperability considerations: The protobufs specification includes
+   Interoperability considerations: The Protobuf specification includes
    versioning provisions to ensure backward compatibility when
    encountering payloads with unknown properties.
 
@@ -205,7 +205,7 @@ Table of Contents
 
    Additional information:
 
- Deprecated alias names for this type: application/x-protobuf, application/x-protobuffer
+ Deprecated alias names for this type: `application/x-protobuf`, `application/x-protobuffer`
  Magic number(s):
  File extension(s):
  Macintosh file type code(s):
@@ -233,10 +233,10 @@ Table of Contents
       insensitive).
 
    Optional parameters:  encoding, which indicates the type of Protobuf
-      encoding and is "json" by default for application/protobuf+json,
-      indicating the [ProtoJSON].  Clients MUST reject binary encodings
-      with +json and MUST reject unknown encodings.  At the time of
-      writing, no other encoding can be used for application/
+      encoding and is json by default for application/protobuf+json,
+      indicating the [ProtoJSON] format.  Clients MUST reject binary
+      encodings with +json and MUST reject unknown encodings.  At the
+      time of writing, no other encoding can be used for application/
       protobuf+json so this parameter is for extensibility.
 
       version, which indicates the version of the encoding
@@ -249,7 +249,7 @@ Table of Contents
 
    Security considerations: see Section 4
 
-   Interoperability considerations: The protobufs specification includes
+   Interoperability considerations: The Protobuf specification includes
    versioning provisions to ensure backward compatibility when
    encountering payloads with unknown properties.
 
