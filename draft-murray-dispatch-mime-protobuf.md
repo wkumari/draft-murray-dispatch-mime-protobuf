@@ -57,6 +57,8 @@ This document registers media types for Protocol Buffers, a common extensible me
 
 # Introduction {#intro}
 
+(For Rob: Feel free to edit for accuracy, but no need to expound too much; we refer to the full specification URI later.)
+
 Protocol Buffers ("protobufs") were introduced in 2008 as a free, open source, platform-independent mechanism for transport and storage of structured data.  Their use has become
 increasingly common.
 
@@ -95,23 +97,36 @@ person.email = "jdoe@example.com"
 An example of the above instance expressed in JSON:
 
 ~~~
-TBD
+{
+  "name": "John Doe",
+  "id": 1234,
+  "email": "jdoe@example.com"
+}
 ~~~
 
+(For Rob: If the actual JSON payload looks different than this, please update.)
+
 # Encoding Considerations {#encoding}
+
+(For Rob: Anything else to say here?)
 
 A protobuf payload can be either in JSON form or in binary form.  For binary forms that need to transit non-binary transports, base64 (xref to RFC 4648) is recommended.
 
 # Security Considerations {#security}
+
+(For Rob: Anything else to say here?)
 
 The payload for these media types contain no directly executable code.  However, it is common for a protobuf definition to be used as input to a code generator which then
 does produce something executable.
 
 A malformed request to a protobuf server could be crafted to, for example, allocate a very large amount of memory, potentially impacting other operations on that server.
 
-Protobuf provides no security services.  Clients or servers for which this is a concern should avail themselves of solutions that provide such capabilities (e.g., {{RFC8446}}).
+Protobuf provides no security or integrity services.  Clients or servers for which this is a concern should avail themselves of solutions that provide such capabilities
+(e.g., {{RFC8446}}).
 
 # IANA Considerations {#iana}
+
+(For Rob: Add any required/optional parameters in both of the next two sections, plus any other relevant discussion.)
 
 ## Registration for "application/protobuf" Media Type
 
