@@ -71,15 +71,14 @@ Table of Contents
    of structured data: their use has become increasingly common and
    Protobuf implementations exist in many languages (C++, C#, Dart, Go,
    Java, Kotlin, Objective-C, Python, JavaScript, Ruby, Swift, and
-   perhaps others).  See [PROTOBUF-WEBSITE] for more information.
+   perhaps others).  See [Protobuf] for more information.
 
    Protobuf consists of an interface definition language, wire encoding
    formats, and language-specific implementations (typically involving a
    generated API) so that clients and servers can be easily deployed
-   using a common schema.  Protobuf supports wire formats for
-   interchange: [BINARY-FORMAT], which is optimized for wire efficiency,
-   and [JSON-FORMAT], which maps the Protobuf schema onto a JSON
-   structure.
+   using a common schema.  Protobuf supports multiple wire formats for
+   interchange: [Binary], which is optimized for wire efficiency, and
+   [ProtoJSON], which maps the Protobuf schema onto a JSON structure.
 
    Serialized objects are occasionally transported within media that
    make use of media types (see [RFC2045] et seq) to identify payloads.
@@ -123,10 +122,10 @@ Table of Contents
 
 3.  Encoding Considerations
 
-   Protobuf supports only the [BINARY-FORMAT] and [JSON-FORMAT] for
-   interchange, both of which are platform-independent.  For binary
-   forms that need to transit non-binary transports, a base64 Content-
-   Transfer-Encoding (xref to [RFC4648]) is recommended.
+   Protobuf supports only the [Binary] and [ProtoJSON] for interchange,
+   both of which are platform-independent.  For binary forms that need
+   to transit non-binary transports, a base64 Content-Transfer-Encoding
+   (xref to [RFC4648]) is recommended.
 
 4.  Security Considerations
 
@@ -151,17 +150,15 @@ Table of Contents
    serializations it is important that it is clear to browsers that
    content is pure JSON, so that they can inhibit Cross-Site Script
    Inclusion or side-channel attacks using techniques such as Cross-
-   Origin Read Blocking ([CROSS-ORIGIN-READ-BLOCKING]).  Per [RFC6839],
-   this can be indicated by a +json subtype suffix (see also
-   [MIME-SNIFF]); so when serializing Protobuf to JSON, users MUST use
-   the application/protobuf+json MIME type.  Further, charset can
-   provide some protection against content sniffing attacks so users
-   should specify it for all JSON encodings.
+   Origin Read Blocking ([CORB]).  Per [RFC6839], this can be indicated
+   by a +json subtype suffix (see also [MIMESNIFF]); so when serializing
+   Protobuf to JSON, users MUST use the application/protobuf+json MIME
+   type.  Further, charset can provide some protection against content
+   sniffing attacks so users should specify it for all JSON encodings.
 
-   In the [PROTO-ANY] type there is technically a link, which was
-   intended to be dereferenced to obtain schemas for a given type;
-   however this is not supported by widely used Protobuf
-   implementations.
+   In the [Any] type there is technically a link, which was intended to
+   be dereferenced to obtain schemas for a given type; however this is
+   not supported by widely used Protobuf implementations.
 
 5.  IANA Considerations
 
@@ -180,9 +177,9 @@ Table of Contents
 
    Optional parameters:  encoding, which indicates the type of Protobuf
       encoding and is "binary" by default for application/protobuf,
-      indicating the [BINARY-FORMAT].  Clients MUST reject json
-      encodings without +json and MUST reject unknown encodings.  At the
-      time of writing, no other encoding can be used for application/
+      indicating the [Binary].  Clients MUST reject json encodings
+      without +json and MUST reject unknown encodings.  At the time of
+      writing, no other encoding can be used for application/
       protobuf+json so this parameter is for extensibility.
 
       version, which indicates the version of the encoding
@@ -237,9 +234,9 @@ Table of Contents
 
    Optional parameters:  encoding, which indicates the type of Protobuf
       encoding and is "json" by default for application/protobuf+json,
-      indicating the [JSON-FORMAT].  Clients MUST reject binary
-      encodings with +json and MUST reject unknown encodings.  At the
-      time of writing, no other encoding can be used for application/
+      indicating the [ProtoJSON].  Clients MUST reject binary encodings
+      with +json and MUST reject unknown encodings.  At the time of
+      writing, no other encoding can be used for application/
       protobuf+json so this parameter is for extensibility.
 
       version, which indicates the version of the encoding
@@ -369,48 +366,36 @@ Table of Contents
 
 7.2.  Informative References
 
-   [BINARY-FORMAT]
-              Protobuf, "Protobuf Binary Wire Encoding Spec", n.d.,
-              <https://protobuf.dev/programming-guides/encoding>.
-
-   [CROSS-ORIGIN-READ-BLOCKING]
-              Chromium, "Cross-Origin Read Blocking for Web Developers",
-              n.d., <https://www.chromium.org/Home/chromium-security/
-              corb-for-developers>.
-
-   [GRPC-WEBSITE]
-              Protobuf, "gRPC Website", n.d., <https://grpc.io>.
-
-   [JSON-FORMAT]
-              Protobuf, "Protobuf JSON Wire Encoding Spec", n.d.,
-              <https://protobuf.dev/programming-guides/json>.
-
-   [MIME-SNIFF]
-              WHATWG, "MIME Sniffing: Living Standard", n.d.,
-              <https://mimesniff.spec.whatwg.org/#mime-type-groups>.
-
-   [PROTO-ANY]
-              Protobuf, "any.proto Schema Definition", n.d., <https://gi
+   [Any]      Protobuf, "any.proto Schema Definition", n.d., <https://gi
               thub.com/protocolbuffers/protobuf/blob/main/src/google/
               protobuf/any.proto>.
 
-   [PROTOBUF-SCHEMA-LANGUAGE-2]
-              Protobuf, "Proto2 Schema Language Specification", n.d.,
-              <https://protobuf.dev/reference/protobuf/proto2-spec>.
+   [Binary]   Protobuf, "Protobuf Binary Wire Encoding Spec", n.d.,
+              <https://protobuf.dev/programming-guides/encoding>.
 
-   [PROTOBUF-SCHEMA-LANGUAGE-3]
-              Protobuf, "Proto3 Schema Language Specification", n.d.,
-              <https://protobuf.dev/reference/protobuf/proto3-spec>.
+   [CORB]     Chromium, "Cross-Origin Read Blocking for Web Developers",
+              n.d., <https://www.chromium.org/Home/chromium-security/
+              corb-for-developers>.
 
-   [PROTOBUF-SCHEMA-LANGUAGE-EDITION-2023]
+   [Edition2023]
               Protobuf, "Proto Edition 2023 Schema Language
               Specification", n.d.,
               <https://protobuf.dev/reference/protobuf/edition-
               2023-spec>.
 
-   [PROTOBUF-WEBSITE]
-              Protobuf, "Protobuf Website", n.d.,
-              <https://protobuf.dev>.
+   [MIMESNIFF]
+              WHATWG, "MIME Sniffing: Living Standard", n.d.,
+              <https://mimesniff.spec.whatwg.org/#mime-type-groups>.
+
+   [Proto2]   Protobuf, "Proto2 Schema Language Specification", n.d.,
+              <https://protobuf.dev/reference/protobuf/proto2-spec>.
+
+   [Proto3]   Protobuf, "Proto3 Schema Language Specification", n.d.,
+              <https://protobuf.dev/reference/protobuf/proto3-spec>.
+
+   [ProtoJSON]
+              Protobuf, "Protobuf JSON Wire Encoding Spec", n.d.,
+              <https://protobuf.dev/programming-guides/json>.
 
    [RFC8446]  Rescorla, E., "The Transport Layer Security (TLS) Protocol
               Version 1.3", RFC 8446, DOI 10.17487/RFC8446, August 2018,
