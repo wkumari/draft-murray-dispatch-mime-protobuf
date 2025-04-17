@@ -21,7 +21,7 @@ venue:
   mail: dispatch@ietf.org
   arch: https://www.ietf.org/mailman/listinfo/dispatch
   github: /wkumari/draft-murray-dispatch-mime-protobuf
-  latest: https://example.com/LATEST
+  latest: https://github.com/wkumari/draft-murray-dispatch-mime-protobuf
 
 author:
  -
@@ -34,20 +34,94 @@ author:
   name: Warren Kumari
   org: Google
   email: warren@kumari.net
+ -
+  ins: R. Sloan
+  fullname: Rob Sloan
+  organization: Google
+  email: rmsj@google.com
 
 normative:
-  RFC6838:
-  RFC4289:
-  RFC4648:
-  RFC7159:
-  RFC6657:
+  RFC1341: # MIME (Multipurpose Internet Mail Extensions)
+  RFC2045: # MIME formats and encodings
+  RFC2046: # Definition of media types
+  RFC2077: # Model top-level media type
+  RFC2119: # Key words for use in RFCs to Indicate Requirement Levels
+  RFC6657: # Update to MIME regarding "charset" parameter handling in textual media types
+  RFC6838: # Media type specifications and registration procedures
+  RFC6839: # Additional Media Type Structured Syntax Suffixes
+  RFC7303: # XML media types
+  RFC8081: # Font top-level media type
+  RFC9694: # Guidelines for the definition of new top-level media types
+  RFC9695: # Haptics top-level media type
+  RFC4289: # Multipurpose Internet Mail Extensions (MIME) Part Four: Registration Procedures
+  RFC4648: # The Base16, Base32, and Base64 Data Encodings
+  RFC7159: # The JavaScript Object Notation (JSON) Data Interchange Format
   Protobuf:
     target: "https://protobuf.dev/"
     title: "Protocol Buffers"
 
 informative:
-  RFC2045:
-  RFC8446:
+  RFC2045: # Multipurpose Internet Mail Extensions (MIME) Part One: Format of Internet Message Bodies
+  RFC8446: # The Transport Layer Security (TLS) Protocol Version 1.3
+  CROSS-ORIGIN-READ-BLOCKING:
+    author:
+      org: Chromium
+    title: "Cross-Origin Read Blocking for Web Developers"
+    target: https://www.chromium.org/Home/chromium-security/corb-for-developers
+
+  MIME-SNIFF
+    author:
+      org: WHATWG
+    title: "MIME Sniffing: Living Standard"
+    target: https://mimesniff.spec.whatwg.org/#mime-type-groups
+
+  PROTO-ANY:
+    author:
+      org: Protobuf
+    title: "any.proto Schema Definition"
+    target: https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/any.proto
+
+  PROTOBUF-WEBSITE:
+    author:
+      org: Protobuf
+    title: "Protobuf Website"
+    target: https://protobuf.dev
+
+  PROTOBUF-BINARY-WIRE-SPEC:
+    author:
+      org: Protobuf
+    title: "Protobuf Binary Wire Encoding Spec"
+    target: https://protobuf.dev/programming-guides/encoding
+
+  PROTOBUF-JSON-WIRE-SPEC:
+    author:
+      org: Protobuf
+    title: "Protobuf JSON Wire Encoding Spec"
+    target: https://protobuf.dev/programming-guides/json
+
+  PROTOBUF-SCHEMA-LANGUAGE-2:
+    author:
+      org: Protobuf
+    title: "Proto2 Schema Language Specification"
+    target: https://protobuf.dev/reference/protobuf/proto2-spec
+
+  PROTOBUF-SCHEMA-LANGUAGE-3:
+    author:
+      org: Protobuf
+    title: "Proto3 Schema Language Specification"
+    target: https://protobuf.dev/reference/protobuf/proto3-spec
+
+  PROTOBUF-SCHEMA-LANGUAGE-EDITION-2023:
+    author:
+      org: Protobuf
+    title: "Proto Edition 2023 Schema Language Specification"
+    target: https://protobuf.dev/reference/protobuf/edition-2023-spec
+
+  GRPC-WEBSITE:
+    author:
+      org: Protobuf
+    title: "gRPC Website"
+    target: https://grpc.io
 
 --- abstract
 
