@@ -68,10 +68,11 @@ current and historical media types used for this purpose would benefit from regi
 
 # Payload Description {#description}
 
-These media types are used in the transport of serialized objects only.  The IDL definitions, if transported, would be used with any appropriate text media type.  In the
-three figures below, only the third of these would ever be used with these media types (a JSON example is depicted).
+These media types are used in the transport of serialized objects only.  The IDL and object definitions, if transported, would be used with any appropriate text media type.
+In the three figures below, only the third of these would ever be used with these media types (a JSON example is depicted).
 
 An example use of the IDL to specify a "Person" object:
+
 ~~~
 edition = "2023";
 
@@ -82,8 +83,9 @@ message Person {
 }
 ~~~
 
-An example of python code that uses the definition above to create an instance of a "Person" object:
-~~~
+An example of python code that uses the IDL definition above to create an instance of a "Person" object:
+
+~~~ python
 person = Person()
 person.id = 1234
 person.name = "John Doe"
@@ -91,6 +93,7 @@ person.email = "jdoe@example.com"
 ~~~
 
 An example of the above instance expressed in JSON:
+
 ~~~
 TBD
 ~~~
