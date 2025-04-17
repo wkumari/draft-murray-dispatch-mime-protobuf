@@ -1202,28 +1202,35 @@ current and historical media types used for this purpose would benefit from regi
       <h2 id="name-payload-description">
 <a href="#section-2" class="section-number selfRef">2. </a><a href="#name-payload-description" class="section-name selfRef">Payload Description</a>
       </h2>
-<p id="section-2-1">These media types are used in the transport of serialized objects only.  The IDL definitions, if transported, would be used with any appropriate text media type.  In the
-three figures below, only the third of these would ever be used with these media types (a JSON example is depicted).<a href="#section-2-1" class="pilcrow">¶</a></p>
-<p id="section-2-2">An example use of the IDL to specify a "Person" object:
-~~~
-edition = "2023";<a href="#section-2-2" class="pilcrow">¶</a></p>
-<p id="section-2-3">message Person {
+<p id="section-2-1">These media types are used in the transport of serialized objects only.  The IDL and object definitions, if transported, would be used with any appropriate text media type.
+In the three figures below, only the third of these would ever be used with these media types (a JSON example is depicted).<a href="#section-2-1" class="pilcrow">¶</a></p>
+<p id="section-2-2">An example use of the IDL to specify a "Person" object:<a href="#section-2-2" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-2-3">
+<pre>
+edition = "2023";
+
+message Person {
   string name = 1;
   int32 id = 2;
   string email = 3;
 }
-~~~<a href="#section-2-3" class="pilcrow">¶</a></p>
-<p id="section-2-4">An example of python code that uses the definition above to create an instance of a "Person" object:
-~~~
+</pre><a href="#section-2-3" class="pilcrow">¶</a>
+</div>
+<p id="section-2-4">An example of python code that uses the IDL definition above to create an instance of a "Person" object:<a href="#section-2-4" class="pilcrow">¶</a></p>
+<div class="lang-python sourcecode" id="section-2-5">
+<pre>
 person = Person()
 person.id = 1234
 person.name = "John Doe"
 person.email = "jdoe@example.com"
-~~~<a href="#section-2-4" class="pilcrow">¶</a></p>
-<p id="section-2-5">An example of the above instance expressed in JSON:
-~~~
+</pre><a href="#section-2-5" class="pilcrow">¶</a>
+</div>
+<p id="section-2-6">An example of the above instance expressed in JSON:<a href="#section-2-6" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-2-7">
+<pre>
 TBD
-~~~<a href="#section-2-5" class="pilcrow">¶</a></p>
+</pre><a href="#section-2-7" class="pilcrow">¶</a>
+</div>
 </section>
 </div>
 <div id="encoding">
