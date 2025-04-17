@@ -156,7 +156,7 @@ message Person {
 }
 ~~~
 
-An example of python code that uses the IDL definition above to create an instance of a "Person" object:
+An example of python code that uses code generated from the IDL definition above to create an instance of a "Person" object:
 
 ~~~ python
 person = Person()
@@ -175,25 +175,18 @@ An example of the above instance expressed in JSON:
 }
 ~~~
 
-(For Rob: If the actual JSON payload looks different than this, please update.)
-
 # Encoding Considerations {#encoding}
 
-(For Rob: Anything else to say here?)
-
-A protobuf payload can be either in JSON form or in binary form.  For binary forms that need to transit non-binary transports, base64 (xref to RFC 4648) is recommended.
+Protobuf supports only the {{BINARY-FORMAT}} and {{JSON-FORMAT}} for interchange, both of which are platform-independent.
+For binary forms that need to transit non-binary transports, a base64 Content-Transfer-Encoding (xref to {{RFC4648}}) is recommended.
 
 # Security Considerations {#security}
 
-(For Rob: Anything else to say here?)
+The payload for these media types contain no directly executable code. While it is common for a protobuf definition to be used as input to a code generator which then produces something executable, but that applies to the schema language, not serializations.
 
-The payload for these media types contain no directly executable code.  However, it is common for a protobuf definition to be used as input to a code generator which then
-does produce something executable.
+Protobuf provides no security, privacy, integrity, or compression services: clients or servers for which this is a concern should avail themselves of solutions that provide such capabilities (e.g. {{RFC8446}}). Implementations should be careful when processing Protobuf like any binary format: a malformed request to a protobuf server could be crafted to, for example, allocate a very large amount of memory, potentially impacting other operations on that server.
 
-A malformed request to a protobuf server could be crafted to, for example, allocate a very large amount of memory, potentially impacting other operations on that server.
-
-Protobuf provides no security or integrity services.  Clients or servers for which this is a concern should avail themselves of solutions that provide such capabilities
-(e.g., {{RFC8446}}).
+In order to safely use Protobuf serializations on the web, it is important to ensure that they cannot be interpreted as another document type, such as JavaScript. For this reason, binary protobuf serializations should always be a wrapped in a Base64 Content-Transfer-Encoding according to {{RFC1341}}. Further, when using JSON serializations it is important that it is clear to browsers that content is pure JSON, so that they can inhibit Cross-Site Script Inclusion or side-channel attacks using techniques such as Cross-Origin Read Blocking ({{CROSS-ORIGIN-READ-BLOCKING}}). Per {{RFC6839}}, this can be indicated by a `+json` subtype suffix (see also {{MIME-SNIFF}}); so when serializing Protobuf to JSON, users MUST use the `application/protobuf+json` MIME type.
 
 # IANA Considerations {#iana}
 
