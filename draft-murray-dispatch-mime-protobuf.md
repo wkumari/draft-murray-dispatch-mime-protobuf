@@ -178,5 +178,5 @@ Provisional registration? (standards tree only): No
 
 # Acknowledgments
 {:numbered="false"}
- 
+
 Orie Steele provided valuable feedback to this work.
