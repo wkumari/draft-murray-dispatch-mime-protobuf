@@ -2,7 +2,7 @@
 title: "Media Type Registration for Protocol Buffers"
 category: info
 
-docname: draft-murray-dispatch-mime-protobuf
+docname: draft-murray-dispatch-mime-protobuf-latest
 submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
 number: 00
 date:
@@ -43,6 +43,7 @@ normative:
   RFC6657:
 
 informative:
+  RFC2045:
   RFC8446:
   Protobuf:
     target: "https://protobuf.dev/"
@@ -54,7 +55,7 @@ This document registers media types for Protocol Buffers, a common extensible me
 
 --- middle
 
-# Introduction
+# Introduction {#intro}
 
 Protocol Buffers ("protobufs") were introduced in 2008 as a free, open source, platform-independent mechanism for transport and storage of structured data.  Their use has become
 increasingly common.
@@ -62,23 +63,23 @@ increasingly common.
 The specification for protobufs generally includes an interface definition language and a code generator so that clients and servers understanding the structured data can be
 easily crafted and deployed.
 
-Serialized objects are occasionally transported within media that make use of media types (see (xref to RFC2045) et seq) to identify payloads.  Accordingly,
+Serialized objects are occasionally transported within media that make use of media types (see {{RFC2045}} et seq) to identify payloads.  Accordingly,
 current and historical media types used for this purpose would benefit from registration.  This document requests those registrations of IANA.
 
-# Encoding Considerations
+# Encoding Considerations {#encoding}
 
 A protobuf payload can be either in JSON form or in binary form.  For binary forms that need to transit non-binary transports, base64 (xref to RFC 4648) is recommended.
 
-# Security Considerations
+# Security Considerations {#security}
 
 The payload for this media type contains no directly executable code.  However, it is common for a protobuf definition to be used as input to a code generator which then
 does produce something executable.
 
 A malformed request to a protobuf server could be crafted to, for example, allocate a very large amount of memory, potentially impacting other operations on that server.
 
-Protobuf provides no security services.  Clients or servers for which this is a concern should avail themselves of solutions that provide such capabilities (e.g., (xref to RFC 8846)).
+Protobuf provides no security services.  Clients or servers for which this is a concern should avail themselves of solutions that provide such capabilities (e.g., {{RFC8846}}).
 
-# IANA Considerations
+# IANA Considerations {#iana}
 
 ## Registration for "application/protobuf" Media Type
 
@@ -92,11 +93,11 @@ Optional parameters: N/A
 
 Encoding considerations: binary
 
-Security considerations: see (xref to the section above)
+Security considerations: see {{security}}
 
 Interoperability considerations: The protobufs specification includes versioning provisions to ensure backward compatibility when encountering payloads with unknown properties.
 
-Published specification: (xref to "Protobuf")
+Published specification: {{Protbuf}}
 
 Applications that use this media type: Any application with a need to exchange or store structured objects across platforms or implementations.
 
@@ -131,13 +132,13 @@ Required parameters: N/A
 
 Optional parameters: N/A
 
-Encoding considerations:  Same as encoding considerations of application/json as specified in (xref to RFC7159), Section 11.
+Encoding considerations:  Same as encoding considerations of application/json as specified in {{RFC7159}}, Section 11.
 
-Security considerations: see (xref to the section above)
+Security considerations: see {{security}}
 
 Interoperability considerations: The protobufs specification includes versioning provisions to ensure backward compatibility when encountering payloads with unknown properties.
 
-Published specification: (xref to "Protobuf")
+Published specification: {{Protobuf}}
 
 Applications that use this media type: Any application with a need to exchange or store structured objects across platforms or implementations.
 
@@ -163,8 +164,3 @@ Person & email address to contact for further information: protobuf-external@goo
    Provisional registration? (standards tree only): No
 
 --- back
-
-# Acknowledgments
-{:numbered="false"}
-
-TODO acknowledge.
