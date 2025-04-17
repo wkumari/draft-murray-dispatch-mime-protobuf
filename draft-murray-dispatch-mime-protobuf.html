@@ -7,6 +7,7 @@
 <title>RFC 0: Media Type Registration for Protocol Buffers</title>
 <meta content="Murray S. Kucherawy" name="author">
 <meta content="Warren Kumari" name="author">
+<meta content="Rob Sloan" name="author">
 <meta content="
        This document registers media types for Protocol Buffers, a common extensible mechanism for serializing structured data. 
     " name="description">
@@ -1054,7 +1055,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <td class="right">April 2025</td>
 </tr></thead>
 <tfoot><tr>
-<td class="left">Kucherawy &amp; Kumari</td>
+<td class="left">Kucherawy, et al.</td>
 <td class="center">Informational</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
@@ -1082,6 +1083,10 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </div>
 <div class="author">
       <div class="author-name">W. Kumari</div>
+<div class="org">Google</div>
+</div>
+<div class="author">
+      <div class="author-name">R. Sloan</div>
 <div class="org">Google</div>
 </div>
 </dd>
@@ -1156,29 +1161,32 @@ svg :is([fill="white"], [fill^="#fff"]) {
             <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.1">
-                <p id="section-toc.1-1.5.2.1.1"><a href="#section-5.1" class="auto internal xref">5.1</a>.  <a href="#name-registration-for-applicatio" class="internal xref">Registration for "application/protobuf" Media Type</a></p>
+                <p id="section-toc.1-1.5.2.1.1"><a href="#section-5.1" class="auto internal xref">5.1</a>.  <a href="#name-registration-for-the-applic" class="internal xref">Registration for the "application/protobuf" Media Type</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.2">
-                <p id="section-toc.1-1.5.2.2.1"><a href="#section-5.2" class="auto internal xref">5.2</a>.  <a href="#name-registration-for-application" class="internal xref">Registration for "application/protobuf+json" Media Type</a></p>
+                <p id="section-toc.1-1.5.2.2.1"><a href="#section-5.2" class="auto internal xref">5.2</a>.  <a href="#name-registration-for-applicatio" class="internal xref">Registration for "application/protobuf+json" Media Type</a></p>
 </li>
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6">
-            <p id="section-toc.1-1.6.1"><a href="#section-6" class="auto internal xref">6</a>.  <a href="#name-references" class="internal xref">References</a></p>
-<ul class="compact toc ulBare ulEmpty">
-<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.1">
-                <p id="section-toc.1-1.6.2.1.1"><a href="#section-6.1" class="auto internal xref">6.1</a>.  <a href="#name-normative-references" class="internal xref">Normative References</a></p>
+            <p id="section-toc.1-1.6.1"><a href="#section-6" class="auto internal xref">6</a>.  <a href="#name-contact" class="internal xref">Contact</a></p>
 </li>
-              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.2">
-                <p id="section-toc.1-1.6.2.2.1"><a href="#section-6.2" class="auto internal xref">6.2</a>.  <a href="#name-informative-references" class="internal xref">Informative References</a></p>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7">
+            <p id="section-toc.1-1.7.1"><a href="#section-7" class="auto internal xref">7</a>.  <a href="#name-references" class="internal xref">References</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.1">
+                <p id="section-toc.1-1.7.2.1.1"><a href="#section-7.1" class="auto internal xref">7.1</a>.  <a href="#name-normative-references" class="internal xref">Normative References</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.2">
+                <p id="section-toc.1-1.7.2.2.1"><a href="#section-7.2" class="auto internal xref">7.2</a>.  <a href="#name-informative-references" class="internal xref">Informative References</a></p>
 </li>
             </ul>
 </li>
-          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7">
-            <p id="section-toc.1-1.7.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
-</li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8">
-            <p id="section-toc.1-1.8.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
+            <p id="section-toc.1-1.8.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9">
+            <p id="section-toc.1-1.9.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
 </li>
         </ul>
 </nav>
@@ -1189,13 +1197,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
       <h2 id="name-introduction">
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
-<p id="section-1-1">(For Rob: Feel free to edit for accuracy, but no need to expound too much; we refer to the full specification URI later.)<a href="#section-1-1" class="pilcrow">¶</a></p>
-<p id="section-1-2">Protocol Buffers ("protobufs") were introduced in 2008 as a free, open source, platform-independent mechanism for transport and storage of structured data.  Their use has become
-increasingly common.<a href="#section-1-2" class="pilcrow">¶</a></p>
-<p id="section-1-3">The specification for protobufs generally includes an interface definition language and a code generator so that clients and servers understanding the structured data can be
-easily crafted and deployed.<a href="#section-1-3" class="pilcrow">¶</a></p>
-<p id="section-1-4">Serialized objects are occasionally transported within media that make use of media types (see <span>[<a href="#RFC2045" class="cite xref">RFC2045</a>]</span> et seq) to identify payloads.  Accordingly,
-current and historical media types used for this purpose would benefit from registration.  This document requests those registrations of IANA.<a href="#section-1-4" class="pilcrow">¶</a></p>
+<p id="section-1-1">Protocol Buffers ("protobufs") were introduced in 2008 as a free, open source, platform-independent mechanism for transport and storage of structured data: their use has become
+increasingly common and Protobuf implementations exist in many languages (C++, C#, Dart, Go, Java, Kotlin, Objective-C, Python, JavaScript, Ruby, Swift, and perhaps others). See <span>[<a href="#PROTOBUF-WEBSITE" class="cite xref">PROTOBUF-WEBSITE</a>]</span> for more information.<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-2">Protobuf consists of an interface definition language, wire encoding formats, and language-specific implementations (typically involving a generated API) so that clients and servers can be easily deployed using a common schema. Protobuf supports wire formats for interchange: <span>[<a href="#BINARY-FORMAT" class="cite xref">BINARY-FORMAT</a>]</span>, which is optimized for wire efficiency, and <span>[<a href="#JSON-FORMAT" class="cite xref">JSON-FORMAT</a>]</span>, which maps the Protobuf schema onto a JSON structure.<a href="#section-1-2" class="pilcrow">¶</a></p>
+<p id="section-1-3">Serialized objects are occasionally transported within media that make use of media types (see <span>[<a href="#RFC2045" class="cite xref">RFC2045</a>]</span> et seq) to identify payloads. Accordingly,
+current and historical media types used for this purpose would benefit from registration. This document requests those registrations of IANA.<a href="#section-1-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="description">
@@ -1217,7 +1223,7 @@ message Person {
 }
 </pre><a href="#section-2-3" class="pilcrow">¶</a>
 </div>
-<p id="section-2-4">An example of python code that uses the IDL definition above to create an instance of a "Person" object:<a href="#section-2-4" class="pilcrow">¶</a></p>
+<p id="section-2-4">An example of python code that uses code generated from the IDL definition above to create an instance of a "Person" object:<a href="#section-2-4" class="pilcrow">¶</a></p>
 <div class="lang-python sourcecode" id="section-2-5">
 <pre>
 person = Person()
@@ -1236,7 +1242,6 @@ person.email = "jdoe@example.com"
 }
 </pre><a href="#section-2-7" class="pilcrow">¶</a>
 </div>
-<p id="section-2-8">(For Rob: If the actual JSON payload looks different than this, please update.)<a href="#section-2-8" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="encoding">
@@ -1244,8 +1249,8 @@ person.email = "jdoe@example.com"
       <h2 id="name-encoding-considerations">
 <a href="#section-3" class="section-number selfRef">3. </a><a href="#name-encoding-considerations" class="section-name selfRef">Encoding Considerations</a>
       </h2>
-<p id="section-3-1">(For Rob: Anything else to say here?)<a href="#section-3-1" class="pilcrow">¶</a></p>
-<p id="section-3-2">A protobuf payload can be either in JSON form or in binary form.  For binary forms that need to transit non-binary transports, base64 (xref to RFC 4648) is recommended.<a href="#section-3-2" class="pilcrow">¶</a></p>
+<p id="section-3-1">Protobuf supports only the <span>[<a href="#BINARY-FORMAT" class="cite xref">BINARY-FORMAT</a>]</span> and <span>[<a href="#JSON-FORMAT" class="cite xref">JSON-FORMAT</a>]</span> for interchange, both of which are platform-independent.
+For binary forms that need to transit non-binary transports, a base64 Content-Transfer-Encoding (xref to <span>[<a href="#RFC4648" class="cite xref">RFC4648</a>]</span>) is recommended.<a href="#section-3-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="security">
@@ -1253,12 +1258,10 @@ person.email = "jdoe@example.com"
       <h2 id="name-security-considerations">
 <a href="#section-4" class="section-number selfRef">4. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
       </h2>
-<p id="section-4-1">(For Rob: Anything else to say here?)<a href="#section-4-1" class="pilcrow">¶</a></p>
-<p id="section-4-2">The payload for these media types contain no directly executable code.  However, it is common for a protobuf definition to be used as input to a code generator which then
-does produce something executable.<a href="#section-4-2" class="pilcrow">¶</a></p>
-<p id="section-4-3">A malformed request to a protobuf server could be crafted to, for example, allocate a very large amount of memory, potentially impacting other operations on that server.<a href="#section-4-3" class="pilcrow">¶</a></p>
-<p id="section-4-4">Protobuf provides no security or integrity services.  Clients or servers for which this is a concern should avail themselves of solutions that provide such capabilities
-(e.g., <span>[<a href="#RFC8446" class="cite xref">RFC8446</a>]</span>).<a href="#section-4-4" class="pilcrow">¶</a></p>
+<p id="section-4-1">The payload for these media types contain no directly executable code. While it is common for a protobuf definition to be used as input to a code generator which then produces something executable, but that applies to the schema language, not serializations.<a href="#section-4-1" class="pilcrow">¶</a></p>
+<p id="section-4-2">Protobuf provides no security, privacy, integrity, or compression services: clients or servers for which this is a concern should avail themselves of solutions that provide such capabilities (e.g. <span>[<a href="#RFC8446" class="cite xref">RFC8446</a>]</span>). Implementations should be careful when processing Protobuf like any binary format: a malformed request to a protobuf server could be crafted to, for example, allocate a very large amount of memory, potentially impacting other operations on that server.<a href="#section-4-2" class="pilcrow">¶</a></p>
+<p id="section-4-3">In order to safely use Protobuf serializations on the web, it is important to ensure that they cannot be interpreted as another document type, such as JavaScript. For this reason, binary protobuf serializations should always be a wrapped in a Base64 Content-Transfer-Encoding according to <span>[<a href="#RFC1341" class="cite xref">RFC1341</a>]</span>. Further, when using JSON serializations it is important that it is clear to browsers that content is pure JSON, so that they can inhibit Cross-Site Script Inclusion or side-channel attacks using techniques such as Cross-Origin Read Blocking (<span>[<a href="#CROSS-ORIGIN-READ-BLOCKING" class="cite xref">CROSS-ORIGIN-READ-BLOCKING</a>]</span>). Per <span>[<a href="#RFC6839" class="cite xref">RFC6839</a>]</span>, this can be indicated by a <code>+json</code> subtype suffix (see also <span>[<a href="#MIME-SNIFF" class="cite xref">MIME-SNIFF</a>]</span>); so when serializing Protobuf to JSON, users MUST use the <code>application/protobuf+json</code> MIME type. Further, <code>charset</code> can provide some protection against content sniffing attacks so users should specify it for all JSON encodings.<a href="#section-4-3" class="pilcrow">¶</a></p>
+<p id="section-4-4">In the <span>[<a href="#PROTO-ANY" class="cite xref">PROTO-ANY</a>]</span> type there is technically a link, which was intended to be dereferenced to obtain schemas for a given type; however this is not supported by widely used Protobuf implementations.<a href="#section-4-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="iana">
@@ -1266,87 +1269,153 @@ does produce something executable.<a href="#section-4-2" class="pilcrow">¶</a><
       <h2 id="name-iana-considerations">
 <a href="#section-5" class="section-number selfRef">5. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
       </h2>
-<p id="section-5-1">(For Rob: Add any required/optional parameters in both of the next two sections, plus any other relevant discussion.)<a href="#section-5-1" class="pilcrow">¶</a></p>
-<div id="registration-for-applicationprotobuf-media-type">
+<p id="section-5-1">This document requests the registration of <code>application/protobuf</code> and <code>application/protobuf+json</code> as media types for Protobuf, and the notation of <code>application/x-protobuf</code>, <code>application/x-protobuffer</code>, and <code>application/x-protobuf+json</code> as deprecated aliases:<a href="#section-5-1" class="pilcrow">¶</a></p>
+<div id="registration-for-the-applicationprotobuf-media-type">
 <section id="section-5.1">
-        <h3 id="name-registration-for-applicatio">
-<a href="#section-5.1" class="section-number selfRef">5.1. </a><a href="#name-registration-for-applicatio" class="section-name selfRef">Registration for "application/protobuf" Media Type</a>
+        <h3 id="name-registration-for-the-applic">
+<a href="#section-5.1" class="section-number selfRef">5.1. </a><a href="#name-registration-for-the-applic" class="section-name selfRef">Registration for the "application/protobuf" Media Type</a>
         </h3>
-<p id="section-5.1-1">Type name: application<a href="#section-5.1-1" class="pilcrow">¶</a></p>
-<p id="section-5.1-2">Subtype name: protobuf<a href="#section-5.1-2" class="pilcrow">¶</a></p>
-<p id="section-5.1-3">Required parameters: N/A<a href="#section-5.1-3" class="pilcrow">¶</a></p>
-<p id="section-5.1-4">Optional parameters: N/A<a href="#section-5.1-4" class="pilcrow">¶</a></p>
-<p id="section-5.1-5">Encoding considerations: binary<a href="#section-5.1-5" class="pilcrow">¶</a></p>
-<p id="section-5.1-6">Security considerations: see <a href="#security" class="auto internal xref">Section 4</a><a href="#section-5.1-6" class="pilcrow">¶</a></p>
-<p id="section-5.1-7">Interoperability considerations: The protobufs specification includes versioning provisions to ensure backward compatibility when encountering payloads with unknown properties.<a href="#section-5.1-7" class="pilcrow">¶</a></p>
-<p id="section-5.1-8">Published specification: <span>[<a href="#Protobuf" class="cite xref">Protobuf</a>]</span><a href="#section-5.1-8" class="pilcrow">¶</a></p>
-<p id="section-5.1-9">Applications that use this media type: Any application with a need to exchange or store structured objects across platforms or implementations.<a href="#section-5.1-9" class="pilcrow">¶</a></p>
-<p id="section-5.1-10">Fragment identifier considerations: None.<a href="#section-5.1-10" class="pilcrow">¶</a></p>
-<p id="section-5.1-11">Additional information:<a href="#section-5.1-11" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="section-5.1-12">
+<span class="break"></span><dl class="dlParallel" id="section-5.1-1">
+          <dt id="section-5.1-1.1">Type name:</dt>
+          <dd style="margin-left: 1.5em" id="section-5.1-1.2">
+            <p id="section-5.1-1.2.1">application<a href="#section-5.1-1.2.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-5.1-1.3">Subtype name:</dt>
+          <dd style="margin-left: 1.5em" id="section-5.1-1.4">
+            <p id="section-5.1-1.4.1">protobuf<a href="#section-5.1-1.4.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-5.1-1.5">Required parameters:</dt>
+          <dd style="margin-left: 1.5em" id="section-5.1-1.6">
+            <p id="section-5.1-1.6.1">none<a href="#section-5.1-1.6.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-5.1-1.7">Optional parameters:</dt>
+          <dd style="margin-left: 1.5em" id="section-5.1-1.8">
+            <p id="section-5.1-1.8.1">encoding, which indicates the type of Protobuf encoding and is "binary" by default for application/protobuf, indicating the <span>[<a href="#BINARY-FORMAT" class="cite xref">BINARY-FORMAT</a>]</span>. Clients MUST reject json encodings without <code>+json</code> and MUST reject unknown encodings. At the time of writing, no other encoding can be used for application/protobuf+json so this parameter is for extensibility.<a href="#section-5.1-1.8.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-5.1-1.9"></dt>
+          <dd style="margin-left: 1.5em" id="section-5.1-1.10">
+            <p id="section-5.1-1.10.1">version, which indicates the version of the encoding specification. Clients MUST reject unknown version settings. At the time of writing, no protobuf encodings are versioned so this parameter is for extensibility.<a href="#section-5.1-1.10.1" class="pilcrow">¶</a></p>
+</dd>
+        <dd class="break"></dd>
+</dl>
+<p id="section-5.1-2">Encoding considerations: binary<a href="#section-5.1-2" class="pilcrow">¶</a></p>
+<p id="section-5.1-3">Security considerations: see <a href="#security" class="auto internal xref">Section 4</a><a href="#section-5.1-3" class="pilcrow">¶</a></p>
+<p id="section-5.1-4">Interoperability considerations: The protobufs specification includes versioning provisions to ensure backward compatibility when encountering payloads with unknown properties.<a href="#section-5.1-4" class="pilcrow">¶</a></p>
+<p id="section-5.1-5">Published specification: <span>[<a href="#Protobuf" class="cite xref">Protobuf</a>]</span><a href="#section-5.1-5" class="pilcrow">¶</a></p>
+<p id="section-5.1-6">Applications that use this media type: Any application with a need to exchange or store structured objects across platforms or implementations.<a href="#section-5.1-6" class="pilcrow">¶</a></p>
+<p id="section-5.1-7">Fragment identifier considerations: None.<a href="#section-5.1-7" class="pilcrow">¶</a></p>
+<p id="section-5.1-8">Additional information:<a href="#section-5.1-8" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-5.1-9">
 <pre>
- Deprecated alias names for this type: x-protobuf
+ Deprecated alias names for this type: application/x-protobuf, application/x-protobuffer
  Magic number(s):
  File extension(s):
  Macintosh file type code(s):
-</pre><a href="#section-5.1-12" class="pilcrow">¶</a>
+</pre><a href="#section-5.1-9" class="pilcrow">¶</a>
 </div>
-<p id="section-5.1-13">Person &amp; email address to contact for further information: protobuf-external@google.com<a href="#section-5.1-13" class="pilcrow">¶</a></p>
-<p id="section-5.1-14">Intended usage: COMMON<a href="#section-5.1-14" class="pilcrow">¶</a></p>
-<p id="section-5.1-15">Restrictions on usage: N/A<a href="#section-5.1-15" class="pilcrow">¶</a></p>
-<p id="section-5.1-16">Author: Rob (details here)<a href="#section-5.1-16" class="pilcrow">¶</a></p>
-<p id="section-5.1-17">Change controller: protobuf-external@google.com<a href="#section-5.1-17" class="pilcrow">¶</a></p>
-<p id="section-5.1-18">Provisional registration? (standards tree only): No<a href="#section-5.1-18" class="pilcrow">¶</a></p>
+<p id="section-5.1-10">Person &amp; email address to contact for further information: Protobuf &lt;protobuf-team@google.com&gt;<a href="#section-5.1-10" class="pilcrow">¶</a></p>
+<p id="section-5.1-11">Intended usage: COMMON<a href="#section-5.1-11" class="pilcrow">¶</a></p>
+<p id="section-5.1-12">Restrictions on usage: None<a href="#section-5.1-12" class="pilcrow">¶</a></p>
+<p id="section-5.1-13">Author: Rob Sloan &lt;rmsj@google.com&gt;<a href="#section-5.1-13" class="pilcrow">¶</a></p>
+<p id="section-5.1-14">Change controller: Protobuf &lt;protobuf-team@google.com&gt;<a href="#section-5.1-14" class="pilcrow">¶</a></p>
+<p id="section-5.1-15">Provisional registration? (standards tree only): No<a href="#section-5.1-15" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="registration-for-applicationprotobufjson-media-type">
 <section id="section-5.2">
-        <h3 id="name-registration-for-application">
-<a href="#section-5.2" class="section-number selfRef">5.2. </a><a href="#name-registration-for-application" class="section-name selfRef">Registration for "application/protobuf+json" Media Type</a>
+        <h3 id="name-registration-for-applicatio">
+<a href="#section-5.2" class="section-number selfRef">5.2. </a><a href="#name-registration-for-applicatio" class="section-name selfRef">Registration for "application/protobuf+json" Media Type</a>
         </h3>
 <p id="section-5.2-1">Type name: application<a href="#section-5.2-1" class="pilcrow">¶</a></p>
-<p id="section-5.2-2">Subtype name: protobuf<a href="#section-5.2-2" class="pilcrow">¶</a></p>
-<p id="section-5.2-3">Required parameters: N/A<a href="#section-5.2-3" class="pilcrow">¶</a></p>
-<p id="section-5.2-4">Optional parameters: N/A<a href="#section-5.2-4" class="pilcrow">¶</a></p>
-<p id="section-5.2-5">Encoding considerations:  Same as encoding considerations of application/json as specified in <span>[<a href="#RFC7159" class="cite xref">RFC7159</a>]</span>, Section 11.<a href="#section-5.2-5" class="pilcrow">¶</a></p>
-<p id="section-5.2-6">Security considerations: see <a href="#security" class="auto internal xref">Section 4</a><a href="#section-5.2-6" class="pilcrow">¶</a></p>
-<p id="section-5.2-7">Interoperability considerations: The protobufs specification includes versioning provisions to ensure backward compatibility when encountering payloads with unknown properties.<a href="#section-5.2-7" class="pilcrow">¶</a></p>
-<p id="section-5.2-8">Published specification: <span>[<a href="#Protobuf" class="cite xref">Protobuf</a>]</span><a href="#section-5.2-8" class="pilcrow">¶</a></p>
-<p id="section-5.2-9">Applications that use this media type: Any application with a need to exchange or store structured objects across platforms or implementations.<a href="#section-5.2-9" class="pilcrow">¶</a></p>
-<p id="section-5.2-10">Fragment identifier considerations: None.<a href="#section-5.2-10" class="pilcrow">¶</a></p>
-<p id="section-5.2-11">Additional information:<a href="#section-5.2-11" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="section-5.2-12">
+<p id="section-5.2-2">Subtype name: protobuf+json<a href="#section-5.2-2" class="pilcrow">¶</a></p>
+<span class="break"></span><dl class="dlParallel" id="section-5.2-3">
+          <dt id="section-5.2-3.1">Required parameters:</dt>
+          <dd style="margin-left: 1.5em" id="section-5.2-3.2">
+            <p id="section-5.2-3.2.1">charset, which MUST be set to <code>utf-8</code> (case-insensitive).<a href="#section-5.2-3.2.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-5.2-3.3">Optional parameters:</dt>
+          <dd style="margin-left: 1.5em" id="section-5.2-3.4">
+            <p id="section-5.2-3.4.1">encoding, which indicates the type of Protobuf encoding and is "json" by default for application/protobuf+json, indicating the <span>[<a href="#JSON-FORMAT" class="cite xref">JSON-FORMAT</a>]</span>. Clients MUST reject binary encodings with <code>+json</code> and MUST reject unknown encodings. At the time of writing, no other encoding can be used for application/protobuf+json so this parameter is for extensibility.<a href="#section-5.2-3.4.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-5.2-3.5"></dt>
+          <dd style="margin-left: 1.5em" id="section-5.2-3.6">
+            <p id="section-5.2-3.6.1">version, which indicates the version of the encoding specification. Clients MUST reject unknown version settings. At the time of writing, no protobuf encodings are versioned so this parameter is for extensibility.<a href="#section-5.2-3.6.1" class="pilcrow">¶</a></p>
+</dd>
+        <dd class="break"></dd>
+</dl>
+<p id="section-5.2-4">Encoding considerations:  Same as encoding considerations of application/json as specified in <span>[<a href="#RFC7159" class="cite xref">RFC7159</a>]</span>, Section 11.<a href="#section-5.2-4" class="pilcrow">¶</a></p>
+<p id="section-5.2-5">Security considerations: see <a href="#security" class="auto internal xref">Section 4</a><a href="#section-5.2-5" class="pilcrow">¶</a></p>
+<p id="section-5.2-6">Interoperability considerations: The protobufs specification includes versioning provisions to ensure backward compatibility when encountering payloads with unknown properties.<a href="#section-5.2-6" class="pilcrow">¶</a></p>
+<p id="section-5.2-7">Published specification: <span>[<a href="#Protobuf" class="cite xref">Protobuf</a>]</span><a href="#section-5.2-7" class="pilcrow">¶</a></p>
+<p id="section-5.2-8">Applications that use this media type: Any application with a need to exchange or store structured objects across platforms or implementations.<a href="#section-5.2-8" class="pilcrow">¶</a></p>
+<p id="section-5.2-9">Fragment identifier considerations: None.<a href="#section-5.2-9" class="pilcrow">¶</a></p>
+<p id="section-5.2-10">Additional information:<a href="#section-5.2-10" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-5.2-11">
 <pre>
  Deprecated alias names for this type: x-protobuf+json
  Magic number(s):
  File extension(s):
  Macintosh file type code(s):
-</pre><a href="#section-5.2-12" class="pilcrow">¶</a>
+</pre><a href="#section-5.2-11" class="pilcrow">¶</a>
 </div>
-<p id="section-5.2-13">Person &amp; email address to contact for further information: protobuf-external@google.com<a href="#section-5.2-13" class="pilcrow">¶</a></p>
-<p id="section-5.2-14">Intended usage: COMMON<a href="#section-5.2-14" class="pilcrow">¶</a></p>
-<p id="section-5.2-15">Restrictions on usage: N/A<a href="#section-5.2-15" class="pilcrow">¶</a></p>
-<p id="section-5.2-16">Author: Rob (details here)<a href="#section-5.2-16" class="pilcrow">¶</a></p>
-<p id="section-5.2-17">Change controller: protobuf-external@google.com<a href="#section-5.2-17" class="pilcrow">¶</a></p>
-<p id="section-5.2-18">Provisional registration? (standards tree only): No<a href="#section-5.2-18" class="pilcrow">¶</a></p>
+<p id="section-5.2-12">Person &amp; email address to contact for further information: Protobuf &lt;protobuf-team@google.com&gt;<a href="#section-5.2-12" class="pilcrow">¶</a></p>
+<p id="section-5.2-13">Intended usage: COMMON<a href="#section-5.2-13" class="pilcrow">¶</a></p>
+<p id="section-5.2-14">Restrictions on usage: None<a href="#section-5.2-14" class="pilcrow">¶</a></p>
+<p id="section-5.2-15">Author: Rob Sloan &lt;rmsj@google.com&gt;<a href="#section-5.2-15" class="pilcrow">¶</a></p>
+<p id="section-5.2-16">Change controller: Protobuf &lt;protobuf-team@google.com&gt;<a href="#section-5.2-16" class="pilcrow">¶</a></p>
+<p id="section-5.2-17">Provisional registration? (standards tree only): No<a href="#section-5.2-17" class="pilcrow">¶</a></p>
 </section>
 </div>
+</section>
+</div>
+<div id="contact">
+<section id="section-6">
+      <h2 id="name-contact">
+<a href="#section-6" class="section-number selfRef">6. </a><a href="#name-contact" class="section-name selfRef">Contact</a>
+      </h2>
+<p id="section-6-1">Please contact protobuf-team@google.com for requests to adjust this specification. Issues may be raised at https://github.com/protocolbuffers/protobuf.<a href="#section-6-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="sec-combined-references">
-<section id="section-6">
+<section id="section-7">
       <h2 id="name-references">
-<a href="#section-6" class="section-number selfRef">6. </a><a href="#name-references" class="section-name selfRef">References</a>
+<a href="#section-7" class="section-number selfRef">7. </a><a href="#name-references" class="section-name selfRef">References</a>
       </h2>
 <div id="sec-normative-references">
-<section id="section-6.1">
+<section id="section-7.1">
         <h3 id="name-normative-references">
-<a href="#section-6.1" class="section-number selfRef">6.1. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
+<a href="#section-7.1" class="section-number selfRef">7.1. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
         </h3>
 <dl class="references">
 <dt id="Protobuf">[Protobuf]</dt>
         <dd>
 <span class="refTitle">"Protocol Buffers"</span>, <span>n.d.</span>, <span>&lt;<a href="https://protobuf.dev/">https://protobuf.dev/</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC1341">[RFC1341]</dt>
+        <dd>
+<span class="refAuthor">Borenstein, N.</span> and <span class="refAuthor">N. Freed</span>, <span class="refTitle">"MIME (Multipurpose Internet Mail Extensions): Mechanisms for Specifying and Describing the Format of Internet Message Bodies"</span>, <span class="seriesInfo">RFC 1341</span>, <span class="seriesInfo">DOI 10.17487/RFC1341</span>, <time datetime="1992-06" class="refDate">June 1992</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc1341">https://www.rfc-editor.org/rfc/rfc1341</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC2045">[RFC2045]</dt>
+        <dd>
+<span class="refAuthor">Freed, N.</span> and <span class="refAuthor">N. Borenstein</span>, <span class="refTitle">"Multipurpose Internet Mail Extensions (MIME) Part One: Format of Internet Message Bodies"</span>, <span class="seriesInfo">RFC 2045</span>, <span class="seriesInfo">DOI 10.17487/RFC2045</span>, <time datetime="1996-11" class="refDate">November 1996</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc2045">https://www.rfc-editor.org/rfc/rfc2045</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC2046">[RFC2046]</dt>
+        <dd>
+<span class="refAuthor">Freed, N.</span> and <span class="refAuthor">N. Borenstein</span>, <span class="refTitle">"Multipurpose Internet Mail Extensions (MIME) Part Two: Media Types"</span>, <span class="seriesInfo">RFC 2046</span>, <span class="seriesInfo">DOI 10.17487/RFC2046</span>, <time datetime="1996-11" class="refDate">November 1996</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc2046">https://www.rfc-editor.org/rfc/rfc2046</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC2077">[RFC2077]</dt>
+        <dd>
+<span class="refAuthor">Nelson, S.</span>, <span class="refAuthor">Parks, C.</span>, and <span class="refAuthor">Mitra</span>, <span class="refTitle">"The Model Primary Content Type for Multipurpose Internet Mail Extensions"</span>, <span class="seriesInfo">RFC 2077</span>, <span class="seriesInfo">DOI 10.17487/RFC2077</span>, <time datetime="1997-01" class="refDate">January 1997</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc2077">https://www.rfc-editor.org/rfc/rfc2077</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC2119">[RFC2119]</dt>
+        <dd>
+<span class="refAuthor">Bradner, S.</span>, <span class="refTitle">"Key words for use in RFCs to Indicate Requirement Levels"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 2119</span>, <span class="seriesInfo">DOI 10.17487/RFC2119</span>, <time datetime="1997-03" class="refDate">March 1997</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC4289">[RFC4289]</dt>
         <dd>
@@ -1364,22 +1433,78 @@ does produce something executable.<a href="#section-4-2" class="pilcrow">¶</a><
         <dd>
 <span class="refAuthor">Freed, N.</span>, <span class="refAuthor">Klensin, J.</span>, and <span class="refAuthor">T. Hansen</span>, <span class="refTitle">"Media Type Specifications and Registration Procedures"</span>, <span class="seriesInfo">BCP 13</span>, <span class="seriesInfo">RFC 6838</span>, <span class="seriesInfo">DOI 10.17487/RFC6838</span>, <time datetime="2013-01" class="refDate">January 2013</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc6838">https://www.rfc-editor.org/rfc/rfc6838</a>&gt;</span>. </dd>
 <dd class="break"></dd>
+<dt id="RFC6839">[RFC6839]</dt>
+        <dd>
+<span class="refAuthor">Hansen, T.</span> and <span class="refAuthor">A. Melnikov</span>, <span class="refTitle">"Additional Media Type Structured Syntax Suffixes"</span>, <span class="seriesInfo">RFC 6839</span>, <span class="seriesInfo">DOI 10.17487/RFC6839</span>, <time datetime="2013-01" class="refDate">January 2013</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc6839">https://www.rfc-editor.org/rfc/rfc6839</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="RFC7159">[RFC7159]</dt>
-      <dd>
+        <dd>
 <span class="refAuthor">Bray, T., Ed.</span>, <span class="refTitle">"The JavaScript Object Notation (JSON) Data Interchange Format"</span>, <span class="seriesInfo">RFC 7159</span>, <span class="seriesInfo">DOI 10.17487/RFC7159</span>, <time datetime="2014-03" class="refDate">March 2014</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7159">https://www.rfc-editor.org/rfc/rfc7159</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC7303">[RFC7303]</dt>
+        <dd>
+<span class="refAuthor">Thompson, H.</span> and <span class="refAuthor">C. Lilley</span>, <span class="refTitle">"XML Media Types"</span>, <span class="seriesInfo">RFC 7303</span>, <span class="seriesInfo">DOI 10.17487/RFC7303</span>, <time datetime="2014-07" class="refDate">July 2014</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7303">https://www.rfc-editor.org/rfc/rfc7303</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8081">[RFC8081]</dt>
+        <dd>
+<span class="refAuthor">Lilley, C.</span>, <span class="refTitle">"The "font" Top-Level Media Type"</span>, <span class="seriesInfo">RFC 8081</span>, <span class="seriesInfo">DOI 10.17487/RFC8081</span>, <time datetime="2017-02" class="refDate">February 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8081">https://www.rfc-editor.org/rfc/rfc8081</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC9694">[RFC9694]</dt>
+        <dd>
+<span class="refAuthor">Dürst, M.J.</span>, <span class="refTitle">"Guidelines for the Definition of New Top-Level Media Types"</span>, <span class="seriesInfo">BCP 13</span>, <span class="seriesInfo">RFC 9694</span>, <span class="seriesInfo">DOI 10.17487/RFC9694</span>, <time datetime="2025-03" class="refDate">March 2025</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9694">https://www.rfc-editor.org/rfc/rfc9694</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC9695">[RFC9695]</dt>
+      <dd>
+<span class="refAuthor">Muthusamy, Y. K.</span> and <span class="refAuthor">C. Ullrich</span>, <span class="refTitle">"The 'haptics' Top-Level Media Type"</span>, <span class="seriesInfo">RFC 9695</span>, <span class="seriesInfo">DOI 10.17487/RFC9695</span>, <time datetime="2025-03" class="refDate">March 2025</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9695">https://www.rfc-editor.org/rfc/rfc9695</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
 </div>
 <div id="sec-informative-references">
-<section id="section-6.2">
+<section id="section-7.2">
         <h3 id="name-informative-references">
-<a href="#section-6.2" class="section-number selfRef">6.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
+<a href="#section-7.2" class="section-number selfRef">7.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
         </h3>
 <dl class="references">
-<dt id="RFC2045">[RFC2045]</dt>
+<dt id="BINARY-FORMAT">[BINARY-FORMAT]</dt>
         <dd>
-<span class="refAuthor">Freed, N.</span> and <span class="refAuthor">N. Borenstein</span>, <span class="refTitle">"Multipurpose Internet Mail Extensions (MIME) Part One: Format of Internet Message Bodies"</span>, <span class="seriesInfo">RFC 2045</span>, <span class="seriesInfo">DOI 10.17487/RFC2045</span>, <time datetime="1996-11" class="refDate">November 1996</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc2045">https://www.rfc-editor.org/rfc/rfc2045</a>&gt;</span>. </dd>
+<span class="refAuthor">Protobuf</span>, <span class="refTitle">"Protobuf Binary Wire Encoding Spec"</span>, <span>n.d.</span>, <span>&lt;<a href="https://protobuf.dev/programming-guides/encoding">https://protobuf.dev/programming-guides/encoding</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="CROSS-ORIGIN-READ-BLOCKING">[CROSS-ORIGIN-READ-BLOCKING]</dt>
+        <dd>
+<span class="refAuthor">Chromium</span>, <span class="refTitle">"Cross-Origin Read Blocking for Web Developers"</span>, <span>n.d.</span>, <span>&lt;<a href="https://www.chromium.org/Home/chromium-security/corb-for-developers">https://www.chromium.org/Home/chromium-security/corb-for-developers</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="GRPC-WEBSITE">[GRPC-WEBSITE]</dt>
+        <dd>
+<span class="refAuthor">Protobuf</span>, <span class="refTitle">"gRPC Website"</span>, <span>n.d.</span>, <span>&lt;<a href="https://grpc.io">https://grpc.io</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="JSON-FORMAT">[JSON-FORMAT]</dt>
+        <dd>
+<span class="refAuthor">Protobuf</span>, <span class="refTitle">"Protobuf JSON Wire Encoding Spec"</span>, <span>n.d.</span>, <span>&lt;<a href="https://protobuf.dev/programming-guides/json">https://protobuf.dev/programming-guides/json</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="MIME-SNIFF">[MIME-SNIFF]</dt>
+        <dd>
+<span class="refAuthor">WHATWG</span>, <span class="refTitle">"MIME Sniffing: Living Standard"</span>, <span>n.d.</span>, <span>&lt;<a href="https://mimesniff.spec.whatwg.org/#mime-type-groups">https://mimesniff.spec.whatwg.org/#mime-type-groups</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="PROTO-ANY">[PROTO-ANY]</dt>
+        <dd>
+<span class="refAuthor">Protobuf</span>, <span class="refTitle">"any.proto Schema Definition"</span>, <span>n.d.</span>, <span>&lt;<a href="https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/any.proto">https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/any.proto</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="PROTOBUF-SCHEMA-LANGUAGE-2">[PROTOBUF-SCHEMA-LANGUAGE-2]</dt>
+        <dd>
+<span class="refAuthor">Protobuf</span>, <span class="refTitle">"Proto2 Schema Language Specification"</span>, <span>n.d.</span>, <span>&lt;<a href="https://protobuf.dev/reference/protobuf/proto2-spec">https://protobuf.dev/reference/protobuf/proto2-spec</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="PROTOBUF-SCHEMA-LANGUAGE-3">[PROTOBUF-SCHEMA-LANGUAGE-3]</dt>
+        <dd>
+<span class="refAuthor">Protobuf</span>, <span class="refTitle">"Proto3 Schema Language Specification"</span>, <span>n.d.</span>, <span>&lt;<a href="https://protobuf.dev/reference/protobuf/proto3-spec">https://protobuf.dev/reference/protobuf/proto3-spec</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="PROTOBUF-SCHEMA-LANGUAGE-EDITION-2023">[PROTOBUF-SCHEMA-LANGUAGE-EDITION-2023]</dt>
+        <dd>
+<span class="refAuthor">Protobuf</span>, <span class="refTitle">"Proto Edition 2023 Schema Language Specification"</span>, <span>n.d.</span>, <span>&lt;<a href="https://protobuf.dev/reference/protobuf/edition-2023-spec">https://protobuf.dev/reference/protobuf/edition-2023-spec</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="PROTOBUF-WEBSITE">[PROTOBUF-WEBSITE]</dt>
+        <dd>
+<span class="refAuthor">Protobuf</span>, <span class="refTitle">"Protobuf Website"</span>, <span>n.d.</span>, <span>&lt;<a href="https://protobuf.dev">https://protobuf.dev</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC8446">[RFC8446]</dt>
       <dd>
@@ -1416,6 +1541,14 @@ does produce something executable.<a href="#section-4-2" class="pilcrow">¶</a><
 <div class="email">
 <span>Email:</span>
 <a href="mailto:warren@kumari.net" class="email">warren@kumari.net</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Rob Sloan</span></div>
+<div dir="auto" class="left"><span class="org">Google</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:rmsj@google.com" class="email">rmsj@google.com</a>
 </div>
 </address>
 </section>

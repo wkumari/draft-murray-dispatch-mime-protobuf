@@ -5,7 +5,8 @@
 Internet Engineering Task Force (IETF)                 M. Kucherawy, Ed.
 Request for Comments: 0                                                 
 Category: Informational                                        W. Kumari
-ISSN: 2070-1721                                                   Google
+ISSN: 2070-1721                                                 R. Sloan
+                                                                  Google
                                                            17 April 2025
 
 
@@ -54,26 +55,31 @@ Table of Contents
    3.  Encoding Considerations
    4.  Security Considerations
    5.  IANA Considerations
-     5.1.  Registration for "application/protobuf" Media Type
+     5.1.  Registration for the "application/protobuf" Media Type
      5.2.  Registration for "application/protobuf+json" Media Type
-   6.  References
-     6.1.  Normative References
-     6.2.  Informative References
+   6.  Contact
+   7.  References
+     7.1.  Normative References
+     7.2.  Informative References
    Acknowledgments
    Authors' Addresses
 
 1.  Introduction
 
-   (For Rob: Feel free to edit for accuracy, but no need to expound too
-   much; we refer to the full specification URI later.)
-
    Protocol Buffers ("protobufs") were introduced in 2008 as a free,
    open source, platform-independent mechanism for transport and storage
-   of structured data.  Their use has become increasingly common.
+   of structured data: their use has become increasingly common and
+   Protobuf implementations exist in many languages (C++, C#, Dart, Go,
+   Java, Kotlin, Objective-C, Python, JavaScript, Ruby, Swift, and
+   perhaps others).  See [PROTOBUF-WEBSITE] for more information.
 
-   The specification for protobufs generally includes an interface
-   definition language and a code generator so that clients and servers
-   understanding the structured data can be easily crafted and deployed.
+   Protobuf consists of an interface definition language, wire encoding
+   formats, and language-specific implementations (typically involving a
+   generated API) so that clients and servers can be easily deployed
+   using a common schema.  Protobuf supports wire formats for
+   interchange: [BINARY-FORMAT], which is optimized for wire efficiency,
+   and [JSON-FORMAT], which maps the Protobuf schema onto a JSON
+   structure.
 
    Serialized objects are occasionally transported within media that
    make use of media types (see [RFC2045] et seq) to identify payloads.
@@ -99,8 +105,8 @@ Table of Contents
      string email = 3;
    }
 
-   An example of python code that uses the IDL definition above to
-   create an instance of a "Person" object:
+   An example of python code that uses code generated from the IDL
+   definition above to create an instance of a "Person" object:
 
    person = Person()
    person.id = 1234
@@ -115,48 +121,74 @@ Table of Contents
      "email": "jdoe@example.com"
    }
 
-   (For Rob: If the actual JSON payload looks different than this,
-   please update.)
-
 3.  Encoding Considerations
 
-   (For Rob: Anything else to say here?)
-
-   A protobuf payload can be either in JSON form or in binary form.  For
-   binary forms that need to transit non-binary transports, base64 (xref
-   to RFC 4648) is recommended.
+   Protobuf supports only the [BINARY-FORMAT] and [JSON-FORMAT] for
+   interchange, both of which are platform-independent.  For binary
+   forms that need to transit non-binary transports, a base64 Content-
+   Transfer-Encoding (xref to [RFC4648]) is recommended.
 
 4.  Security Considerations
 
-   (For Rob: Anything else to say here?)
-
    The payload for these media types contain no directly executable
-   code.  However, it is common for a protobuf definition to be used as
-   input to a code generator which then does produce something
-   executable.
+   code.  While it is common for a protobuf definition to be used as
+   input to a code generator which then produces something executable,
+   but that applies to the schema language, not serializations.
 
-   A malformed request to a protobuf server could be crafted to, for
-   example, allocate a very large amount of memory, potentially
-   impacting other operations on that server.
+   Protobuf provides no security, privacy, integrity, or compression
+   services: clients or servers for which this is a concern should avail
+   themselves of solutions that provide such capabilities (e.g.
+   [RFC8446]).  Implementations should be careful when processing
+   Protobuf like any binary format: a malformed request to a protobuf
+   server could be crafted to, for example, allocate a very large amount
+   of memory, potentially impacting other operations on that server.
 
-   Protobuf provides no security or integrity services.  Clients or
-   servers for which this is a concern should avail themselves of
-   solutions that provide such capabilities (e.g., [RFC8446]).
+   In order to safely use Protobuf serializations on the web, it is
+   important to ensure that they cannot be interpreted as another
+   document type, such as JavaScript.  For this reason, binary protobuf
+   serializations should always be a wrapped in a Base64 Content-
+   Transfer-Encoding according to [RFC1341].  Further, when using JSON
+   serializations it is important that it is clear to browsers that
+   content is pure JSON, so that they can inhibit Cross-Site Script
+   Inclusion or side-channel attacks using techniques such as Cross-
+   Origin Read Blocking ([CROSS-ORIGIN-READ-BLOCKING]).  Per [RFC6839],
+   this can be indicated by a +json subtype suffix (see also
+   [MIME-SNIFF]); so when serializing Protobuf to JSON, users MUST use
+   the application/protobuf+json MIME type.  Further, charset can
+   provide some protection against content sniffing attacks so users
+   should specify it for all JSON encodings.
+
+   In the [PROTO-ANY] type there is technically a link, which was
+   intended to be dereferenced to obtain schemas for a given type;
+   however this is not supported by widely used Protobuf
+   implementations.
 
 5.  IANA Considerations
 
-   (For Rob: Add any required/optional parameters in both of the next
-   two sections, plus any other relevant discussion.)
+   This document requests the registration of application/protobuf and
+   application/protobuf+json as media types for Protobuf, and the
+   notation of application/x-protobuf, application/x-protobuffer, and
+   application/x-protobuf+json as deprecated aliases:
 
-5.1.  Registration for "application/protobuf" Media Type
+5.1.  Registration for the "application/protobuf" Media Type
 
-   Type name: application
+   Type name:  application
 
-   Subtype name: protobuf
+   Subtype name:  protobuf
 
-   Required parameters: N/A
+   Required parameters:  none
 
-   Optional parameters: N/A
+   Optional parameters:  encoding, which indicates the type of Protobuf
+      encoding and is "binary" by default for application/protobuf,
+      indicating the [BINARY-FORMAT].  Clients MUST reject json
+      encodings without +json and MUST reject unknown encodings.  At the
+      time of writing, no other encoding can be used for application/
+      protobuf+json so this parameter is for extensibility.
+
+      version, which indicates the version of the encoding
+      specification.  Clients MUST reject unknown version settings.  At
+      the time of writing, no protobuf encodings are versioned so this
+      parameter is for extensibility.
 
    Encoding considerations: binary
 
@@ -176,21 +208,21 @@ Table of Contents
 
    Additional information:
 
-    Deprecated alias names for this type: x-protobuf
-    Magic number(s):
-    File extension(s):
-    Macintosh file type code(s):
+ Deprecated alias names for this type: application/x-protobuf, application/x-protobuffer
+ Magic number(s):
+ File extension(s):
+ Macintosh file type code(s):
 
-   Person & email address to contact for further information: protobuf-
-   external@google.com
+   Person & email address to contact for further information: Protobuf
+   <protobuf-team@google.com>
 
    Intended usage: COMMON
 
-   Restrictions on usage: N/A
+   Restrictions on usage: None
 
-   Author: Rob (details here)
+   Author: Rob Sloan <rmsj@google.com>
 
-   Change controller: protobuf-external@google.com
+   Change controller: Protobuf <protobuf-team@google.com>
 
    Provisional registration? (standards tree only): No
 
@@ -198,11 +230,22 @@ Table of Contents
 
    Type name: application
 
-   Subtype name: protobuf
+   Subtype name: protobuf+json
 
-   Required parameters: N/A
+   Required parameters:  charset, which MUST be set to utf-8 (case-
+      insensitive).
 
-   Optional parameters: N/A
+   Optional parameters:  encoding, which indicates the type of Protobuf
+      encoding and is "json" by default for application/protobuf+json,
+      indicating the [JSON-FORMAT].  Clients MUST reject binary
+      encodings with +json and MUST reject unknown encodings.  At the
+      time of writing, no other encoding can be used for application/
+      protobuf+json so this parameter is for extensibility.
+
+      version, which indicates the version of the encoding
+      specification.  Clients MUST reject unknown version settings.  At
+      the time of writing, no protobuf encodings are versioned so this
+      parameter is for extensibility.
 
    Encoding considerations: Same as encoding considerations of
    application/json as specified in [RFC7159], Section 11.
@@ -228,24 +271,56 @@ Table of Contents
     File extension(s):
     Macintosh file type code(s):
 
-   Person & email address to contact for further information: protobuf-
-   external@google.com
+   Person & email address to contact for further information: Protobuf
+   <protobuf-team@google.com>
 
    Intended usage: COMMON
 
-   Restrictions on usage: N/A
+   Restrictions on usage: None
 
-   Author: Rob (details here)
+   Author: Rob Sloan <rmsj@google.com>
 
-   Change controller: protobuf-external@google.com
+   Change controller: Protobuf <protobuf-team@google.com>
 
    Provisional registration? (standards tree only): No
 
-6.  References
+6.  Contact
 
-6.1.  Normative References
+   Please contact protobuf-team@google.com for requests to adjust this
+   specification.  Issues may be raised at
+   https://github.com/protocolbuffers/protobuf.
+
+7.  References
+
+7.1.  Normative References
 
    [Protobuf] "Protocol Buffers", n.d., <https://protobuf.dev/>.
+
+   [RFC1341]  Borenstein, N. and N. Freed, "MIME (Multipurpose Internet
+              Mail Extensions): Mechanisms for Specifying and Describing
+              the Format of Internet Message Bodies", RFC 1341,
+              DOI 10.17487/RFC1341, June 1992,
+              <https://www.rfc-editor.org/rfc/rfc1341>.
+
+   [RFC2045]  Freed, N. and N. Borenstein, "Multipurpose Internet Mail
+              Extensions (MIME) Part One: Format of Internet Message
+              Bodies", RFC 2045, DOI 10.17487/RFC2045, November 1996,
+              <https://www.rfc-editor.org/rfc/rfc2045>.
+
+   [RFC2046]  Freed, N. and N. Borenstein, "Multipurpose Internet Mail
+              Extensions (MIME) Part Two: Media Types", RFC 2046,
+              DOI 10.17487/RFC2046, November 1996,
+              <https://www.rfc-editor.org/rfc/rfc2046>.
+
+   [RFC2077]  Nelson, S., Parks, C., and Mitra, "The Model Primary
+              Content Type for Multipurpose Internet Mail Extensions",
+              RFC 2077, DOI 10.17487/RFC2077, January 1997,
+              <https://www.rfc-editor.org/rfc/rfc2077>.
+
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997,
+              <https://www.rfc-editor.org/rfc/rfc2119>.
 
    [RFC4289]  Freed, N. and J. Klensin, "Multipurpose Internet Mail
               Extensions (MIME) Part Four: Registration Procedures",
@@ -266,16 +341,76 @@ Table of Contents
               RFC 6838, DOI 10.17487/RFC6838, January 2013,
               <https://www.rfc-editor.org/rfc/rfc6838>.
 
+   [RFC6839]  Hansen, T. and A. Melnikov, "Additional Media Type
+              Structured Syntax Suffixes", RFC 6839,
+              DOI 10.17487/RFC6839, January 2013,
+              <https://www.rfc-editor.org/rfc/rfc6839>.
+
    [RFC7159]  Bray, T., Ed., "The JavaScript Object Notation (JSON) Data
               Interchange Format", RFC 7159, DOI 10.17487/RFC7159, March
               2014, <https://www.rfc-editor.org/rfc/rfc7159>.
 
-6.2.  Informative References
+   [RFC7303]  Thompson, H. and C. Lilley, "XML Media Types", RFC 7303,
+              DOI 10.17487/RFC7303, July 2014,
+              <https://www.rfc-editor.org/rfc/rfc7303>.
 
-   [RFC2045]  Freed, N. and N. Borenstein, "Multipurpose Internet Mail
-              Extensions (MIME) Part One: Format of Internet Message
-              Bodies", RFC 2045, DOI 10.17487/RFC2045, November 1996,
-              <https://www.rfc-editor.org/rfc/rfc2045>.
+   [RFC8081]  Lilley, C., "The "font" Top-Level Media Type", RFC 8081,
+              DOI 10.17487/RFC8081, February 2017,
+              <https://www.rfc-editor.org/rfc/rfc8081>.
+
+   [RFC9694]  Dürst, M.J., "Guidelines for the Definition of New Top-
+              Level Media Types", BCP 13, RFC 9694,
+              DOI 10.17487/RFC9694, March 2025,
+              <https://www.rfc-editor.org/rfc/rfc9694>.
+
+   [RFC9695]  Muthusamy, Y. K. and C. Ullrich, "The 'haptics' Top-Level
+              Media Type", RFC 9695, DOI 10.17487/RFC9695, March 2025,
+              <https://www.rfc-editor.org/rfc/rfc9695>.
+
+7.2.  Informative References
+
+   [BINARY-FORMAT]
+              Protobuf, "Protobuf Binary Wire Encoding Spec", n.d.,
+              <https://protobuf.dev/programming-guides/encoding>.
+
+   [CROSS-ORIGIN-READ-BLOCKING]
+              Chromium, "Cross-Origin Read Blocking for Web Developers",
+              n.d., <https://www.chromium.org/Home/chromium-security/
+              corb-for-developers>.
+
+   [GRPC-WEBSITE]
+              Protobuf, "gRPC Website", n.d., <https://grpc.io>.
+
+   [JSON-FORMAT]
+              Protobuf, "Protobuf JSON Wire Encoding Spec", n.d.,
+              <https://protobuf.dev/programming-guides/json>.
+
+   [MIME-SNIFF]
+              WHATWG, "MIME Sniffing: Living Standard", n.d.,
+              <https://mimesniff.spec.whatwg.org/#mime-type-groups>.
+
+   [PROTO-ANY]
+              Protobuf, "any.proto Schema Definition", n.d., <https://gi
+              thub.com/protocolbuffers/protobuf/blob/main/src/google/
+              protobuf/any.proto>.
+
+   [PROTOBUF-SCHEMA-LANGUAGE-2]
+              Protobuf, "Proto2 Schema Language Specification", n.d.,
+              <https://protobuf.dev/reference/protobuf/proto2-spec>.
+
+   [PROTOBUF-SCHEMA-LANGUAGE-3]
+              Protobuf, "Proto3 Schema Language Specification", n.d.,
+              <https://protobuf.dev/reference/protobuf/proto3-spec>.
+
+   [PROTOBUF-SCHEMA-LANGUAGE-EDITION-2023]
+              Protobuf, "Proto Edition 2023 Schema Language
+              Specification", n.d.,
+              <https://protobuf.dev/reference/protobuf/edition-
+              2023-spec>.
+
+   [PROTOBUF-WEBSITE]
+              Protobuf, "Protobuf Website", n.d.,
+              <https://protobuf.dev>.
 
    [RFC8446]  Rescorla, E., "The Transport Layer Security (TLS) Protocol
               Version 1.3", RFC 8446, DOI 10.17487/RFC8446, August 2018,
@@ -294,3 +429,8 @@ Authors' Addresses
    Warren Kumari
    Google
    Email: warren@kumari.net
+
+
+   Rob Sloan
+   Google
+   Email: rmsj@google.com
