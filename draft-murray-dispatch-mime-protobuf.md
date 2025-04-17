@@ -36,8 +36,8 @@ author:
   email: warren@kumari.net
  -
   ins: R. Sloan
-  fullname: Rob Sloan
-  organization: Google
+  name: Rob Sloan
+  org: Google
   email: rmsj@google.com
 
 normative:
@@ -87,13 +87,13 @@ informative:
     title: "Protobuf Website"
     target: https://protobuf.dev
 
-  PROTOBUF-BINARY-WIRE-SPEC:
+  BINARY-FORMAT:
     author:
       org: Protobuf
     title: "Protobuf Binary Wire Encoding Spec"
     target: https://protobuf.dev/programming-guides/encoding
 
-  PROTOBUF-JSON-WIRE-SPEC:
+  JSON-FORMAT:
     author:
       org: Protobuf
     title: "Protobuf JSON Wire Encoding Spec"
@@ -131,16 +131,13 @@ This document registers media types for Protocol Buffers, a common extensible me
 
 # Introduction {#intro}
 
-(For Rob: Feel free to edit for accuracy, but no need to expound too much; we refer to the full specification URI later.)
+Protocol Buffers ("protobufs") were introduced in 2008 as a free, open source, platform-independent mechanism for transport and storage of structured data: their use has become
+increasingly common and Protobuf implementations exist in many languages (C++, C#, Dart, Go, Java, Kotlin, Objective-C, Python, JavaScript, Ruby, Swift, and perhaps others). See {{PROTOBUF-WEBSITE}} for more information.
 
-Protocol Buffers ("protobufs") were introduced in 2008 as a free, open source, platform-independent mechanism for transport and storage of structured data.  Their use has become
-increasingly common.
+Protobuf consists of an interface definition language, wire encoding formats, and language-specific implementations (typically involving a generated API) so that clients and servers can be easily deployed using a common schema. Protobuf supports wire formats for interchange: {{BINARY-FORMAT}}, which is optimized for wire efficiency, and {{JSON-FORMAT}}, which maps the Protobuf schema onto a JSON structure.
 
-The specification for protobufs generally includes an interface definition language and a code generator so that clients and servers understanding the structured data can be
-easily crafted and deployed.
-
-Serialized objects are occasionally transported within media that make use of media types (see {{RFC2045}} et seq) to identify payloads.  Accordingly,
-current and historical media types used for this purpose would benefit from registration.  This document requests those registrations of IANA.
+Serialized objects are occasionally transported within media that make use of media types (see {{RFC2045}} et seq) to identify payloads. Accordingly,
+current and historical media types used for this purpose would benefit from registration. This document requests those registrations of IANA.
 
 # Payload Description {#description}
 
