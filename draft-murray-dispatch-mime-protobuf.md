@@ -19,39 +19,51 @@
 # Change the file extension to match the format (.xml for XML, etc...)
 #
 ###
-title: "TODO - Your title"
-abbrev: "TODO - Abbreviation"
+title: "Media Type Registration for Protocol Buffers"
 category: info
 
-docname: draft-todo-yourname-protocol-latest
+docname: draft-murray-dispatch-mime-protobuf-latest
 submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
 number:
 date:
 consensus: true
 v: 3
-area: AREA
-workgroup: WG Working Group
+area: ART
+workgroup: DISPATCH
 keyword:
- - next generation
- - unicorn
- - sparkling distributed ledger
+ - MIME
+ - protobuf
+ - media type
+ - application
 venue:
-  group: WG
+  group: DISPATCH
   type: Working Group
-  mail: WG@example.com
-  arch: https://example.com/WG
-  github: USER/REPO
+  mail: dispatch@ietf.org
+  arch: https://www.ietf.org/mailman/listinfo/dispatch
+  github: /wkumari/draft-murray-dispatch-mime-protobuf
   latest: https://example.com/LATEST
 
 author:
  -
-    fullname: Your Name Here
-    organization: Your Organization Here
-    email: your.email@example.com
+  ins: W. Kumari
+  name: Warren Kumari
+  org: Google
+  email: warren@kumari.net
+ -
+  ins: M. Kucherawy
+  name: Murray S. Kucherawy
+  org: Facebook
+  email:msk@fb.com
 
 normative:
+  RFC6838:
+  RFC4289:
+  RFC6657:
 
 informative:
+  Protobuf:
+    target: "https://protobuf.dev/"
+    title: "Protocol Buffers"
 
 
 --- abstract
