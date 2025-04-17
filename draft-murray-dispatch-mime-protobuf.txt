@@ -50,14 +50,16 @@ Copyright Notice
 Table of Contents
 
    1.  Introduction
-   2.  Encoding Considerations
-   3.  Security Considerations
-   4.  IANA Considerations
-     4.1.  Registration for "application/protobuf" Media Type
-     4.2.  Registration for "application/protobuf+json" Media Type
-   5.  References
-     5.1.  Normative References
-     5.2.  Informative References
+   2.  Payload Description
+   3.  Encoding Considerations
+   4.  Security Considerations
+   5.  IANA Considerations
+     5.1.  Registration for "application/protobuf" Media Type
+     5.2.  Registration for "application/protobuf+json" Media Type
+   6.  References
+     6.1.  Normative References
+     6.2.  Informative References
+   Acknowledgments
    Authors' Addresses
 
 1.  Introduction
@@ -76,17 +78,32 @@ Table of Contents
    would benefit from registration.  This document requests those
    registrations of IANA.
 
-2.  Encoding Considerations
+2.  Payload Description
+
+   These media types are used in the transport of serialized objects
+   only.  The IDL definitions, if transported, would be used with any
+   appropriate text media type.  In the three figures below, only the
+   third of these would ever be used with these media types (a JSON
+   example is depicted).
+
+   (labeled example of an IDL object definition)
+
+   (labeled example of an annotated IDL object instance definition)
+
+   (labeled example of a serialized object)
+
+3.  Encoding Considerations
 
    A protobuf payload can be either in JSON form or in binary form.  For
    binary forms that need to transit non-binary transports, base64 (xref
    to RFC 4648) is recommended.
 
-3.  Security Considerations
+4.  Security Considerations
 
-   The payload for this media type contains no directly executable code.
-   However, it is common for a protobuf definition to be used as input
-   to a code generator which then does produce something executable.
+   The payload for these media types contain no directly executable
+   code.  However, it is common for a protobuf definition to be used as
+   input to a code generator which then does produce something
+   executable.
 
    A malformed request to a protobuf server could be crafted to, for
    example, allocate a very large amount of memory, potentially
@@ -96,9 +113,9 @@ Table of Contents
    this is a concern should avail themselves of solutions that provide
    such capabilities (e.g., [RFC8446]).
 
-4.  IANA Considerations
+5.  IANA Considerations
 
-4.1.  Registration for "application/protobuf" Media Type
+5.1.  Registration for "application/protobuf" Media Type
 
    Type name: application
 
@@ -110,7 +127,7 @@ Table of Contents
 
    Encoding considerations: binary
 
-   Security considerations: see Section 3
+   Security considerations: see Section 4
 
    Interoperability considerations: The protobufs specification includes
    versioning provisions to ensure backward compatibility when
@@ -144,7 +161,7 @@ Table of Contents
 
    Provisional registration? (standards tree only): No
 
-4.2.  Registration for "application/protobuf+json" Media Type
+5.2.  Registration for "application/protobuf+json" Media Type
 
    Type name: application
 
@@ -157,7 +174,7 @@ Table of Contents
    Encoding considerations: Same as encoding considerations of
    application/json as specified in [RFC7159], Section 11.
 
-   Security considerations: see Section 3
+   Security considerations: see Section 4
 
    Interoperability considerations: The protobufs specification includes
    versioning provisions to ensure backward compatibility when
@@ -191,9 +208,11 @@ Table of Contents
 
    Provisional registration? (standards tree only): No
 
-5.  References
+6.  References
 
-5.1.  Normative References
+6.1.  Normative References
+
+   [Protobuf] "Protocol Buffers", n.d., <https://protobuf.dev/>.
 
    [RFC4289]  Freed, N. and J. Klensin, "Multipurpose Internet Mail
               Extensions (MIME) Part Four: Registration Procedures",
@@ -218,9 +237,7 @@ Table of Contents
               Interchange Format", RFC 7159, DOI 10.17487/RFC7159, March
               2014, <https://www.rfc-editor.org/rfc/rfc7159>.
 
-5.2.  Informative References
-
-   [Protobuf] "Protocol Buffers", n.d., <https://protobuf.dev/>.
+6.2.  Informative References
 
    [RFC2045]  Freed, N. and N. Borenstein, "Multipurpose Internet Mail
               Extensions (MIME) Part One: Format of Internet Message
@@ -230,6 +247,10 @@ Table of Contents
    [RFC8446]  Rescorla, E., "The Transport Layer Security (TLS) Protocol
               Version 1.3", RFC 8446, DOI 10.17487/RFC8446, August 2018,
               <https://www.rfc-editor.org/rfc/rfc8446>.
+
+Acknowledgments
+
+   Orie Steele provided valuable feedback to this work.
 
 Authors' Addresses
 
