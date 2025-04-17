@@ -39,6 +39,7 @@ author:
   name: Rob Sloan
   org: Google
   email: rmsj@google.com
+ -
 
 normative:
   RFC1341: # MIME (Multipurpose Internet Mail Extensions)
@@ -289,6 +290,10 @@ Author: Rob Sloan \<rmsj@google.com\>
 Change controller: Protobuf \<protobuf-team@google.com\>
 
 Provisional registration? (standards tree only): No
+
+# Contact
+
+Please contact protobuf-team@google.com for requests to adjust this specification. Issues may be raised at https://github.com/protocolbuffers/protobuf.
 
 --- back
 
