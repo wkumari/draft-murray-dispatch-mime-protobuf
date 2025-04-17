@@ -70,7 +70,7 @@ informative:
     title: "Cross-Origin Read Blocking for Web Developers"
     target: https://www.chromium.org/Home/chromium-security/corb-for-developers
 
-  MIME-SNIFF
+  MIME-SNIFF:
     author:
       org: WHATWG
     title: "MIME Sniffing: Living Standard"
