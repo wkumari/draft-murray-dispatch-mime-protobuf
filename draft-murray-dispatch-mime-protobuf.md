@@ -210,7 +210,7 @@ Required parameters:
 
 Optional parameters:
 
-: encoding, which indicates the type of Protobuf encoding and is "binary" by default for application/protobuf, indicating the format described in {{PROTOBUF-BINARY-WIRE-SPEC}}. Clients MUST reject json encodings without `+json` and MUST reject unknown encodings. At the time of writing, no other encoding can be used for application/protobuf+json so this parameter is for extensibility.
+: encoding, which indicates the type of Protobuf encoding and is "binary" by default for application/protobuf, indicating the {{BINARY-FORMAT}}. Clients MUST reject json encodings without `+json` and MUST reject unknown encodings. At the time of writing, no other encoding can be used for application/protobuf+json so this parameter is for extensibility.
 : version, which indicates the version of the encoding specification. Clients MUST reject unknown version settings. At the time of writing, no protobuf encodings are versioned so this parameter is for extensibility.
 
 Encoding considerations: binary
@@ -256,7 +256,7 @@ Required parameters:
 
 Optional parameters:
 
-: encoding, which indicates the type of Protobuf encoding and is "json" by default for application/protobuf+json, indicating the format described in {{PROTOBUF-JSON-WIRE-SPEC}}. Clients MUST reject binary encodings with `+json` and MUST reject unknown encodings. At the time of writing, no other encoding can be used for application/protobuf+json so this parameter is for extensibility.
+: encoding, which indicates the type of Protobuf encoding and is "json" by default for application/protobuf+json, indicating the {{JSON-FORMAT}}. Clients MUST reject binary encodings with `+json` and MUST reject unknown encodings. At the time of writing, no other encoding can be used for application/protobuf+json so this parameter is for extensibility.
 : version, which indicates the version of the encoding specification. Clients MUST reject unknown version settings. At the time of writing, no protobuf encodings are versioned so this parameter is for extensibility.
 
 Encoding considerations:  Same as encoding considerations of application/json as specified in {{RFC7159}}, Section 11.
