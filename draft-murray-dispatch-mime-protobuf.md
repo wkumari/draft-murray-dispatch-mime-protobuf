@@ -77,7 +77,7 @@ does produce something executable.
 
 A malformed request to a protobuf server could be crafted to, for example, allocate a very large amount of memory, potentially impacting other operations on that server.
 
-Protobuf provides no security services.  Clients or servers for which this is a concern should avail themselves of solutions that provide such capabilities (e.g., {{RFC8846}}).
+Protobuf provides no security services.  Clients or servers for which this is a concern should avail themselves of solutions that provide such capabilities (e.g., {{RFC8446}}).
 
 # IANA Considerations {#iana}
 
@@ -97,7 +97,7 @@ Security considerations: see {{security}}
 
 Interoperability considerations: The protobufs specification includes versioning provisions to ensure backward compatibility when encountering payloads with unknown properties.
 
-Published specification: {{Protbuf}}
+Published specification: {{Protobuf}}
 
 Applications that use this media type: Any application with a need to exchange or store structured objects across platforms or implementations.
 
