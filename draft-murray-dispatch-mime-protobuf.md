@@ -63,65 +63,53 @@ normative:
 
 informative:
   RFC8446: # The Transport Layer Security (TLS) Protocol Version 1.3
-  CROSS-ORIGIN-READ-BLOCKING:
+  CORB:
     author:
       org: Chromium
     title: "Cross-Origin Read Blocking for Web Developers"
     target: https://www.chromium.org/Home/chromium-security/corb-for-developers
 
-  MIME-SNIFF:
+  MIMESNIFF:
     author:
       org: WHATWG
     title: "MIME Sniffing: Living Standard"
     target: https://mimesniff.spec.whatwg.org/#mime-type-groups
 
-  PROTO-ANY:
+  Any:
     author:
       org: Protobuf
     title: "any.proto Schema Definition"
     target: https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/any.proto
 
-  PROTOBUF-WEBSITE:
-    author:
-      org: Protobuf
-    title: "Protobuf Website"
-    target: https://protobuf.dev
-
-  BINARY-FORMAT:
+  Binary:
     author:
       org: Protobuf
     title: "Protobuf Binary Wire Encoding Spec"
     target: https://protobuf.dev/programming-guides/encoding
 
-  JSON-FORMAT:
+  ProtoJSON:
     author:
       org: Protobuf
     title: "Protobuf JSON Wire Encoding Spec"
     target: https://protobuf.dev/programming-guides/json
 
-  PROTOBUF-SCHEMA-LANGUAGE-2:
+  Proto2:
     author:
       org: Protobuf
     title: "Proto2 Schema Language Specification"
     target: https://protobuf.dev/reference/protobuf/proto2-spec
 
-  PROTOBUF-SCHEMA-LANGUAGE-3:
+  Proto3:
     author:
       org: Protobuf
     title: "Proto3 Schema Language Specification"
     target: https://protobuf.dev/reference/protobuf/proto3-spec
 
-  PROTOBUF-SCHEMA-LANGUAGE-EDITION-2023:
+  Edition2023:
     author:
       org: Protobuf
     title: "Proto Edition 2023 Schema Language Specification"
     target: https://protobuf.dev/reference/protobuf/edition-2023-spec
-
-  GRPC-WEBSITE:
-    author:
-      org: Protobuf
-    title: "gRPC Website"
-    target: https://grpc.io
 
 --- abstract
 
@@ -132,9 +120,9 @@ This document registers media types for Protocol Buffers, a common extensible me
 # Introduction {#intro}
 
 Protocol Buffers ("protobufs") were introduced in 2008 as a free, open source, platform-independent mechanism for transport and storage of structured data: their use has become
-increasingly common and Protobuf implementations exist in many languages (C++, C#, Dart, Go, Java, Kotlin, Objective-C, Python, JavaScript, Ruby, Swift, and perhaps others). See {{PROTOBUF-WEBSITE}} for more information.
+increasingly common and Protobuf implementations exist in many languages (C++, C#, Dart, Go, Java, Kotlin, Objective-C, Python, JavaScript, Ruby, Swift, and perhaps others). See {{Protobuf}} for more information.
 
-Protobuf consists of an interface definition language, wire encoding formats, and language-specific implementations (typically involving a generated API) so that clients and servers can be easily deployed using a common schema. Protobuf supports wire formats for interchange: {{BINARY-FORMAT}}, which is optimized for wire efficiency, and {{JSON-FORMAT}}, which maps the Protobuf schema onto a JSON structure.
+Protobuf consists of an interface definition language, wire encoding formats, and language-specific implementations (typically involving a generated API) so that clients and servers can be easily deployed using a common schema. Protobuf supports multiple wire formats for interchange: {{Binary}}, which is optimized for wire efficiency, and {{ProtoJSON}}, which maps the Protobuf schema onto a JSON structure.
 
 Serialized objects are occasionally transported within media that make use of media types (see {{RFC2045}} et seq) to identify payloads. Accordingly,
 current and historical media types used for this purpose would benefit from registration. This document requests those registrations of IANA.
@@ -177,7 +165,7 @@ An example of the above instance expressed in JSON:
 
 # Encoding Considerations {#encoding}
 
-Protobuf supports only the {{BINARY-FORMAT}} and {{JSON-FORMAT}} for interchange, both of which are platform-independent.
+Protobuf supports only the {{Binary}} and {{ProtoJSON}} for interchange, both of which are platform-independent.
 For binary forms that need to transit non-binary transports, a base64 Content-Transfer-Encoding (xref to {{RFC4648}}) is recommended.
 
 # Security Considerations {#security}
@@ -186,9 +174,9 @@ The payload for these media types contain no directly executable code. While it 
 
 Protobuf provides no security, privacy, integrity, or compression services: clients or servers for which this is a concern should avail themselves of solutions that provide such capabilities (e.g. {{RFC8446}}). Implementations should be careful when processing Protobuf like any binary format: a malformed request to a protobuf server could be crafted to, for example, allocate a very large amount of memory, potentially impacting other operations on that server.
 
-In order to safely use Protobuf serializations on the web, it is important to ensure that they cannot be interpreted as another document type, such as JavaScript. For this reason, binary protobuf serializations should always be a wrapped in a Base64 Content-Transfer-Encoding according to {{RFC1341}}. Further, when using JSON serializations it is important that it is clear to browsers that content is pure JSON, so that they can inhibit Cross-Site Script Inclusion or side-channel attacks using techniques such as Cross-Origin Read Blocking ({{CROSS-ORIGIN-READ-BLOCKING}}). Per {{RFC6839}}, this can be indicated by a `+json` subtype suffix (see also {{MIME-SNIFF}}); so when serializing Protobuf to JSON, users MUST use the `application/protobuf+json` MIME type. Further, `charset` can provide some protection against content sniffing attacks so users should specify it for all JSON encodings.
+In order to safely use Protobuf serializations on the web, it is important to ensure that they cannot be interpreted as another document type, such as JavaScript. For this reason, binary protobuf serializations should always be a wrapped in a Base64 Content-Transfer-Encoding according to {{RFC1341}}. Further, when using JSON serializations it is important that it is clear to browsers that content is pure JSON, so that they can inhibit Cross-Site Script Inclusion or side-channel attacks using techniques such as Cross-Origin Read Blocking ({{CORB}}). Per {{RFC6839}}, this can be indicated by a `+json` subtype suffix (see also {{MIMESNIFF}}); so when serializing Protobuf to JSON, users MUST use the `application/protobuf+json` MIME type. Further, `charset` can provide some protection against content sniffing attacks so users should specify it for all JSON encodings.
 
-In the {{PROTO-ANY}} type there is technically a link, which was intended to be dereferenced to obtain schemas for a given type; however this is not supported by widely used Protobuf implementations.
+In the {{Any}} type there is technically a link, which was intended to be dereferenced to obtain schemas for a given type; however this is not supported by widely used Protobuf implementations.
 
 # IANA Considerations {#iana}
 
@@ -210,7 +198,7 @@ Required parameters:
 
 Optional parameters:
 
-: encoding, which indicates the type of Protobuf encoding and is "binary" by default for application/protobuf, indicating the {{BINARY-FORMAT}}. Clients MUST reject json encodings without `+json` and MUST reject unknown encodings. At the time of writing, no other encoding can be used for application/protobuf+json so this parameter is for extensibility.
+: encoding, which indicates the type of Protobuf encoding and is "binary" by default for application/protobuf, indicating the {{Binary}}. Clients MUST reject json encodings without `+json` and MUST reject unknown encodings. At the time of writing, no other encoding can be used for application/protobuf+json so this parameter is for extensibility.
 : version, which indicates the version of the encoding specification. Clients MUST reject unknown version settings. At the time of writing, no protobuf encodings are versioned so this parameter is for extensibility.
 
 Encoding considerations: binary
@@ -256,7 +244,7 @@ Required parameters:
 
 Optional parameters:
 
-: encoding, which indicates the type of Protobuf encoding and is "json" by default for application/protobuf+json, indicating the {{JSON-FORMAT}}. Clients MUST reject binary encodings with `+json` and MUST reject unknown encodings. At the time of writing, no other encoding can be used for application/protobuf+json so this parameter is for extensibility.
+: encoding, which indicates the type of Protobuf encoding and is "json" by default for application/protobuf+json, indicating the {{ProtoJSON}}. Clients MUST reject binary encodings with `+json` and MUST reject unknown encodings. At the time of writing, no other encoding can be used for application/protobuf+json so this parameter is for extensibility.
 : version, which indicates the version of the encoding specification. Clients MUST reject unknown version settings. At the time of writing, no protobuf encodings are versioned so this parameter is for extensibility.
 
 Encoding considerations:  Same as encoding considerations of application/json as specified in {{RFC7159}}, Section 11.
