@@ -2,10 +2,10 @@
 
 
 
-DISPATCH                                                       W. Kumari
-Internet-Draft                                                    Google
-Intended status: Informational                              M. Kucherawy
-Expires: 19 October 2025                                        Facebook
+DISPATCH                                                    M. Kucherawy
+Internet-Draft                                                  Facebook
+Intended status: Informational                                 W. Kumari
+Expires: 19 October 2025                                          Google
                                                            17 April 2025
 
 
@@ -134,11 +134,11 @@ Acknowledgments
 
 Authors' Addresses
 
-   Warren Kumari
-   Google
-   Email: warren@kumari.net
-
-
    Murray S. Kucherawy
    Facebook
    Email: msk@fb.com
+
+
+   Warren Kumari
+   Google
+   Email: warren@kumari.net
