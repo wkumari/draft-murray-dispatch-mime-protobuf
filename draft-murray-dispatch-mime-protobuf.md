@@ -174,7 +174,7 @@ The payload for these media types contain no directly executable code. While it 
 
 Protobuf provides no security, privacy, integrity, or compression services: clients or servers for which this is a concern should avail themselves of solutions that provide such capabilities (e.g. {{RFC8446}}). Implementations should be careful when processing Protobuf like any binary format: a malformed request to a protobuf server could be crafted to, for example, allocate a very large amount of memory, potentially impacting other operations on that server.
 
-In order to safely use Protobuf serializations on the web, it is important to ensure that they cannot be interpreted as another document type, such as JavaScript. For this reason, binary protobuf serializations should always be a wrapped in a Base64 Content-Transfer-Encoding according to {{RFC1341}}. Further, when using JSON serializations it is important that it is clear to browsers that content is pure JSON, so that they can inhibit Cross-Site Script Inclusion or side-channel attacks using techniques such as Cross-Origin Read Blocking ({{CORB}}). Per {{RFC6839}}, this can be indicated by a `+json` subtype suffix (see also {{MIMESNIFF}}); so when serializing Protobuf to JSON, users MUST use the `application/protobuf+json` MIME type. Further, `charset` can provide some protection against content sniffing attacks so users should specify it for all JSON encodings.
+In order to safely use Protobuf serializations on the web, it is important to ensure that they cannot be interpreted as another document type, such as JavaScript. For this reason, binary protobuf serializations should always be a wrapped in a Base64 `Content-Transfer-Encoding` according to {{RFC1341}}. Further, when using JSON serializations it is important that it is clear to browsers that content is pure JSON, so that they can inhibit Cross-Site Script Inclusion or side-channel attacks using techniques such as Cross-Origin Read Blocking ({{CORB}}). Per {{RFC6839}}, this can be indicated by a `+json` subtype suffix (see also {{MIMESNIFF}}); so when serializing Protobuf to JSON, users MUST use the `application/protobuf+json` MIME type. Further, `charset` can provide some protection against content sniffing attacks so users should specify it for all JSON encodings.
 
 In the {{Any}} type there is technically a link, which was intended to be dereferenced to obtain schemas for a given type; however this is not supported by widely used Protobuf implementations.
 
@@ -198,14 +198,14 @@ Required parameters:
 
 Optional parameters:
 
-: encoding, which indicates the type of Protobuf encoding and is "binary" by default for application/protobuf, indicating the {{Binary}}. Clients MUST reject json encodings without `+json` and MUST reject unknown encodings. At the time of writing, no other encoding can be used for application/protobuf+json so this parameter is for extensibility.
-: version, which indicates the version of the encoding specification. Clients MUST reject unknown version settings. At the time of writing, no protobuf encodings are versioned so this parameter is for extensibility.
+: `encoding`, which indicates the type of Protobuf encoding and is "binary" by default for `application/protobuf`, indicating the {{Binary}} format. Clients MUST reject JSON encodings without `+json` and MUST reject unknown encodings. At the time of writing, no other encoding can be used for `application/protobuf+json` so this parameter is for extensibility.
+: `version`, which indicates the version of the encoding specification. Clients MUST reject unknown version settings. At the time of writing, no protobuf encodings are versioned so this parameter is for extensibility.
 
 Encoding considerations: binary
 
 Security considerations: see {{security}}
 
-Interoperability considerations: The protobufs specification includes versioning provisions to ensure backward compatibility when encountering payloads with unknown properties.
+Interoperability considerations: The Protobuf specification includes versioning provisions to ensure backward compatibility when encountering payloads with unknown properties.
 
 Published specification: {{Protobuf}}
 
@@ -215,7 +215,7 @@ Fragment identifier considerations: None.
 
 Additional information:
 
-     Deprecated alias names for this type: application/x-protobuf, application/x-protobuffer
+     Deprecated alias names for this type: `application/x-protobuf`, `application/x-protobuffer`
      Magic number(s):
      File extension(s):
      Macintosh file type code(s):
@@ -240,18 +240,18 @@ Subtype name: protobuf+json
 
 Required parameters:
 
-: charset, which MUST be set to `utf-8` (case-insensitive).
+: `charset`, which MUST be set to `utf-8` (case-insensitive).
 
 Optional parameters:
 
-: encoding, which indicates the type of Protobuf encoding and is "json" by default for application/protobuf+json, indicating the {{ProtoJSON}}. Clients MUST reject binary encodings with `+json` and MUST reject unknown encodings. At the time of writing, no other encoding can be used for application/protobuf+json so this parameter is for extensibility.
-: version, which indicates the version of the encoding specification. Clients MUST reject unknown version settings. At the time of writing, no protobuf encodings are versioned so this parameter is for extensibility.
+: `encoding`, which indicates the type of Protobuf encoding and is `json` by default for `application/protobuf+json`, indicating the {{ProtoJSON}} format. Clients MUST reject binary encodings with `+json` and MUST reject unknown encodings. At the time of writing, no other encoding can be used for `application/protobuf+json` so this parameter is for extensibility.
+: `version`, which indicates the version of the encoding specification. Clients MUST reject unknown version settings. At the time of writing, no protobuf encodings are versioned so this parameter is for extensibility.
 
-Encoding considerations:  Same as encoding considerations of application/json as specified in {{RFC7159}}, Section 11.
+Encoding considerations:  Same as encoding considerations of `application/json` as specified in {{RFC7159}}, Section 11.
 
 Security considerations: see {{security}}
 
-Interoperability considerations: The protobufs specification includes versioning provisions to ensure backward compatibility when encountering payloads with unknown properties.
+Interoperability considerations: The Protobuf specification includes versioning provisions to ensure backward compatibility when encountering payloads with unknown properties.
 
 Published specification: {{Protobuf}}
 
