@@ -1,4 +1,4 @@
- ---
+---
 title: "Media Type Registration for Protocol Buffers"
 category: info
 
