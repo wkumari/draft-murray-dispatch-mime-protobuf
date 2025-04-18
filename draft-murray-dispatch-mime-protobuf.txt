@@ -7,7 +7,7 @@ Request for Comments: 0
 Category: Informational                                        W. Kumari
 ISSN: 2070-1721                                                 R. Sloan
                                                                   Google
-                                                           17 April 2025
+                                                           18 April 2025
 
 
               Media Type Registration for Protocol Buffers
@@ -146,7 +146,7 @@ Table of Contents
    important to ensure that they cannot be interpreted as another
    document type, such as JavaScript.  For this reason, binary protobuf
    serializations should always be a wrapped in a Base64 Content-
-   Transfer-Encoding according to [RFC1341].  Further, when using JSON
+   Transfer-Encoding according to [RFC2045].  Further, when using JSON
    serializations it is important that it is clear to browsers that
    content is pure JSON, so that they can inhibit Cross-Site Script
    Inclusion or side-channel attacks using techniques such as Cross-
@@ -169,20 +169,22 @@ Table of Contents
 
 5.1.  Registration for the "application/protobuf" Media Type
 
-   Type name:  application
+   Type name: application
 
-   Subtype name:  protobuf
+   Subtype name: protobuf
 
-   Required parameters:  none
+   Required parameters: none
 
-   Optional parameters:  encoding, which indicates the type of Protobuf
-      encoding and is "binary" by default for application/protobuf,
-      indicating the [Binary] format.  Clients MUST reject JSON
-      encodings without +json and MUST reject unknown encodings.  At the
-      time of writing, no other encoding can be used for application/
-      protobuf+json so this parameter is for extensibility.
+   Optional parameters:
 
-      version, which indicates the version of the encoding
+   *  encoding, which indicates the type of Protobuf encoding and is
+      "binary" by default for application/protobuf, indicating the
+      [Binary] format.  Clients MUST reject JSON encodings without +json
+      and MUST reject unknown encodings.  At the time of writing, no
+      other encoding can be used for application/protobuf so this
+      parameter is for extensibility.
+
+   *  version, which indicates the version of the encoding
       specification.  Clients MUST reject unknown version settings.  At
       the time of writing, no protobuf encodings are versioned so this
       parameter is for extensibility.
@@ -229,17 +231,19 @@ Table of Contents
 
    Subtype name: protobuf+json
 
-   Required parameters:  charset, which MUST be set to utf-8 (case-
-      insensitive).
+   Required parameters: charset, which MUST be set to utf-8 (case-
+   insensitive).
 
-   Optional parameters:  encoding, which indicates the type of Protobuf
-      encoding and is json by default for application/protobuf+json,
-      indicating the [ProtoJSON] format.  Clients MUST reject binary
-      encodings with +json and MUST reject unknown encodings.  At the
-      time of writing, no other encoding can be used for application/
-      protobuf+json so this parameter is for extensibility.
+   Optional parameters:
 
-      version, which indicates the version of the encoding
+   *  encoding, which indicates the type of Protobuf encoding and is
+      json by default for application/protobuf+json, indicating the
+      [ProtoJSON] format.  Clients MUST reject binary encodings with
+      +json and MUST reject unknown encodings.  At the time of writing,
+      no other encoding can be used for application/protobuf+json so
+      this parameter is for extensibility.
+
+   *  version, which indicates the version of the encoding
       specification.  Clients MUST reject unknown version settings.  At
       the time of writing, no protobuf encodings are versioned so this
       parameter is for extensibility.
@@ -292,12 +296,6 @@ Table of Contents
 7.1.  Normative References
 
    [Protobuf] "Protocol Buffers", n.d., <https://protobuf.dev/>.
-
-   [RFC1341]  Borenstein, N. and N. Freed, "MIME (Multipurpose Internet
-              Mail Extensions): Mechanisms for Specifying and Describing
-              the Format of Internet Message Bodies", RFC 1341,
-              DOI 10.17487/RFC1341, June 1992,
-              <https://www.rfc-editor.org/rfc/rfc1341>.
 
    [RFC2045]  Freed, N. and N. Borenstein, "Multipurpose Internet Mail
               Extensions (MIME) Part One: Format of Internet Message
