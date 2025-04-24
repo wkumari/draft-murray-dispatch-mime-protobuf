@@ -145,9 +145,9 @@ Table of Contents
    In order to safely use Protobuf serializations on the web, it is
    important to ensure that they cannot be interpreted as another
    document type, such as JavaScript.  For this reason, we recommend
-   that binary protobuf serializations be a wrapped in a Base64 Content-
+   that binary protobuf serializations be wrapped in a Base64 Content-
    Transfer-Encoding according to [RFC2045].  Further, when using JSON
-   serializations it is important that it is clear to browsers that
+   serializations it is important that it is clear to browsers that the
    content is pure JSON, so that they can inhibit Cross-Site Script
    Inclusion or side-channel attacks using techniques such as Cross-
    Origin Read Blocking ([CORB]).  Per [RFC6839], pure JSON content can
@@ -180,10 +180,10 @@ Table of Contents
 
    *  encoding, which indicates the type of Protobuf encoding and is
       "binary" by default for application/protobuf, indicating the
-      [Binary] format.  Clients MUST reject JSON encodings without +json
-      and MUST reject unknown encodings.  At the time of writing, no
-      other encoding can be used for application/protobuf so this
-      parameter is for extensibility.
+      [Binary] format.  Clients MUST reject JSON encodings without the
+      +json subtype suffix and MUST reject unknown encodings.  At the
+      time of writing, no other encoding can be used for application/
+      protobuf so this parameter is for extensibility.
 
    *  version, which indicates the version of the encoding
       specification.  Clients MUST reject unknown version settings.  At
