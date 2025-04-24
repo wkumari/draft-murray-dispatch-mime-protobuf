@@ -7,7 +7,7 @@ Request for Comments: 0
 Category: Informational                                        W. Kumari
 ISSN: 2070-1721                                                 R. Sloan
                                                                   Google
-                                                           18 April 2025
+                                                           24 April 2025
 
 
               Media Type Registration for Protocol Buffers
@@ -144,17 +144,18 @@ Table of Contents
 
    In order to safely use Protobuf serializations on the web, it is
    important to ensure that they cannot be interpreted as another
-   document type, such as JavaScript.  For this reason, binary protobuf
-   serializations should always be a wrapped in a Base64 Content-
+   document type, such as JavaScript.  For this reason, we recommend
+   that binary protobuf serializations be a wrapped in a Base64 Content-
    Transfer-Encoding according to [RFC2045].  Further, when using JSON
    serializations it is important that it is clear to browsers that
    content is pure JSON, so that they can inhibit Cross-Site Script
    Inclusion or side-channel attacks using techniques such as Cross-
-   Origin Read Blocking ([CORB]).  Per [RFC6839], this can be indicated
-   by a +json subtype suffix (see also [MIMESNIFF]); so when serializing
-   Protobuf to JSON, users MUST use the application/protobuf+json MIME
-   type.  Further, charset can provide some protection against content
-   sniffing attacks so users should specify it for all JSON encodings.
+   Origin Read Blocking ([CORB]).  Per [RFC6839], pure JSON content can
+   be indicated by a +json subtype suffix (see also [MIMESNIFF]); so
+   when serializing Protobuf content to JSON, users MUST use the
+   application/protobuf+json MIME type.  Further, charset can prevent
+   certain encoding confusion attacks so users should specify it for all
+   JSON encodings.
 
    In the [Any] type there is technically a link, which was intended to
    be dereferenced to obtain schemas for a given type; however this is
