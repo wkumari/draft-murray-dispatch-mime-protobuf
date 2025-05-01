@@ -209,7 +209,8 @@ Table of Contents
       MUST reject unknown version settings.  At the time of writing, no
       protobuf wire encodings are versioned so this parameter is for
       extensibility.  Unversioned wire encodings should be treated as
-      having version 1.
+      having version 1.  Protobuf implementations should accept all
+      versions of wire encodings defined at the time of implementation.
 
    Encoding considerations: binary
 
@@ -270,7 +271,8 @@ Table of Contents
       MUST reject unknown version settings.  At the time of writing, no
       protobuf wire encodings are versioned so this parameter is for
       extensibility.  Unversioned wire encodings should be treated as
-      having version 1.
+      having version 1.  Protobuf implementations should accept all
+      versions of wire encodings defined at the time of implementation.
 
    Encoding considerations: Same as encoding considerations of
    application/json as specified in [RFC7159], Section 11.
