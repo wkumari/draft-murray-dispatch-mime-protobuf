@@ -192,7 +192,7 @@ Required parameters: none
 Optional parameters:
 
 * `encoding`, which indicates the type of Protobuf encoding and is "binary" by default for `application/protobuf`, indicating the {{Binary}} format. Clients MUST reject JSON encodings without the `+json` subtype suffix and MUST reject unknown encodings. At the time of writing, no other encoding can be used for `application/protobuf` so this parameter is for extensibility.
-* `version`, which indicates the version of the encoding specification. Clients MUST reject unknown version settings. At the time of writing, no protobuf encodings are versioned so this parameter is for extensibility.
+* `version`, which indicates the version of the wire encoding specification (not the schema language), with default `1`. Clients MUST reject unknown version settings. At the time of writing, no protobuf wire encodings are versioned so this parameter is for extensibility. Unversioned wire encodings should be treated as having version `1`.
 
 Encoding considerations: binary
 
@@ -236,7 +236,7 @@ Required parameters: `charset`, which MUST be set to `utf-8` (case-insensitive).
 Optional parameters:
 
 * `encoding`, which indicates the type of Protobuf encoding and is `json` by default for `application/protobuf+json`, indicating the {{ProtoJSON}} format. Clients MUST reject binary encodings with `+json` and MUST reject unknown encodings. At the time of writing, no other encoding can be used for `application/protobuf+json` so this parameter is for extensibility.
-* `version`, which indicates the version of the encoding specification. Clients MUST reject unknown version settings. At the time of writing, no protobuf encodings are versioned so this parameter is for extensibility.
+* `version`, which indicates the version of the wire encoding specification (not the schema language), with default `1`. Clients MUST reject unknown version settings. At the time of writing, no protobuf wire encodings are versioned so this parameter is for extensibility. Unversioned wire encodings should be treated as having version `1`.
 
 Encoding considerations: Same as encoding considerations of `application/json` as specified in {{RFC7159}}, Section 11.
 
