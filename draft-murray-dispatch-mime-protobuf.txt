@@ -5,9 +5,9 @@
 DISPATCH                                               M. Kucherawy, Ed.
 Internet-Draft                                                          
 Intended status: Informational                                 W. Kumari
-Expires: 27 October 2025                                        R. Sloan
+Expires: 2 November 2025                                        R. Sloan
                                                                   Google
-                                                           25 April 2025
+                                                              1 May 2025
 
 
               Media Type Registration for Protocol Buffers
@@ -51,7 +51,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 27 October 2025.
+   This Internet-Draft will expire on 2 November 2025.
 
 Copyright Notice
 
@@ -204,10 +204,12 @@ Table of Contents
       time of writing, no other encoding can be used for application/
       protobuf so this parameter is for extensibility.
 
-   *  version, which indicates the version of the encoding
-      specification.  Clients MUST reject unknown version settings.  At
-      the time of writing, no protobuf encodings are versioned so this
-      parameter is for extensibility.
+   *  version, which indicates the version of the wire encoding
+      specification (not the schema language), with default 1.  Clients
+      MUST reject unknown version settings.  At the time of writing, no
+      protobuf wire encodings are versioned so this parameter is for
+      extensibility.  Unversioned wire encodings should be treated as
+      having version 1.
 
    Encoding considerations: binary
 
@@ -263,10 +265,12 @@ Table of Contents
       no other encoding can be used for application/protobuf+json so
       this parameter is for extensibility.
 
-   *  version, which indicates the version of the encoding
-      specification.  Clients MUST reject unknown version settings.  At
-      the time of writing, no protobuf encodings are versioned so this
-      parameter is for extensibility.
+   *  version, which indicates the version of the wire encoding
+      specification (not the schema language), with default 1.  Clients
+      MUST reject unknown version settings.  At the time of writing, no
+      protobuf wire encodings are versioned so this parameter is for
+      extensibility.  Unversioned wire encodings should be treated as
+      having version 1.
 
    Encoding considerations: Same as encoding considerations of
    application/json as specified in [RFC7159], Section 11.

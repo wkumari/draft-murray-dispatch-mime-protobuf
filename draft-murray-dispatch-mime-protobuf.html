@@ -1049,11 +1049,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">Media Type Registration for Protocol Buf</td>
-<td class="right">April 2025</td>
+<td class="right">May 2025</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Kucherawy, et al.</td>
-<td class="center">Expires 27 October 2025</td>
+<td class="center">Expires 2 November 2025</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1066,12 +1066,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-murray-dispatch-mime-protobuf-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-04-25" class="published">25 April 2025</time>
+<time datetime="2025-05-01" class="published">1 May 2025</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2025-10-27">27 October 2025</time></dd>
+<dd class="expires"><time datetime="2025-11-02">2 November 2025</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1129,7 +1129,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 27 October 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 2 November 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1297,7 +1297,7 @@ For binary forms that need to transit non-binary transports, a base64 Content-Tr
             <p id="section-5.1-5.1.1"><code>encoding</code>, which indicates the type of Protobuf encoding and is "binary" by default for <code>application/protobuf</code>, indicating the <span>[<a href="#Binary" class="cite xref">Binary</a>]</span> format. Clients MUST reject JSON encodings without the <code>+json</code> subtype suffix and MUST reject unknown encodings. At the time of writing, no other encoding can be used for <code>application/protobuf</code> so this parameter is for extensibility.<a href="#section-5.1-5.1.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-5.1-5.2">
-            <p id="section-5.1-5.2.1"><code>version</code>, which indicates the version of the encoding specification. Clients MUST reject unknown version settings. At the time of writing, no protobuf encodings are versioned so this parameter is for extensibility.<a href="#section-5.1-5.2.1" class="pilcrow">¶</a></p>
+            <p id="section-5.1-5.2.1"><code>version</code>, which indicates the version of the wire encoding specification (not the schema language), with default <code>1</code>. Clients MUST reject unknown version settings. At the time of writing, no protobuf wire encodings are versioned so this parameter is for extensibility. Unversioned wire encodings should be treated as having version <code>1</code>.<a href="#section-5.1-5.2.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 <p id="section-5.1-6">Encoding considerations: binary<a href="#section-5.1-6" class="pilcrow">¶</a></p>
@@ -1337,7 +1337,7 @@ For binary forms that need to transit non-binary transports, a base64 Content-Tr
             <p id="section-5.2-5.1.1"><code>encoding</code>, which indicates the type of Protobuf encoding and is <code>json</code> by default for <code>application/protobuf+json</code>, indicating the <span>[<a href="#ProtoJSON" class="cite xref">ProtoJSON</a>]</span> format. Clients MUST reject binary encodings with <code>+json</code> and MUST reject unknown encodings. At the time of writing, no other encoding can be used for <code>application/protobuf+json</code> so this parameter is for extensibility.<a href="#section-5.2-5.1.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-5.2-5.2">
-            <p id="section-5.2-5.2.1"><code>version</code>, which indicates the version of the encoding specification. Clients MUST reject unknown version settings. At the time of writing, no protobuf encodings are versioned so this parameter is for extensibility.<a href="#section-5.2-5.2.1" class="pilcrow">¶</a></p>
+            <p id="section-5.2-5.2.1"><code>version</code>, which indicates the version of the wire encoding specification (not the schema language), with default <code>1</code>. Clients MUST reject unknown version settings. At the time of writing, no protobuf wire encodings are versioned so this parameter is for extensibility. Unversioned wire encodings should be treated as having version <code>1</code>.<a href="#section-5.2-5.2.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 <p id="section-5.2-6">Encoding considerations: Same as encoding considerations of <code>application/json</code> as specified in <span>[<a href="#RFC7159" class="cite xref">RFC7159</a>]</span>, Section 11.<a href="#section-5.2-6" class="pilcrow">¶</a></p>
