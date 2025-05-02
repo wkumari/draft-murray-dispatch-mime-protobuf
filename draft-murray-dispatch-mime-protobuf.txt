@@ -166,7 +166,7 @@ Table of Contents
    document type, such as JavaScript.  For this reason, we recommend
    that binary protobuf serializations be wrapped in a Base64 Content-
    Transfer-Encoding according to [RFC2045] and set the X-Content-Type-
-   Options: nosniff header (see [NOSNIFF]), which will decrease the
+   Options: nosniff header (see [FETCH]), which will decrease the
    likelihood of misinterpretation.
 
    Further, when using JSON serializations it is important that it is
@@ -410,14 +410,12 @@ Table of Contents
               <https://protobuf.dev/reference/protobuf/edition-
               2023-spec>.
 
+   [FETCH]    WHATWG, "Fetch: Living Standard", n.d.,
+              <https://fetch.spec.whatwg.org/>.
+
    [MIMESNIFF]
               WHATWG, "MIME Sniffing: Living Standard", n.d.,
               <https://mimesniff.spec.whatwg.org/#mime-type-groups>.
-
-   [NOSNIFF]  Microsoft, "MIME-Handling: Sniffing Opt-Out", n.d.,
-              <https://learn.microsoft.com/en-us/archive/blogs/ie/ie8-
-              security-part-vi-beta-2-update#mime-handling-sniffing-opt-
-              out>.
 
    [Proto2]   Protobuf, "Proto2 Schema Language Specification", n.d.,
               <https://protobuf.dev/reference/protobuf/proto2-spec>.
