@@ -74,6 +74,12 @@ informative:
     title: "MIME Sniffing: Living Standard"
     target: https://mimesniff.spec.whatwg.org/#mime-type-groups
 
+  NOSNIFF:
+    author:
+      org: Microsoft
+    title: "MIME-Handling: Sniffing Opt-Out"
+    target: https://learn.microsoft.com/en-us/archive/blogs/ie/ie8-security-part-vi-beta-2-update#mime-handling-sniffing-opt-out
+
   Any:
     author:
       org: Protobuf
@@ -173,7 +179,9 @@ The payload for these media types contain no directly executable code. While it 
 
 Protobuf provides no security, privacy, integrity, or compression services: clients or servers for which this is a concern should avail themselves of solutions that provide such capabilities (e.g. {{RFC8446}}). Implementations should be careful when processing Protobuf like any binary format: a malformed request to a protobuf server could be crafted to, for example, allocate a very large amount of memory, potentially impacting other operations on that server.
 
-In order to safely use Protobuf serializations on the web, it is important to ensure that they cannot be interpreted as another document type, such as JavaScript. For this reason, we recommend that binary protobuf serializations be wrapped in a Base64 `Content-Transfer-Encoding` according to {{RFC2045}}. Further, when using JSON serializations it is important that it is clear to browsers that the content is pure JSON, so that they can inhibit Cross-Site Script Inclusion or side-channel attacks using techniques such as Cross-Origin Read Blocking ({{CORB}}). Per {{RFC6839}}, pure JSON content can be indicated by a `+json` subtype suffix (see also {{MIMESNIFF}}); so when serializing Protobuf content to JSON, users MUST use the `application/protobuf+json` MIME type. Further, `charset` can prevent certain encoding confusion attacks so users should specify it for all JSON encodings.
+In order to safely use Protobuf serializations on the web, it is important to ensure that they cannot be interpreted as another document type, such as JavaScript. For this reason, we recommend that binary protobuf serializations be wrapped in a Base64 `Content-Transfer-Encoding` according to {{RFC2045}} and set the `X-Content-Type-Options: nosniff` header (see {{NOSNIFF}}), which will decrease the likelihood of misinterpretation.
+
+Further, when using JSON serializations it is important that it is clear to browsers that the content is pure JSON, so that they can inhibit Cross-Site Script Inclusion or side-channel attacks using techniques such as Cross-Origin Read Blocking ({{CORB}}). Per {{RFC6839}}, pure JSON content can be indicated by a `+json` subtype suffix (see also {{MIMESNIFF}}); so when serializing Protobuf content to JSON, users MUST use the `application/protobuf+json` MIME type. Further, `charset` can prevent certain encoding confusion attacks so users should specify it for all JSON encodings.
 
 In the {{Any}} type there is technically a link, which was intended to be dereferenced to obtain schemas for a given type; however this is not supported by widely used Protobuf implementations.
 
