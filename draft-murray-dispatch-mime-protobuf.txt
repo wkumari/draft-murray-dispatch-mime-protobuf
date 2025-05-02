@@ -173,11 +173,11 @@ Table of Contents
    clear to browsers that the content is pure JSON, so that they can
    inhibit Cross-Site Script Inclusion or side-channel attacks using
    techniques such as Cross-Origin Read Blocking ([CORB]).  Per
-   [RFC6839], pure JSON content can be indicated by a +json subtype
-   suffix (see also [MIMESNIFF]); so when serializing Protobuf content
-   to JSON, users MUST use the application/protobuf+json MIME type.
-   Further, charset can prevent certain encoding confusion attacks so
-   users should specify it for all JSON encodings.
+   [RFC6839], pure JSON content is indicated by a +json subtype suffix
+   (see also [MIMESNIFF]); so when serializing Protobuf content to JSON,
+   users MUST use the application/protobuf+json MIME type.  When using
+   JSON, charset can prevent certain encoding confusion attacks so users
+   should specify it for all JSON encodings.
 
    In the [Any] type there is technically a link, which was intended to
    be dereferenced to obtain schemas for a given type; however this is
