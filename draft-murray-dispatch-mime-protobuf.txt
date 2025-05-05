@@ -165,8 +165,8 @@ Table of Contents
    important to ensure that they are not interpreted as another document
    type, such as JavaScript: servers should follow the advice of
    [RFC9205] to inhibit content sniffing.  We also recommend
-   base64-encoding responses to generally inhibit parsing as active
-   content.
+   base64-encoding binary Protobuf responses whenever possible to
+   generally inhibit parsing as active content.
 
    Further, when using JSON serializations it is important that it is
    clear to browsers that the content is pure JSON, so that they can
