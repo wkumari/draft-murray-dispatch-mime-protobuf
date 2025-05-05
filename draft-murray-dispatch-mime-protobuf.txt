@@ -166,8 +166,7 @@ Table of Contents
    type, such as JavaScript: servers should follow the advice of
    [RFC9205] to inhibit content sniffing.  We also recommend
    base64-encoding responses to generally inhibit parsing as active
-   content, indicating the encoding to the client using Content-
-   Transfer-Encoding, according to [RFC2045].
+   content.
 
    Further, when using JSON serializations it is important that it is
    clear to browsers that the content is pure JSON, so that they can
