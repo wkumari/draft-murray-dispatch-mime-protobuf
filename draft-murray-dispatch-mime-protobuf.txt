@@ -5,9 +5,9 @@
 DISPATCH                                               M. Kucherawy, Ed.
 Internet-Draft                                                          
 Intended status: Informational                                 W. Kumari
-Expires: 3 November 2025                                        R. Sloan
+Expires: 6 November 2025                                        R. Sloan
                                                                   Google
-                                                              2 May 2025
+                                                              5 May 2025
 
 
               Media Type Registration for Protocol Buffers
@@ -51,7 +51,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 3 November 2025.
+   This Internet-Draft will expire on 6 November 2025.
 
 Copyright Notice
 
@@ -162,12 +162,12 @@ Table of Contents
    of memory, potentially impacting other operations on that server.
 
    In order to safely use Protobuf serializations on the web, it is
-   important to ensure that they cannot be interpreted as another
-   document type, such as JavaScript.  For this reason, we recommend
-   that binary protobuf serializations be wrapped in a Base64 Content-
-   Transfer-Encoding according to [RFC2045] and set the X-Content-Type-
-   Options: nosniff header (see [FETCH]), which will decrease the
-   likelihood of misinterpretation.
+   important to ensure that they are not interpreted as another document
+   type, such as JavaScript: servers should follow the advice of
+   [RFC9205] to inhibit content sniffing.  We also recommend
+   base64-encoding responses to generally inhibit parsing as active
+   content, indicating the encoding to the client using Content-
+   Transfer-Encoding, according to [RFC2045].
 
    Further, when using JSON serializations it is important that it is
    clear to browsers that the content is pure JSON, so that they can
@@ -410,9 +410,6 @@ Table of Contents
               <https://protobuf.dev/reference/protobuf/edition-
               2023-spec>.
 
-   [FETCH]    WHATWG, "Fetch: Living Standard", n.d.,
-              <https://fetch.spec.whatwg.org/>.
-
    [MIMESNIFF]
               WHATWG, "MIME Sniffing: Living Standard", n.d.,
               <https://mimesniff.spec.whatwg.org/#mime-type-groups>.
@@ -430,6 +427,10 @@ Table of Contents
    [RFC8446]  Rescorla, E., "The Transport Layer Security (TLS) Protocol
               Version 1.3", RFC 8446, DOI 10.17487/RFC8446, August 2018,
               <https://www.rfc-editor.org/rfc/rfc8446>.
+
+   [RFC9205]  Nottingham, M., "Building Protocols with HTTP", BCP 56,
+              RFC 9205, DOI 10.17487/RFC9205, June 2022,
+              <https://www.rfc-editor.org/rfc/rfc9205>.
 
 Acknowledgments
 
