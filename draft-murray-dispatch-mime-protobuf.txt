@@ -143,10 +143,10 @@ Table of Contents
 
 3.  Encoding Considerations
 
-   Protobuf supports only the [Binary] and [ProtoJSON] for interchange,
-   both of which are platform-independent.  For binary forms that need
-   to transit non-binary transports, a base64 Content-Transfer-Encoding
-   (xref to [RFC4648]) is recommended.
+   Protobuf supports only the [Binary] and [ProtoJSON] formats for
+   interchange, both of which are platform-independent.  For binary
+   forms that need to transit non-binary transports, a base64 Content-
+   Transfer-Encoding (xref to [RFC4648]) is recommended.
 
 4.  Versions
 
