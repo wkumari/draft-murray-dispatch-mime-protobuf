@@ -165,7 +165,7 @@ An example of the above instance expressed in JSON:
 
 # Encoding Considerations {#encoding}
 
-Protobuf supports only the {{Binary}} and {{ProtoJSON}} for interchange, both of which are platform-independent.
+Protobuf supports only the {{Binary}} and {{ProtoJSON}} formats for interchange, both of which are platform-independent.
 For binary forms that need to transit non-binary transports, a base64 `Content-Transfer-Encoding` (xref to {{RFC4648}}) is recommended.
 
 # Versions {#versions}
