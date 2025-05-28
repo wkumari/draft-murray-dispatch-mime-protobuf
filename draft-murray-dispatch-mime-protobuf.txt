@@ -5,9 +5,9 @@
 DISPATCH                                               M. Kucherawy, Ed.
 Internet-Draft                                                          
 Intended status: Informational                                 W. Kumari
-Expires: 17 November 2025                                       R. Sloan
+Expires: 29 November 2025                                       R. Sloan
                                                                   Google
-                                                             16 May 2025
+                                                             28 May 2025
 
 
               Media Type Registration for Protocol Buffers
@@ -51,7 +51,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 17 November 2025.
+   This Internet-Draft will expire on 29 November 2025.
 
 Copyright Notice
 
