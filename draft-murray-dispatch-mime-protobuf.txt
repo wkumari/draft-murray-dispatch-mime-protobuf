@@ -200,7 +200,7 @@ Table of Contents
    techniques such as Cross-Origin Read Blocking ([CORB]).  Per
    [RFC6839], pure JSON content is indicated by a +json subtype suffix
    (see also [MIMESNIFF]); so when serializing Protobuf content to JSON,
-   users MUST use the application/protobuf+json MIME type.  When using
+   users MUST use the application/protobuf+json media type.  When using
    JSON, charset can prevent certain encoding confusion attacks so users
    should specify it for all JSON encodings.
 
@@ -281,8 +281,8 @@ Table of Contents
 
    Subtype name: protobuf+json
 
-   Required parameters: charset, which MUST be set to utf-8 (case-
-   insensitive).
+   Required parameters: charset, which must be set to utf-8 (case-
+   insensitive)
 
    Optional parameters:
 
