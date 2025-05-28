@@ -186,7 +186,7 @@ Protobuf provides no security, privacy, integrity, or compression services: clie
 
 In order to safely use Protobuf serializations on the web, it is important to ensure that they are not interpreted as another document type, such as JavaScript: we recommend base64-encoding binary Protobuf responses whenever possible to prevent parsing as active content. Servers should generally follow the advice of {{RFC9205}} to prevent content sniffing for all binary formats.
 
-Further, when using JSON serializations it is important that it is clear to browsers that the content is pure JSON, so that they can inhibit Cross-Site Script Inclusion or side-channel attacks using techniques such as Cross-Origin Read Blocking ({{CORB}}). Per {{RFC6839}}, pure JSON content is indicated by a `+json` subtype suffix (see also {{MIMESNIFF}}); so when serializing Protobuf content to JSON, users MUST use the `application/protobuf+json` MIME type. When using JSON, `charset` can prevent certain encoding confusion attacks so users should specify it for all JSON encodings.
+Further, when using JSON serializations it is important that it is clear to browsers that the content is pure JSON, so that they can inhibit Cross-Site Script Inclusion or side-channel attacks using techniques such as Cross-Origin Read Blocking ({{CORB}}). Per {{RFC6839}}, pure JSON content is indicated by a `+json` subtype suffix (see also {{MIMESNIFF}}); so when serializing Protobuf content to JSON, users MUST use the `application/protobuf+json` media type. When using JSON, `charset` can prevent certain encoding confusion attacks so users should specify it for all JSON encodings.
 
 In the {{Any}} type there is technically a link, which was intended to be dereferenced to obtain schemas for a given type; however this is not supported by widely used Protobuf implementations.
 
@@ -244,7 +244,7 @@ Type name: application
 
 Subtype name: protobuf+json
 
-Required parameters: `charset`, which MUST be set to `utf-8` (case-insensitive).
+Required parameters: `charset`, which must be set to `utf-8` (case-insensitive)
 
 Optional parameters:
 
