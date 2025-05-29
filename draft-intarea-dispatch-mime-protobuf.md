@@ -2,7 +2,7 @@
 title: "Media Type Registration for Protocol Buffers"
 category: info
 
-docname: draft-murray-dispatch-mime-protobuf-latest
+docname: draft-intarea-dispatch-mime-protobuf-latest
 submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
 #number: 00 -- this is the RFC number, not the draft number....
 date:
