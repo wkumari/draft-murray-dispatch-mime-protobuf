@@ -11,7 +11,7 @@ Expires: 30 November 2025                                       R. Sloan
 
 
               Media Type Registration for Protocol Buffers
-              draft-intarea-dispatch-mime-protobuf-latest
+                draft-ietf-dispatch-mime-protobuf-latest
 
 Abstract
 
@@ -25,8 +25,7 @@ About This Document
    The latest revision of this draft can be found at
    https://github.com/wkumari/draft-murray-dispatch-mime-protobuf.
    Status information for this document may be found at
-   https://datatracker.ietf.org/doc/draft-intarea-dispatch-mime-
-   protobuf/.
+   https://datatracker.ietf.org/doc/draft-ietf-dispatch-mime-protobuf/.
 
    Discussion of this document takes place on the DISPATCH Working Group
    mailing list (mailto:dispatch@ietf.org), which is archived at
