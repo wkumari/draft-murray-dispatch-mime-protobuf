@@ -111,6 +111,18 @@ informative:
     title: "Proto Edition 2023 Schema Language Specification"
     target: https://protobuf.dev/reference/protobuf/edition-2023-spec
 
+  ProtoFeatures:
+    author:
+      org: Protobuf
+    title: "Protobuf Feature Settings for Editions"
+    target: https://protobuf.dev/editions/features/
+
+  UniChars:
+    author:
+      org: IETF
+    title: "Unicode Character Repertoire Subsets"
+    target: https://datatracker.ietf.org/doc/draft-bray-unichars/
+
 --- abstract
 
 This document registers media types for Protocol Buffers, a common extensible mechanism for serializing structured data.
@@ -185,6 +197,8 @@ Clients MUST reject payloads with an unsupported version number.
 The payload for these media types contain no directly executable code. While it is common for a protobuf definition to be used as input to a code generator which then produces something executable, but that applies to the schema language, not serializations.
 
 Protobuf provides no security, privacy, integrity, or compression services: clients or servers for which this is a concern should avail themselves of solutions that provide such capabilities (e.g. {{RFC8446}}). Implementations should be careful when processing Protobuf like any binary format: a malformed request to a protobuf server could be crafted to, for example, allocate a very large amount of memory, potentially impacting other operations on that server.
+
+Protobuf supports embedded content in `string` or `bytes` fields: in both cases, applications should ensure that the format of the content is precisely as expected. Note that UTF-8 validation of `string` fields is optional (see {{ProtoFeatures}}) and a manual well-formedness check may be necessary. Further, handling UTF-8 encodings generally can be quite complex with problems discussed, for example, in {{UniChars}}; so it is best to rely on well-supported internationalization libraries when possible.
 
 In order to safely use Protobuf serializations on the web, it is important to ensure that they are not interpreted as another document type, such as JavaScript: we recommend base64-encoding binary Protobuf responses whenever possible to prevent parsing as active content. Servers should generally follow the advice of {{RFC9205}} to prevent content sniffing for all binary formats.
 
