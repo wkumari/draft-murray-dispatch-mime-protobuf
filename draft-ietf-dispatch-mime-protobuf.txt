@@ -5,9 +5,9 @@
 DISPATCH                                               M. Kucherawy, Ed.
 Internet-Draft                                                          
 Intended status: Informational                                 W. Kumari
-Expires: 4 December 2025                                        R. Sloan
+Expires: 9 January 2026                                         R. Sloan
                                                                   Google
-                                                             2 June 2025
+                                                             8 July 2025
 
 
               Media Type Registration for Protocol Buffers
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 4 December 2025.
+   This Internet-Draft will expire on 9 January 2026.
 
 Copyright Notice
 
@@ -190,6 +190,15 @@ Table of Contents
    Protobuf like any binary format: a malformed request to a protobuf
    server could be crafted to, for example, allocate a very large amount
    of memory, potentially impacting other operations on that server.
+
+   Protobuf supports embedded content in string or bytes fields: in both
+   cases, applications should ensure that the format of the content is
+   precisely as expected.  Note that UTF-8 validation of string fields
+   is optional (see [ProtoFeatures]) and a manual well-formedness check
+   may be necessary.  Further, handling UTF-8 encodings generally can be
+   quite complex with problems discussed, for example, in [UniChars]; so
+   it is best to rely on well-supported internationalization libraries
+   when possible.
 
    In order to safely use Protobuf serializations on the web, it is
    important to ensure that they are not interpreted as another document
@@ -447,6 +456,10 @@ Table of Contents
    [Proto3]   Protobuf, "Proto3 Schema Language Specification", n.d.,
               <https://protobuf.dev/reference/protobuf/proto3-spec>.
 
+   [ProtoFeatures]
+              Protobuf, "Protobuf Feature Settings for Editions", n.d.,
+              <https://protobuf.dev/editions/features/>.
+
    [ProtoJSON]
               Protobuf, "Protobuf JSON Wire Encoding Spec", n.d.,
               <https://protobuf.dev/programming-guides/json>.
@@ -458,6 +471,9 @@ Table of Contents
    [RFC9205]  Nottingham, M., "Building Protocols with HTTP", BCP 56,
               RFC 9205, DOI 10.17487/RFC9205, June 2022,
               <https://www.rfc-editor.org/rfc/rfc9205>.
+
+   [UniChars] IETF, "Unicode Character Repertoire Subsets", n.d.,
+              <https://datatracker.ietf.org/doc/draft-bray-unichars/>.
 
 Acknowledgments
 
