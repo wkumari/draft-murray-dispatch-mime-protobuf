@@ -1053,7 +1053,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Kucherawy, et al.</td>
-<td class="center">Expires 9 January 2026</td>
+<td class="center">Expires 17 January 2026</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1066,12 +1066,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-ietf-dispatch-mime-protobuf-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-07-08" class="published">8 July 2025</time>
+<time datetime="2025-07-16" class="published">16 July 2025</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2026-01-09">9 January 2026</time></dd>
+<dd class="expires"><time datetime="2026-01-17">17 January 2026</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1129,7 +1129,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 9 January 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 17 January 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1288,7 +1288,7 @@ For binary forms that need to transit non-binary transports, a base64 <code>Cont
       </h2>
 <p id="section-5-1">The payload for these media types contain no directly executable code. While it is common for a protobuf definition to be used as input to a code generator which then produces something executable, but that applies to the schema language, not serializations.<a href="#section-5-1" class="pilcrow">¶</a></p>
 <p id="section-5-2">Protobuf provides no security, privacy, integrity, or compression services: clients or servers for which this is a concern should avail themselves of solutions that provide such capabilities (e.g. <span>[<a href="#RFC8446" class="cite xref">RFC8446</a>]</span>). Implementations should be careful when processing Protobuf like any binary format: a malformed request to a protobuf server could be crafted to, for example, allocate a very large amount of memory, potentially impacting other operations on that server.<a href="#section-5-2" class="pilcrow">¶</a></p>
-<p id="section-5-3">Protobuf supports embedded content in <code>string</code> or <code>bytes</code> fields: in both cases, applications should ensure that the format of the content is precisely as expected. Note that UTF-8 validation of <code>string</code> fields is optional (see <span>[<a href="#ProtoFeatures" class="cite xref">ProtoFeatures</a>]</span>) and a manual well-formedness check may be necessary. Further, handling UTF-8 encodings generally can be quite complex with problems discussed, for example, in <span>[<a href="#UniChars" class="cite xref">UniChars</a>]</span>; so it is best to rely on well-supported internationalization libraries when possible.<a href="#section-5-3" class="pilcrow">¶</a></p>
+<p id="section-5-3">Protobuf supports embedded content in <code>string</code> or <code>bytes</code> fields: in both cases, applications should ensure that the format of the content is precisely as expected. Note that UTF-8 validation of <code>string</code> fields is optional (see <span>[<a href="#ProtoFeatures" class="cite xref">ProtoFeatures</a>]</span>) and a manual well-formedness check may be necessary. Further, handling Unicode text generally can be quite complex with problems discussed, for example, in <span>[<a href="#UniChars" class="cite xref">UniChars</a>]</span> and <span>[<a href="#RFC8264" class="cite xref">RFC8264</a>]</span>; so it is best to rely on well-supported internationalization libraries whenever possible.<a href="#section-5-3" class="pilcrow">¶</a></p>
 <p id="section-5-4">In order to safely use Protobuf serializations on the web, it is important to ensure that they are not interpreted as another document type, such as JavaScript: we recommend base64-encoding binary Protobuf responses whenever possible to prevent parsing as active content. Servers should generally follow the advice of <span>[<a href="#RFC9205" class="cite xref">RFC9205</a>]</span> to prevent content sniffing for all binary formats.<a href="#section-5-4" class="pilcrow">¶</a></p>
 <p id="section-5-5">Further, when using JSON serializations it is important that it is clear to browsers that the content is pure JSON, so that they can inhibit Cross-Site Script Inclusion or side-channel attacks using techniques such as Cross-Origin Read Blocking (<span>[<a href="#CORB" class="cite xref">CORB</a>]</span>). Per <span>[<a href="#RFC6839" class="cite xref">RFC6839</a>]</span>, pure JSON content is indicated by a <code>+json</code> subtype suffix (see also <span>[<a href="#MIMESNIFF" class="cite xref">MIMESNIFF</a>]</span>); so when serializing Protobuf content to JSON, users MUST use the <code>application/protobuf+json</code> media type. When using JSON, <code>charset</code> can prevent certain encoding confusion attacks so users should specify it for all JSON encodings.<a href="#section-5-5" class="pilcrow">¶</a></p>
 <p id="section-5-6">In the <span>[<a href="#Any" class="cite xref">Any</a>]</span> type there is technically a link, which was intended to be dereferenced to obtain schemas for a given type; however this is not supported by widely used Protobuf implementations.<a href="#section-5-6" class="pilcrow">¶</a></p>
@@ -1505,6 +1505,10 @@ For binary forms that need to transit non-binary transports, a base64 <code>Cont
 <dt id="ProtoJSON">[ProtoJSON]</dt>
         <dd>
 <span class="refAuthor">Protobuf</span>, <span class="refTitle">"Protobuf JSON Wire Encoding Spec"</span>, <span>n.d.</span>, <span>&lt;<a href="https://protobuf.dev/programming-guides/json">https://protobuf.dev/programming-guides/json</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8264">[RFC8264]</dt>
+        <dd>
+<span class="refAuthor">Saint-Andre, P.</span> and <span class="refAuthor">M. Blanchet</span>, <span class="refTitle">"PRECIS Framework: Preparation, Enforcement, and Comparison of Internationalized Strings in Application Protocols"</span>, <span class="seriesInfo">RFC 8264</span>, <span class="seriesInfo">DOI 10.17487/RFC8264</span>, <time datetime="2017-10" class="refDate">October 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8264">https://www.rfc-editor.org/rfc/rfc8264</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC8446">[RFC8446]</dt>
         <dd>
