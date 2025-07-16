@@ -63,6 +63,7 @@ normative:
 informative:
   RFC8446: # The Transport Layer Security (TLS) Protocol Version 1.3
   RFC9205: # Building Protocols with HTTP
+  RFC8264: # PRECIS
   CORB:
     author:
       org: Chromium
@@ -198,7 +199,7 @@ The payload for these media types contain no directly executable code. While it 
 
 Protobuf provides no security, privacy, integrity, or compression services: clients or servers for which this is a concern should avail themselves of solutions that provide such capabilities (e.g. {{RFC8446}}). Implementations should be careful when processing Protobuf like any binary format: a malformed request to a protobuf server could be crafted to, for example, allocate a very large amount of memory, potentially impacting other operations on that server.
 
-Protobuf supports embedded content in `string` or `bytes` fields: in both cases, applications should ensure that the format of the content is precisely as expected. Note that UTF-8 validation of `string` fields is optional (see {{ProtoFeatures}}) and a manual well-formedness check may be necessary. Further, handling UTF-8 encodings generally can be quite complex with problems discussed, for example, in {{UniChars}}; so it is best to rely on well-supported internationalization libraries when possible.
+Protobuf supports embedded content in `string` or `bytes` fields: in both cases, applications should ensure that the format of the content is precisely as expected. Note that UTF-8 validation of `string` fields is optional (see {{ProtoFeatures}}) and a manual well-formedness check may be necessary. Further, handling Unicode text generally can be quite complex with problems discussed, for example, in {{UniChars}} and {{RFC8264}}; so it is best to rely on well-supported internationalization libraries whenever possible.
 
 In order to safely use Protobuf serializations on the web, it is important to ensure that they are not interpreted as another document type, such as JavaScript: we recommend base64-encoding binary Protobuf responses whenever possible to prevent parsing as active content. Servers should generally follow the advice of {{RFC9205}} to prevent content sniffing for all binary formats.
 
