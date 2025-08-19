@@ -48,7 +48,7 @@ normative:
   RFC6839: # Additional Media Type Structured Syntax Suffixes
   RFC8174: # moar RFC2119
   RFC4648: # The Base16, Base32, and Base64 Data Encodings
-  RFC7159: # The JavaScript Object Notation (JSON) Data Interchange Format
+  RFC8259: # The JavaScript Object Notation (JSON) Data Interchange Format
   Protobuf:
     target: "https://protobuf.dev/"
     title: "Protocol Buffers"
@@ -266,7 +266,7 @@ Optional parameters:
 * `encoding`, which indicates the type of Protobuf encoding and is `json` by default for `application/protobuf+json`, indicating the {{ProtoJSON}} format. At the time of writing, no other encoding can be used for `application/protobuf+json` so this parameter is for extensibility.
 * `version`, which indicates the version of the wire encoding specification (not the schema language), with default `1`. At the time of writing, no protobuf wire encodings are versioned so this parameter is for extensibility. Unversioned wire encodings should be treated as having version `1`. Protobuf implementations should accept all versions of wire encodings defined at the time of implementation.
 
-Encoding considerations: Same as encoding considerations of `application/json` as specified in {{RFC7159}}, Section 11.
+Encoding considerations: Same as encoding considerations of `application/json` as specified in {{RFC8259}}, Section 11.
 
 Security considerations: see {{security}}
 
