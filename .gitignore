@@ -8,6 +8,7 @@
 *~
 /.*.mk
 /.gems/
+/.idea/
 /.refcache
 /.venv/
 /.vscode/
@@ -16,7 +17,7 @@
 /node_modules/
 /versioned/
 archive.json
-draft-murray-dispatch-mime-protobuf.xml
+draft-ietf-dispatch-mime-protobuf.xml
 Gemfile.lock
 package-lock.json
 report.xml

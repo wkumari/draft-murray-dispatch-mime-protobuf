@@ -1,3 +1,3 @@
 # Automatically generated CODEOWNERS
 # Regenerate with `make update-codeowners`
-draft-murray-dispatch-mime-protobuf.md warren@kumari.net msk@fb.com
+draft-ietf-dispatch-mime-protobuf.md superuser@gmail.com warren@kumari.net rmsj@google.com

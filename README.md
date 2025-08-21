@@ -2,12 +2,12 @@
 
 # Media Type Registration for Protocol Buffers
 
-This is the working area for the individual Internet-Draft, "Media Type Registration for Protocol Buffers".
+This is the working area for the IETF [DISPATCH Working Group](https://datatracker.ietf.org/group/dispatch/documents/) Internet-Draft, "Media Type Registration for Protocol Buffers".
 
-* [Editor's Copy](https://wkumari.github.io/draft-murray-dispatch-mime-protobuf/#go.draft-murray-dispatch-mime-protobuf.html)
-* [Datatracker Page](https://datatracker.ietf.org/doc/draft-murray-dispatch-mime-protobuf)
-* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-murray-dispatch-mime-protobuf)
-* [Compare Editor's Copy to Individual Draft](https://wkumari.github.io/draft-murray-dispatch-mime-protobuf/#go.draft-murray-dispatch-mime-protobuf.diff)
+* [Editor's Copy](https://wkumari.github.io/draft-murray-dispatch-mime-protobuf/#go.draft-ietf-dispatch-mime-protobuf.html)
+* [Datatracker Page](https://datatracker.ietf.org/doc/draft-ietf-dispatch-mime-protobuf)
+* [Working Group Draft](https://datatracker.ietf.org/doc/html/draft-ietf-dispatch-mime-protobuf)
+* [Compare Editor's Copy to Working Group Draft](https://wkumari.github.io/draft-murray-dispatch-mime-protobuf/#go.draft-ietf-dispatch-mime-protobuf.diff)
 
 
 ## Contributing
@@ -15,9 +15,8 @@ This is the working area for the individual Internet-Draft, "Media Type Registra
 See the
 [guidelines for contributions](https://github.com/wkumari/draft-murray-dispatch-mime-protobuf/blob/main/CONTRIBUTING.md).
 
-Contributions can be made by creating pull requests.
-The GitHub interface supports creating pull requests using the Edit (✏) button.
-
+The contributing file also has tips on how to make contributions, if you
+don't already know how to do that.
 
 ## Command Line Usage
 
