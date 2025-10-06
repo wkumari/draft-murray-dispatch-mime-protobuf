@@ -177,7 +177,7 @@ An example of the above instance expressed in JSON:
 # Encoding Considerations {#encoding}
 
 Protobuf supports only the {{Binary}} and {{ProtoJSON}} formats for interchange, both of which are platform-independent.
-For binary forms that need to transit non-binary transports, a base64 `Content-Transfer-Encoding` (xref to {{RFC4648}}) is recommended.
+For binary forms that need to transit non-binary transports, a base64 encoding (xref to {{RFC4648}}) is recommended.
 
 The media type includes an optional "encoding" parameter indicating which encoding format is to be used with that particular payload.  This is included for future extensibility. Valid values for this parameter are "binary" and "json", and other values MUST be treated as an error.  See {{iana}} for the defaults for each of the two registered media types. Using "binary" for the JSON type or "json" for the binary type MUST be treated as an error.
 
@@ -193,7 +193,7 @@ Clients MUST reject payloads with an unsupported version number.
 
 # Security Considerations {#security}
 
-The payload for these media types contain no directly executable code. While it is common for a protobuf definition to be used as input to a code generator which then produces something executable, but that applies to the schema language, not serializations.
+The payload for these media types contain no directly executable code. While it is common for a protobuf definition to be used as input to a code generator which then produces something executable, that applies to the schema language, not serializations.
 
 Protobuf provides no security, privacy, integrity, or compression services: clients or servers for which this is a concern should avail themselves of solutions that provide such capabilities (e.g. {{RFC8446}}). Implementations should be careful when processing Protobuf like any binary format: a malformed request to a protobuf server could be crafted to, for example, allocate a very large amount of memory, potentially impacting other operations on that server.
 
@@ -220,7 +220,7 @@ Required parameters: none
 Optional parameters:
 
 * `encoding`, which indicates the type of Protobuf encoding and is "binary" by default for `application/protobuf`, indicating the {{Binary}} format. At the time of writing, no other encoding can be used for `application/protobuf` so this parameter is for extensibility.
-* `version`, which indicates the version of the wire encoding specification (not the schema language), with default `1`. At the time of writing, no protobuf wire encodings are versioned so this parameter is for extensibility. Unversioned wire encodings should be treated as having version `1`. Protobuf implementations should accept all versions of wire encodings defined at the time of implementation.
+* `version`, which indicates the version of the wire encoding specification (not the schema language), with default `1`. At the time of writing, no protobuf wire encodings are versioned so this parameter is for extensibility. Unversioned wire encodings should be treated as having version `1`.
 
 Encoding considerations: binary
 
@@ -264,7 +264,7 @@ Required parameters: `charset`, which must be set to `utf-8` (case-insensitive)
 Optional parameters:
 
 * `encoding`, which indicates the type of Protobuf encoding and is `json` by default for `application/protobuf+json`, indicating the {{ProtoJSON}} format. At the time of writing, no other encoding can be used for `application/protobuf+json` so this parameter is for extensibility.
-* `version`, which indicates the version of the wire encoding specification (not the schema language), with default `1`. At the time of writing, no protobuf wire encodings are versioned so this parameter is for extensibility. Unversioned wire encodings should be treated as having version `1`. Protobuf implementations should accept all versions of wire encodings defined at the time of implementation.
+* `version`, which indicates the version of the wire encoding specification (not the schema language), with default `1`. At the time of writing, no protobuf wire encodings are versioned so this parameter is for extensibility. Unversioned wire encodings should be treated as having version `1`.
 
 Encoding considerations: Same as encoding considerations of `application/json` as specified in {{RFC8259}}, Section 11.
 
