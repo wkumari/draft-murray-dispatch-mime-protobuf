@@ -5,9 +5,9 @@
 DISPATCH                                               M. Kucherawy, Ed.
 Internet-Draft                                                          
 Intended status: Informational                                 W. Kumari
-Expires: 22 February 2026                                       R. Sloan
+Expires: 9 April 2026                                           R. Sloan
                                                                   Google
-                                                          21 August 2025
+                                                          6 October 2025
 
 
               Media Type Registration for Protocol Buffers
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 22 February 2026.
+   This Internet-Draft will expire on 9 April 2026.
 
 Copyright Notice
 
@@ -153,8 +153,8 @@ Table of Contents
 
    Protobuf supports only the [Binary] and [ProtoJSON] formats for
    interchange, both of which are platform-independent.  For binary
-   forms that need to transit non-binary transports, a base64 Content-
-   Transfer-Encoding (xref to [RFC4648]) is recommended.
+   forms that need to transit non-binary transports, a base64 encoding
+   (xref to [RFC4648]) is recommended.
 
    The media type includes an optional "encoding" parameter indicating
    which encoding format is to be used with that particular payload.
@@ -190,7 +190,7 @@ Table of Contents
    The payload for these media types contain no directly executable
    code.  While it is common for a protobuf definition to be used as
    input to a code generator which then produces something executable,
-   but that applies to the schema language, not serializations.
+   that applies to the schema language, not serializations.
 
    Protobuf provides no security, privacy, integrity, or compression
    services: clients or servers for which this is a concern should avail
@@ -258,9 +258,7 @@ Table of Contents
       specification (not the schema language), with default 1.  At the
       time of writing, no protobuf wire encodings are versioned so this
       parameter is for extensibility.  Unversioned wire encodings should
-      be treated as having version 1.  Protobuf implementations should
-      accept all versions of wire encodings defined at the time of
-      implementation.
+      be treated as having version 1.
 
    Encoding considerations: binary
 
@@ -323,9 +321,7 @@ Table of Contents
       specification (not the schema language), with default 1.  At the
       time of writing, no protobuf wire encodings are versioned so this
       parameter is for extensibility.  Unversioned wire encodings should
-      be treated as having version 1.  Protobuf implementations should
-      accept all versions of wire encodings defined at the time of
-      implementation.
+      be treated as having version 1.
 
    Encoding considerations: Same as encoding considerations of
    application/json as specified in [RFC8259], Section 11.

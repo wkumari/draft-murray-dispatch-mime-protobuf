@@ -11,26 +11,26 @@
 <meta content="
        This document registers media types for Protocol Buffers, a common extensible mechanism for serializing structured data. 
     " name="description">
-<meta content="xml2rfc 3.30.0" name="generator">
+<meta content="xml2rfc 3.30.2" name="generator">
 <meta content="MIME" name="keyword">
 <meta content="protobuf" name="keyword">
 <meta content="media type" name="keyword">
 <meta content="application" name="keyword">
 <meta content="draft-ietf-dispatch-mime-protobuf-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.30.0
+  xml2rfc 3.30.2
     Python 3.12.11
     ConfigArgParse 1.7
     google-i18n-address 3.1.1
     intervaltree 3.1.0
     Jinja2 3.1.6
     lxml 5.3.1
-    platformdirs 4.3.8
+    platformdirs 4.4.0
     pycountry 24.6.1
     PyYAML 6.0.2
-    requests 2.32.4
+    requests 2.32.5
     setuptools 80.9.0
-    wcwidth 0.2.13
+    wcwidth 0.2.14
 -->
 <link href="draft-ietf-dispatch-mime-protobuf.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
@@ -1049,11 +1049,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">Media Type Registration for Protocol Buf</td>
-<td class="right">August 2025</td>
+<td class="right">October 2025</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Kucherawy, et al.</td>
-<td class="center">Expires 22 February 2026</td>
+<td class="center">Expires 9 April 2026</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1066,12 +1066,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-ietf-dispatch-mime-protobuf-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-08-21" class="published">21 August 2025</time>
+<time datetime="2025-10-06" class="published">6 October 2025</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2026-02-22">22 February 2026</time></dd>
+<dd class="expires"><time datetime="2026-04-09">9 April 2026</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1129,7 +1129,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 22 February 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 9 April 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1278,7 +1278,7 @@ person.email = "jdoe@example.com"
 <a href="#section-4" class="section-number selfRef">4. </a><a href="#name-encoding-considerations" class="section-name selfRef">Encoding Considerations</a>
       </h2>
 <p id="section-4-1">Protobuf supports only the <span>[<a href="#Binary" class="cite xref">Binary</a>]</span> and <span>[<a href="#ProtoJSON" class="cite xref">ProtoJSON</a>]</span> formats for interchange, both of which are platform-independent.
-For binary forms that need to transit non-binary transports, a base64 <code>Content-Transfer-Encoding</code> (xref to <span>[<a href="#RFC4648" class="cite xref">RFC4648</a>]</span>) is recommended.<a href="#section-4-1" class="pilcrow">¶</a></p>
+For binary forms that need to transit non-binary transports, a base64 encoding (xref to <span>[<a href="#RFC4648" class="cite xref">RFC4648</a>]</span>) is recommended.<a href="#section-4-1" class="pilcrow">¶</a></p>
 <p id="section-4-2">The media type includes an optional "encoding" parameter indicating which encoding format is to be used with that particular payload.  This is included for future extensibility. Valid values for this parameter are "binary" and "json", and other values MUST be treated as an error.  See <a href="#iana" class="auto internal xref">Section 7</a> for the defaults for each of the two registered media types. Using "binary" for the JSON type or "json" for the binary type MUST be treated as an error.<a href="#section-4-2" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1298,7 +1298,7 @@ For binary forms that need to transit non-binary transports, a base64 <code>Cont
       <h2 id="name-security-considerations">
 <a href="#section-6" class="section-number selfRef">6. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
       </h2>
-<p id="section-6-1">The payload for these media types contain no directly executable code. While it is common for a protobuf definition to be used as input to a code generator which then produces something executable, but that applies to the schema language, not serializations.<a href="#section-6-1" class="pilcrow">¶</a></p>
+<p id="section-6-1">The payload for these media types contain no directly executable code. While it is common for a protobuf definition to be used as input to a code generator which then produces something executable, that applies to the schema language, not serializations.<a href="#section-6-1" class="pilcrow">¶</a></p>
 <p id="section-6-2">Protobuf provides no security, privacy, integrity, or compression services: clients or servers for which this is a concern should avail themselves of solutions that provide such capabilities (e.g. <span>[<a href="#RFC8446" class="cite xref">RFC8446</a>]</span>). Implementations should be careful when processing Protobuf like any binary format: a malformed request to a protobuf server could be crafted to, for example, allocate a very large amount of memory, potentially impacting other operations on that server.<a href="#section-6-2" class="pilcrow">¶</a></p>
 <p id="section-6-3">Protobuf supports embedded content in <code>string</code> or <code>bytes</code> fields: in both cases, applications should ensure that the format of the content is precisely as expected. Note that UTF-8 validation of <code>string</code> fields is optional (see <span>[<a href="#ProtoFeatures" class="cite xref">ProtoFeatures</a>]</span>) and a manual well-formedness check may be necessary. Further, handling Unicode text generally can be quite complex with problems discussed, for example, in <span>[<a href="#UniChars" class="cite xref">UniChars</a>]</span> and <span>[<a href="#RFC8264" class="cite xref">RFC8264</a>]</span>; so it is best to rely on well-supported internationalization libraries whenever possible.<a href="#section-6-3" class="pilcrow">¶</a></p>
 <p id="section-6-4">In order to safely use Protobuf serializations on the web, it is important to ensure that they are not interpreted as another document type, such as JavaScript: we recommend base64-encoding binary Protobuf responses whenever possible to prevent parsing as active content. Servers should generally follow the advice of <span>[<a href="#RFC9205" class="cite xref">RFC9205</a>]</span> to prevent content sniffing for all binary formats.<a href="#section-6-4" class="pilcrow">¶</a></p>
@@ -1326,7 +1326,7 @@ For binary forms that need to transit non-binary transports, a base64 <code>Cont
             <p id="section-7.1-5.1.1"><code>encoding</code>, which indicates the type of Protobuf encoding and is "binary" by default for <code>application/protobuf</code>, indicating the <span>[<a href="#Binary" class="cite xref">Binary</a>]</span> format. At the time of writing, no other encoding can be used for <code>application/protobuf</code> so this parameter is for extensibility.<a href="#section-7.1-5.1.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-7.1-5.2">
-            <p id="section-7.1-5.2.1"><code>version</code>, which indicates the version of the wire encoding specification (not the schema language), with default <code>1</code>. At the time of writing, no protobuf wire encodings are versioned so this parameter is for extensibility. Unversioned wire encodings should be treated as having version <code>1</code>. Protobuf implementations should accept all versions of wire encodings defined at the time of implementation.<a href="#section-7.1-5.2.1" class="pilcrow">¶</a></p>
+            <p id="section-7.1-5.2.1"><code>version</code>, which indicates the version of the wire encoding specification (not the schema language), with default <code>1</code>. At the time of writing, no protobuf wire encodings are versioned so this parameter is for extensibility. Unversioned wire encodings should be treated as having version <code>1</code>.<a href="#section-7.1-5.2.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 <p id="section-7.1-6">Encoding considerations: binary<a href="#section-7.1-6" class="pilcrow">¶</a></p>
@@ -1372,7 +1372,7 @@ For binary forms that need to transit non-binary transports, a base64 <code>Cont
             <p id="section-7.2-5.1.1"><code>encoding</code>, which indicates the type of Protobuf encoding and is <code>json</code> by default for <code>application/protobuf+json</code>, indicating the <span>[<a href="#ProtoJSON" class="cite xref">ProtoJSON</a>]</span> format. At the time of writing, no other encoding can be used for <code>application/protobuf+json</code> so this parameter is for extensibility.<a href="#section-7.2-5.1.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-7.2-5.2">
-            <p id="section-7.2-5.2.1"><code>version</code>, which indicates the version of the wire encoding specification (not the schema language), with default <code>1</code>. At the time of writing, no protobuf wire encodings are versioned so this parameter is for extensibility. Unversioned wire encodings should be treated as having version <code>1</code>. Protobuf implementations should accept all versions of wire encodings defined at the time of implementation.<a href="#section-7.2-5.2.1" class="pilcrow">¶</a></p>
+            <p id="section-7.2-5.2.1"><code>version</code>, which indicates the version of the wire encoding specification (not the schema language), with default <code>1</code>. At the time of writing, no protobuf wire encodings are versioned so this parameter is for extensibility. Unversioned wire encodings should be treated as having version <code>1</code>.<a href="#section-7.2-5.2.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 <p id="section-7.2-6">Encoding considerations: Same as encoding considerations of <code>application/json</code> as specified in <span>[<a href="#RFC8259" class="cite xref">RFC8259</a>]</span>, Section 11.<a href="#section-7.2-6" class="pilcrow">¶</a></p>
