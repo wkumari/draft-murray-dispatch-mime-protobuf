@@ -177,7 +177,7 @@ An example of the above instance expressed in JSON:
 # Encoding Considerations {#encoding}
 
 Protobuf supports only the {{Binary}} and {{ProtoJSON}} formats for interchange, both of which are platform-independent.
-For binary forms that need to transit non-binary transports, a base64 encoding (xref to {{RFC4648}}) is recommended.
+For binary forms that need to transit non-binary transports, a base64 encoding (e.g., {{RFC4648}}) is recommended.
 
 The media type includes an optional "encoding" parameter indicating which encoding format is to be used with that particular payload.  This is included for future extensibility. Valid values for this parameter are "binary" and "json", and other values MUST be treated as an error.  See {{iana}} for the defaults for each of the two registered media types. Using "binary" for the JSON type or "json" for the binary type MUST be treated as an error.
 
