@@ -5,9 +5,9 @@
 DISPATCH                                               M. Kucherawy, Ed.
 Internet-Draft                                                          
 Intended status: Informational                                 W. Kumari
-Expires: 9 April 2026                                           R. Sloan
+Expires: 7 May 2026                                             R. Sloan
                                                                   Google
-                                                          6 October 2025
+                                                         3 November 2025
 
 
               Media Type Registration for Protocol Buffers
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 9 April 2026.
+   This Internet-Draft will expire on 7 May 2026.
 
 Copyright Notice
 
@@ -154,7 +154,7 @@ Table of Contents
    Protobuf supports only the [Binary] and [ProtoJSON] formats for
    interchange, both of which are platform-independent.  For binary
    forms that need to transit non-binary transports, a base64 encoding
-   (xref to [RFC4648]) is recommended.
+   (e.g., [RFC4648]) is recommended.
 
    The media type includes an optional "encoding" parameter indicating
    which encoding format is to be used with that particular payload.

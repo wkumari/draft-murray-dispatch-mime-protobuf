@@ -11,25 +11,24 @@
 <meta content="
        This document registers media types for Protocol Buffers, a common extensible mechanism for serializing structured data. 
     " name="description">
-<meta content="xml2rfc 3.30.2" name="generator">
+<meta content="xml2rfc 3.31.0" name="generator">
 <meta content="MIME" name="keyword">
 <meta content="protobuf" name="keyword">
 <meta content="media type" name="keyword">
 <meta content="application" name="keyword">
 <meta content="draft-ietf-dispatch-mime-protobuf-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.30.2
-    Python 3.12.11
+  xml2rfc 3.31.0
+    Python 3.12.12
     ConfigArgParse 1.7
     google-i18n-address 3.1.1
     intervaltree 3.1.0
     Jinja2 3.1.6
     lxml 5.3.1
-    platformdirs 4.4.0
+    platformdirs 4.5.0
     pycountry 24.6.1
     PyYAML 6.0.2
     requests 2.32.5
-    setuptools 80.9.0
     wcwidth 0.2.14
 -->
 <link href="draft-ietf-dispatch-mime-protobuf.xml" rel="alternate" type="application/rfc+xml">
@@ -1049,11 +1048,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">Media Type Registration for Protocol Buf</td>
-<td class="right">October 2025</td>
+<td class="right">November 2025</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Kucherawy, et al.</td>
-<td class="center">Expires 9 April 2026</td>
+<td class="center">Expires 7 May 2026</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1066,12 +1065,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-ietf-dispatch-mime-protobuf-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-10-06" class="published">6 October 2025</time>
+<time datetime="2025-11-03" class="published">3 November 2025</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2026-04-09">9 April 2026</time></dd>
+<dd class="expires"><time datetime="2026-05-07">7 May 2026</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1129,7 +1128,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 9 April 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 7 May 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1278,7 +1277,7 @@ person.email = "jdoe@example.com"
 <a href="#section-4" class="section-number selfRef">4. </a><a href="#name-encoding-considerations" class="section-name selfRef">Encoding Considerations</a>
       </h2>
 <p id="section-4-1">Protobuf supports only the <span>[<a href="#Binary" class="cite xref">Binary</a>]</span> and <span>[<a href="#ProtoJSON" class="cite xref">ProtoJSON</a>]</span> formats for interchange, both of which are platform-independent.
-For binary forms that need to transit non-binary transports, a base64 encoding (xref to <span>[<a href="#RFC4648" class="cite xref">RFC4648</a>]</span>) is recommended.<a href="#section-4-1" class="pilcrow">¶</a></p>
+For binary forms that need to transit non-binary transports, a base64 encoding (e.g., <span>[<a href="#RFC4648" class="cite xref">RFC4648</a>]</span>) is recommended.<a href="#section-4-1" class="pilcrow">¶</a></p>
 <p id="section-4-2">The media type includes an optional "encoding" parameter indicating which encoding format is to be used with that particular payload.  This is included for future extensibility. Valid values for this parameter are "binary" and "json", and other values MUST be treated as an error.  See <a href="#iana" class="auto internal xref">Section 7</a> for the defaults for each of the two registered media types. Using "binary" for the JSON type or "json" for the binary type MUST be treated as an error.<a href="#section-4-2" class="pilcrow">¶</a></p>
 </section>
 </div>
