@@ -5,9 +5,9 @@
 DISPATCH                                               M. Kucherawy, Ed.
 Internet-Draft                                                          
 Intended status: Informational                                 W. Kumari
-Expires: 7 May 2026                                             R. Sloan
+Expires: 17 May 2026                                            R. Sloan
                                                                   Google
-                                                         3 November 2025
+                                                        13 November 2025
 
 
               Media Type Registration for Protocol Buffers
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 7 May 2026.
+   This Internet-Draft will expire on 17 May 2026.
 
 Copyright Notice
 
@@ -354,9 +354,10 @@ Table of Contents
 
    Restrictions on usage: None
 
-   Author: Rob Sloan <rmsj@google.com>
+   Author: Rob Sloan <rmsj@google.com>.  Protobuf Team <protobuf-
+   team@google.com>
 
-   Change controller: Protobuf <protobuf-team@google.com>
+   Change controller: IETF
 
    Provisional registration? (standards tree only): No
 
