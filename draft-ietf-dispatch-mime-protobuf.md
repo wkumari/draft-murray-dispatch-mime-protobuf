@@ -291,9 +291,9 @@ Intended usage: COMMON
 
 Restrictions on usage: None
 
-Author: Rob Sloan \<rmsj@google.com\>
+Author: Rob Sloan \<rmsj@google.com\>. Protobuf Team \<protobuf-team@google.com\>
 
-Change controller: Protobuf \<protobuf-team@google.com\>
+Change controller: IETF
 
 Provisional registration? (standards tree only): No
 
