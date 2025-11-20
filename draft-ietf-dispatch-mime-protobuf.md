@@ -128,7 +128,7 @@ This document registers media types for Protocol Buffers, a common extensible me
 Protocol Buffers ("protobufs") were introduced in 2008 as a free, open source, platform-independent mechanism for transport and storage of structured data: their use has become
 increasingly common and Protobuf implementations exist in many languages (C++, C#, Dart, Go, Java, Kotlin, Objective-C, Python, JavaScript, Ruby, Swift, and perhaps others). See {{Protobuf}} for more information.
 
-Protobuf consists of an interface definition language ("IDL"), wire encoding formats, and language-specific implementations (typically involving a generated API) so that clients and servers can be easily deployed using a common schema. Protobuf supports multiple wire formats for interchange: {{Binary}}, which is optimized for wire efficiency, and {{ProtoJSON}}, which maps the Protobuf schema onto a JSON structure.
+Protobuf consists of an interface definition language ("IDL"), wire encoding formats, and language-specific implementations (typically involving a generated API) so that clients and servers can be easily deployed using a common schema. Protobuf supports two wire formats for interchange: {{Binary}}, which is optimized for wire efficiency, and {{ProtoJSON}}, which maps the Protobuf schema onto a JSON structure.
 
 Serialized objects are occasionally transported within media that make use of media types (see {{RFC2045}} et seq) to identify payloads. Accordingly,
 current and historical media types used for this purpose would benefit from registration. This document requests those registrations of IANA.
@@ -176,7 +176,7 @@ An example of the above instance expressed in JSON:
 
 # Encoding Considerations {#encoding}
 
-Protobuf supports only the {{Binary}} and {{ProtoJSON}} formats for interchange, both of which are platform-independent.
+Protobuf supports the {{Binary}} and {{ProtoJSON}} formats for interchange, both of which are platform-independent.
 For binary forms that need to transit non-binary transports, a base64 encoding (e.g., {{RFC4648}}) is recommended.
 
 The media type includes an optional "encoding" parameter indicating which encoding format is to be used with that particular payload.  This is included for future extensibility. Valid values for this parameter are "binary" and "json", and other values MUST be treated as an error.  See {{iana}} for the defaults for each of the two registered media types. Using "binary" for the JSON type or "json" for the binary type MUST be treated as an error.
