@@ -5,9 +5,9 @@
 DISPATCH                                               M. Kucherawy, Ed.
 Internet-Draft                                                          
 Intended status: Informational                                 W. Kumari
-Expires: 17 May 2026                                            R. Sloan
+Expires: 24 May 2026                                            R. Sloan
                                                                   Google
-                                                        13 November 2025
+                                                        20 November 2025
 
 
               Media Type Registration for Protocol Buffers
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 17 May 2026.
+   This Internet-Draft will expire on 24 May 2026.
 
 Copyright Notice
 
@@ -96,10 +96,10 @@ Table of Contents
    Protobuf consists of an interface definition language ("IDL"), wire
    encoding formats, and language-specific implementations (typically
    involving a generated API) so that clients and servers can be easily
-   deployed using a common schema.  Protobuf supports multiple wire
-   formats for interchange: [Binary], which is optimized for wire
-   efficiency, and [ProtoJSON], which maps the Protobuf schema onto a
-   JSON structure.
+   deployed using a common schema.  Protobuf supports two wire formats
+   for interchange: [Binary], which is optimized for wire efficiency,
+   and [ProtoJSON], which maps the Protobuf schema onto a JSON
+   structure.
 
    Serialized objects are occasionally transported within media that
    make use of media types (see [RFC2045] et seq) to identify payloads.
@@ -151,7 +151,7 @@ Table of Contents
 
 4.  Encoding Considerations
 
-   Protobuf supports only the [Binary] and [ProtoJSON] formats for
+   Protobuf supports the [Binary] and [ProtoJSON] formats for
    interchange, both of which are platform-independent.  For binary
    forms that need to transit non-binary transports, a base64 encoding
    (e.g., [RFC4648]) is recommended.
