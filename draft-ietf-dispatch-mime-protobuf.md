@@ -166,7 +166,7 @@ person.email = "jdoe@example.com"
 
 An example of the above instance expressed in JSON:
 
-~~~
+~~~ json
 {
   "name": "John Doe",
   "id": 1234,
